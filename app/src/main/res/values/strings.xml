@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MAD_project</string>
+    <string name="main_heading">Welcome !!</string>
+    <string name="main_topic">RUSH ADVERTISING</string>
+    <string name="Advertising_moto">Outdoor and Indoor Advertising</string>
 </resources>
