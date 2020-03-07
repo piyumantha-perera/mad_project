@@ -9,4 +9,12 @@
     <string name="register">Are you not Register?</string>
     <string name="reg">Register</string>
     <string name="login">LOGIN</string>
+    <string name="register_head">Register</string>
+    <string name="name">User Name:</string>
+    <string name="password">Password:</string>
+    <string name="contact">Contact No:</string>
+    <string name="email">E-mail :</string>
+    <string name="address">Adderss  :</string>
+    <string name="conf_password">Confirm Password :</string>
+    <string name="registerbtn">REGISTER</string>
 </resources>
