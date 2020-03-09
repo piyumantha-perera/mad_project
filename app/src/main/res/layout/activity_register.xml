@@ -51,13 +51,14 @@
         android:layout_width="107dp"
         android:layout_height="29dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="228dp"
         android:text="@string/password"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:layout_constraintVertical_bias="0.138" />
 
     <EditText
         android:id="@+id/editTextRegisterPassword"
@@ -157,7 +158,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.223" />
 
     <EditText
         android:id="@+id/editText8"
