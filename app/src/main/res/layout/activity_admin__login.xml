@@ -85,7 +85,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView21" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonAdminLogin"
         android:layout_width="188dp"
         android:layout_height="47dp"
         android:background="@drawable/btn_login"

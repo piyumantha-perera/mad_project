@@ -6,4 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".Admin_Choose">
 
+    <Button
+        android:id="@+id/buttonAdChAddEmp"
+        android:layout_width="295dp"
+        android:layout_height="63dp"
+        android:background="@drawable/btn_employee_choose"
+        android:text="@string/add_emp"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.398"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.345" />
+
+    <Button
+        android:id="@+id/buttonAdChAddPayments"
+        android:layout_width="295dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="48dp"
+        android:background="@drawable/btn_employee_choose"
+        android:text="@string/payments"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdChAddEmp"
+        app:layout_constraintVertical_bias="0.192" />
+
+    <Button
+        android:id="@+id/buttonAdChAddWorks"
+        android:layout_width="295dp"
+        android:layout_height="63dp"
+        android:background="@drawable/btn_employee_choose"
+        android:text="@string/works"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdChAddPayments"
+        app:layout_constraintVertical_bias="0.284" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,4 +23,7 @@
     <string name="customer">Customer</string>
     <string name="adimin_heading">Welcome Admin</string>
     <string name="admin_name">User Name :</string>
+    <string name="add_emp">Add Employers</string>
+    <string name="payments">Add Employers Payments</string>
+    <string name="works">Add Employee Works</string>
 </resources>
