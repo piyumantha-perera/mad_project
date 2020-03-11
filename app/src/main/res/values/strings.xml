@@ -17,4 +17,10 @@
     <string name="address">Adderss  :</string>
     <string name="conf_password">Confirm Password :</string>
     <string name="registerbtn">REGISTER</string>
+    <string name="areYou">Who are you?</string>
+    <string name="admin">Admin</string>
+    <string name="employee">Employer</string>
+    <string name="customer">Customer</string>
+    <string name="adimin_heading">Welcome Admin</string>
+    <string name="admin_name">User Name :</string>
 </resources>
