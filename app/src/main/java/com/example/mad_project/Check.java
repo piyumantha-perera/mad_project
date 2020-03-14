@@ -11,6 +11,7 @@ public class Check extends AppCompatActivity {
 
     ImageView cutomer;
     ImageView admin;
+    ImageView employe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class Check extends AppCompatActivity {
 
         cutomer = findViewById(R.id.imageButtonCheckCustomer);
         admin = findViewById(R.id.imageButtonCheckAdmin);
+        employe=findViewById(R.id.imageButtonCheckEmployee);
 
         cutomer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,5 +37,17 @@ public class Check extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        employe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Check.this,Employee_Login.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
     }
 }
