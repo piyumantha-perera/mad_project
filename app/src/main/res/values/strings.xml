@@ -30,7 +30,7 @@
     <string name="salary">Employee-Salay-Details</string>
     <string name="date">Date</string>
     <string name="hello">Hello</string>
-    <string name="admin_heading">Employee Login</string>
+    <string name="emp_heading">Employee Login</string>
     <string name="employee_name">User Name :</string>
     <string name="emp_password">Password :</string>
     <string name="emp_login">Login</string>

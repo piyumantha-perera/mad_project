@@ -10,7 +10,7 @@
         android:id="@+id/textView22"
         android:layout_width="236dp"
         android:layout_height="48dp"
-        android:text="@string/admin_heading"
+        android:text="@string/emp_heading"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
