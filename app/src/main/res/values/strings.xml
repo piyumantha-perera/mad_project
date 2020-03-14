@@ -26,4 +26,8 @@
     <string name="add_emp">Add Employers</string>
     <string name="payments">Add Employers Payments</string>
     <string name="works">Add Employee Works</string>
+    <string name="dayWork">Employee-Day-to-Day-Work</string>
+    <string name="salary">Employee-Salay-Details</string>
+    <string name="date">Date</string>
+    <string name="hello">Hello</string>
 </resources>
