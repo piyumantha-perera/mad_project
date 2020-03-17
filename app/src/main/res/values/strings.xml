@@ -34,5 +34,15 @@
     <string name="employee_name">User Name :</string>
     <string name="emp_password">Password :</string>
     <string name="emp_login">Login</string>
-    <string name="salary_heading">Salary Details</string>
+    <string name="salary_heading">Employee Salary Details</string>
+    <string name="Emp_Sala_Name">Name </string>
+    <string name="Basic_Salary">Basic salary </string>
+    <string name="Trav_allow">Travelling Allowance</string>
+    <string name="Over_time">Over Time</string>
+    <string name="Sal_advance">Salary Advance</string>
+    <string name="Net_sal">Net Salary</string>
+    <string name="Sal_add">ADD</string>
+    <string name="Sal_update">UPDATE</string>
+    <string name="Sal_del">DELETE</string>
+
 </resources>
