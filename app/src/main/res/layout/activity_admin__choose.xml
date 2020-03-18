@@ -17,25 +17,27 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.398"
+        app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.345" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="0.079" />
 
     <Button
         android:id="@+id/buttonAdChAddPayments"
         android:layout_width="295dp"
         android:layout_height="63dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="44dp"
         android:background="@drawable/btn_employee_choose"
         android:text="@string/payments"
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonAdChAddEmp"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintVertical_bias="0.152" />
 
     <Button
         android:id="@+id/buttonAdChAddWorks"
@@ -51,5 +53,17 @@
         app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonAdChAddPayments"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintVertical_bias="0.217" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="191dp"
+        android:layout_height="198dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061"
+        app:srcCompat="@drawable/thinking" />
 </androidx.constraintlayout.widget.ConstraintLayout>
