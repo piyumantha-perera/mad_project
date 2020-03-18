@@ -29,7 +29,6 @@
     <string name="dayWork">Employee-Day-to-Day-Work</string>
     <string name="salary">Employee-Salay-Details</string>
     <string name="date">Date</string>
-    <string name="hello">Hello</string>
     <string name="emp_heading">Employee Login</string>
     <string name="employee_name">User Name :</string>
     <string name="emp_password">Password :</string>
@@ -44,5 +43,15 @@
     <string name="Sal_add">ADD</string>
     <string name="Sal_update">UPDATE</string>
     <string name="Sal_del">DELETE</string>
+    <string name="hello">Hello</string>
+    <string name="heading_view_salary">This is your salary</string>
+    <string name="sal_view_name">Name</string>
+    <string name="sal_view_basic">Basic Salary</string>
+    <string name="sal_view_trav">Travelling Allowance</string>
+    <string name="sal_view_ovrTi">Over Time</string>
+    <string name="sal_view_adva" >Salary Advance</string>
+    <string name="sal_view_net">Net Salary</string>
+    <string name="back">Back</string>
+    <string name="log_out">Log Out</string>
 
 </resources>
