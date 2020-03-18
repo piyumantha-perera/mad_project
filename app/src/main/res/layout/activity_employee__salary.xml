@@ -201,12 +201,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintStart_toEndOf="@+id/btnOutsideEMP"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.88" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnOfficeEMP"
         android:layout_width="104dp"
         android:layout_height="54dp"
         android:background="@drawable/btn_delete"
@@ -220,7 +220,7 @@
         app:layout_constraintVertical_bias="0.881" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnOutsideEMP"
         android:layout_width="102dp"
         android:layout_height="52dp"
         android:background="@drawable/btn_add"
