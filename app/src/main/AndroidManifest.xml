@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Banner"></activity>
-        <activity android:name=".Customer_Choose" />
-        <activity android:name=".Customer_Profile" />
+        <activity android:name=".Customer_Profile"></activity>
         <activity android:name=".Employee_Choose" />
         <activity android:name=".Salary_View" />
         <activity android:name=".Employee_Salary" />
@@ -28,10 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
