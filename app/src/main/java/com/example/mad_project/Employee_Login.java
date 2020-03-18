@@ -22,7 +22,7 @@ public class Employee_Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(Employee_Login.this,EmployeeWorks.class);
+                Intent intent=new Intent(Employee_Login.this,Employee_Choose.class);
                 startActivity(intent);
             }
         });

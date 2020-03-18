@@ -7,22 +7,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Admin_Choose extends AppCompatActivity {
+public class Employee_Choose extends AppCompatActivity {
 
-    Button salary;
+    Button monthlySal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin__choose);
+        setContentView(R.layout.activity_employee__choose);
 
-        salary=findViewById(R.id.buttonAdChAddPayments);
+        monthlySal=findViewById(R.id.buttonMonthlySal);
 
-        salary.setOnClickListener(new View.OnClickListener() {
+        monthlySal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent( Admin_Choose.this,Employee_Salary.class);
+
+                Intent intent=new Intent(Employee_Choose.this,Salary_View.class);
                 startActivity(intent);
+
             }
         });
     }

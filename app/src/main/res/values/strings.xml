@@ -49,9 +49,11 @@
     <string name="sal_view_basic">Basic Salary</string>
     <string name="sal_view_trav">Travelling Allowance</string>
     <string name="sal_view_ovrTi">Over Time</string>
-    <string name="sal_view_adva" >Salary Advance</string>
+    <string name="sal_view_adva">Salary Advance</string>
     <string name="sal_view_net">Net Salary</string>
     <string name="back">Back</string>
     <string name="log_out">Log Out</string>
+    <string name="monthly_salary">Monthly Salary</string>
+    <string name="day_work">Day To Day Work</string>
 
 </resources>
