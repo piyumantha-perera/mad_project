@@ -63,5 +63,19 @@
     <string name="cus_pro_edit">EDIT</string>
     <string name="select_products">You are Selected these Items</string>
     <string name="creation">Our Creations</string>
+    <string name="cust_choise_head">What is your Choice?</string>
+    <string name="btn_banner">Banners</string>
+    <string name="btn_leaflet">Leaflet</string>
+    <string name="btn_lightb">Light Board</string>
+    <string name="btn_nameboard">Name Board</string>
+    <string name="bannerSize">Size</string>
+    <string name="bannerLength">Length :</string>
+    <string name="bannerWidth">Width :</string>
+    <string name="BannerSample">Sample Images</string>
+    <string name="browse">Upload Image</string>
+    <string name="image">banner.png</string>
+    <string name="bannerdescription">Description :</string>
+    <string name="bannerheading">Banner Details</string>
+    <string name="bnDes">How we design Banner?</string>
 
 </resources>

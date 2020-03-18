@@ -25,16 +25,16 @@
         android:id="@+id/textView23"
         android:layout_width="114dp"
         android:layout_height="28dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:text="@string/employee_name"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView9"
         app:layout_constraintTop_toBottomOf="@+id/textView22"
-        app:layout_constraintVertical_bias="0.543" />
+        app:layout_constraintVertical_bias="0.119" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -56,7 +56,7 @@
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView23"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toEndOf="@+id/textView23" />
 
     <TextView
@@ -64,6 +64,7 @@
         android:layout_width="116dp"
         android:layout_height="26dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="136dp"
         android:text="@string/emp_password"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -71,10 +72,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintTop_toBottomOf="@+id/textView23"
+        app:layout_constraintVertical_bias="0.206" />
 
     <EditText
         android:id="@+id/editText10"
@@ -84,7 +85,7 @@
         android:inputType="textPassword"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintStart_toEndOf="@+id/textView24" />
 
     <Button

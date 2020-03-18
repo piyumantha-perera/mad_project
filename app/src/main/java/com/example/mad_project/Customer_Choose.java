@@ -6,20 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
-public class Customer_Profile extends AppCompatActivity {
+public class Customer_Choose extends AppCompatActivity {
 
-    Button creation;
+    ImageView banner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer__profile);
-        creation = findViewById(R.id.buttonProfileCreation);
-        creation.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_customer__choose);
+
+        banner = findViewById(R.id.imageButtonCusChoBanner);
+        banner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Customer_Profile.this,Customer_Choose.class);
+                Intent intent = new Intent(Customer_Choose.this,Banner.class);
                 startActivity(intent);
             }
         });
