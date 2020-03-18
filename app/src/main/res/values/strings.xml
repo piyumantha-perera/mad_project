@@ -55,5 +55,13 @@
     <string name="log_out">Log Out</string>
     <string name="monthly_salary">Monthly Salary</string>
     <string name="day_work">Day To Day Work</string>
+    <string name="customer_profile_heading">My Profile</string>
+    <string name="profile_username">User Name</string>
+    <string name="pro_email">Email</string>
+    <string name="pro_contact">Contact</string>
+    <string name="pro_address">Address</string>
+    <string name="cus_pro_edit">EDIT</string>
+    <string name="select_products">You are Selected these Items</string>
+    <string name="creation">Our Creations</string>
 
 </resources>

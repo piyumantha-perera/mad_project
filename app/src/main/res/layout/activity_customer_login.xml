@@ -137,7 +137,7 @@
         app:srcCompat="@drawable/password" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCusLogin"
         android:layout_width="172dp"
         android:layout_height="54dp"
         android:background="@drawable/btn_login"
