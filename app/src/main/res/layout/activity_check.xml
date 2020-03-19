@@ -6,20 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".Check">
 
+    <include
+        android:id="@+id/include2"
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="160dp"
-        android:layout_height="41dp"
+        android:layout_width="150dp"
+        android:layout_height="37dp"
+        android:fontFamily="@font/amaranth_bold"
         android:text="@string/areYou"
-        android:textColor="#000000"
+        android:textColor="@color/design_default_color_secondary"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView17"
+        app:layout_constraintVertical_bias="0.038" />
 
     <ImageButton
         android:id="@+id/imageButtonCheckAdmin"
@@ -28,10 +35,10 @@
         android:background="@drawable/btn_admin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.134"
+        app:layout_constraintVertical_bias="0.068"
         app:srcCompat="@drawable/admin" />
 
     <ImageButton
@@ -41,10 +48,10 @@
         android:background="@drawable/btn_employee"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.626"
+        app:layout_constraintHorizontal_bias="0.601"
         app:layout_constraintStart_toEndOf="@+id/imageButtonCheckAdmin"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.133"
+        app:layout_constraintVertical_bias="0.068"
         app:srcCompat="@drawable/employee" />
 
     <ImageButton
@@ -57,7 +64,7 @@
         app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:layout_constraintVertical_bias="0.165"
+        app:layout_constraintVertical_bias="0.093"
         app:srcCompat="@drawable/customer" />
 
     <TextView
@@ -104,4 +111,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButtonCheckCustomer"
         app:layout_constraintVertical_bias="0.159" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="195dp"
+        android:layout_height="176dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137"
+        app:srcCompat="@drawable/logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

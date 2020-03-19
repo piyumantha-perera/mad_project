@@ -10,6 +10,8 @@ import android.widget.Button;
 public class Admin_Choose extends AppCompatActivity {
 
     Button salary;
+    Button emp;
+
     Button work;
 
     @Override
@@ -17,6 +19,8 @@ public class Admin_Choose extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin__choose);
 
+        salary = findViewById(R.id.buttonAdChAddPayments);
+        emp = findViewById(R.id.buttonAdChAddEmp);
         salary=findViewById(R.id.buttonAdChAddPayments);
         work = findViewById(R.id.buttonAdChAddWorks);
 
@@ -33,6 +37,14 @@ public class Admin_Choose extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent( Admin_Choose.this,Employee_Salary.class);
+                startActivity(intent);
+            }
+        });
+
+        emp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent( Admin_Choose.this,Employee_Add.class);
                 startActivity(intent);
             }
         });

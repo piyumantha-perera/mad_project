@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Customer_Login">
 
+    <include
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="138dp"
@@ -15,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075"
+        app:layout_constraintVertical_bias="0.156"
         app:srcCompat="@drawable/login" />
 
     <TextView
