@@ -7,32 +7,33 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Admin_Choose extends AppCompatActivity {
+public class DaytoDayWork extends AppCompatActivity {
 
-    Button salary;
-    Button work;
+    Button office;
+    Button outside;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin__choose);
+        setContentView(R.layout.activity_dayto_day_work);
 
-        salary=findViewById(R.id.buttonAdChAddPayments);
-        work = findViewById(R.id.buttonAdChAddWorks);
+        office=findViewById(R.id.btnOfficeEMP);
+        outside=findViewById(R.id.btnOutsideEMP);
 
-        work.setOnClickListener(new View.OnClickListener() {
+        outside.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent( Admin_Choose.this,DaytoDayWork.class);
+                Intent intent=new Intent( DaytoDayWork.this,OutsideEMP.class);
                 startActivity(intent);
-
             }
         });
 
-        salary.setOnClickListener(new View.OnClickListener() {
+
+        office.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent( Admin_Choose.this,Employee_Salary.class);
+
+                Intent intent=new Intent( DaytoDayWork.this,OfficeEMP.class);
                 startActivity(intent);
             }
         });

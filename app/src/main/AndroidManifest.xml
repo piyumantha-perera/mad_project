@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Employee_Add"></activity>
+        <activity android:name=".OutsideEMP"></activity>
+        <activity android:name=".OfficeEMP" />
+        <activity android:name=".DaytoDayWork" />
         <activity android:name=".Customer_Profile" />
         <activity android:name=".Employee_Choose" />
         <activity android:name=".Salary_View" />
