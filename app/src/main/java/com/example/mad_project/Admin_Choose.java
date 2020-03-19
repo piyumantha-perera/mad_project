@@ -40,13 +40,6 @@ public class Admin_Choose extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        emp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent( Admin_Choose.this,Employee_Add.class);
-                startActivity(intent);
-            }
-        });
+        
     }
 }
