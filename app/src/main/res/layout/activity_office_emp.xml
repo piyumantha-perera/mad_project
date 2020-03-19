@@ -101,11 +101,10 @@
         android:layout_width="113dp"
         android:layout_height="46dp"
         android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
         android:layout_marginTop="488dp"
-        android:background="#BABED8"
-        android:textStyle="bold"
+        android:background="@drawable/btwork"
         android:text="ADD"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,11 +114,10 @@
         android:layout_width="113dp"
         android:layout_height="45dp"
         android:layout_marginStart="256dp"
-        android:layout_marginLeft="256dp"
         android:layout_marginTop="488dp"
-        android:background="#BABED8"
-        android:textStyle="bold"
+        android:background="@drawable/btnworkupdate"
         android:text="UPDATE"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
