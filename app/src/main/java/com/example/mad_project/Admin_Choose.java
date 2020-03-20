@@ -21,7 +21,6 @@ public class Admin_Choose extends AppCompatActivity {
 
         salary = findViewById(R.id.buttonAdChAddPayments);
         emp = findViewById(R.id.buttonAdChAddEmp);
-       // salary=findViewById(R.id.buttonAdChAddPayments);
         work = findViewById(R.id.buttonAdChAddWorks);
 
         work.setOnClickListener(new View.OnClickListener() {

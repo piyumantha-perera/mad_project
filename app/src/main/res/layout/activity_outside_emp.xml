@@ -98,7 +98,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonBannerUpload"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="113dp"
         android:layout_height="46dp"

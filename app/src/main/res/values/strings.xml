@@ -79,5 +79,17 @@
     <string name="bnDes">How we design Banner?</string>
     <string name="toolbar">RUSH ADVERTISING</string>
     <string name="bannerDate">Date Of Need :</string>
+    <string name="oneBanner">Price Of One Banner</string>
+    <string name="cal">Calculate</string>
+    <string name="price">Amount</string>
+    <string name="btn_next">NEXT</string>
+    <string name="Bannerqty">Quantity :</string>
+    <string name="Total">Total Amount :</string>
+    <string name="show">show</string>
+    <string name="del_date">Delivery Date:</string>
+    <string name="getting_type">How to get the Creations?</string>
+    <string name="del_take">Delivery Or Taking</string>
+    <string name="btn_addD">Add details</string>
+
 
 </resources>
