@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 public class Customer_Choose extends AppCompatActivity {
 
-    ImageView banner, leaflet;
+    ImageView banner, leaflet, nameboard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class Customer_Choose extends AppCompatActivity {
 
         banner = findViewById(R.id.imageButtonCusChoBanner);
         leaflet = findViewById(R.id.imageButtonCusChoLeaflet);
+        nameboard = findViewById(R.id.imageButtonNameBoard);
 
         banner.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,14 @@ public class Customer_Choose extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Customer_Choose.this, Leaflet.class);
+                startActivity(intent);
+            }
+        });
+
+        nameboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Customer_Choose.this, NameBoard.class);
                 startActivity(intent);
             }
         });

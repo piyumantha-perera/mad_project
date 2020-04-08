@@ -93,6 +93,7 @@
     <string name="Leaflet_head">Leaflet Details</string>
     <string name="leaflet_price">Total price of Leaflets:</string>
     <string name="image_url">Enter the images driver URL :</string>
+    <string name="nameboard_haed">Name Board Details</string>
 
 
 </resources>
