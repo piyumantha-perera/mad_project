@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Banner_Clone"></activity>
+        <activity android:name=".Leaflet_Clone"></activity>
+        <activity android:name=".Leaflet" />
+        <activity android:name=".Banner_Clone" />
         <activity android:name=".Customer_Profile" />
         <activity android:name=".Banner" />
         <activity android:name=".DaytoDayWork" />

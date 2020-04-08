@@ -90,6 +90,9 @@
     <string name="getting_type">How to get the Creations?</string>
     <string name="del_take">Delivery Or Taking</string>
     <string name="btn_addD">Add details</string>
+    <string name="Leaflet_head">Leaflet Details</string>
+    <string name="leaflet_price">Total price of Leaflets:</string>
+    <string name="image_url">Enter the images driver URL :</string>
 
 
 </resources>

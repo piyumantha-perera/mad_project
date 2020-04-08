@@ -4,55 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Banner_Clone">
+    tools:context=".Leaflet_Clone">
 
     <include
-        android:id="@+id/include3"
+        android:id="@+id/include2"
         layout="@layout/toolbar"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-2dp" />
 
     <TextView
-        android:id="@+id/textView55"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/textView54"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
         android:fontFamily="@font/amaranth_bold"
-        android:text="@string/bannerheading"
+        android:text="@string/Leaflet_head"
         android:textColor="#800000"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.112" />
-
-    <TextView
-        android:id="@+id/textView59"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Total"
-        android:textColor="#008ecc"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView55"
-        app:layout_constraintVertical_bias="0.091" />
-
-    <TextView
-        android:id="@+id/textViewBannerTotal"
-        android:layout_width="189dp"
-        android:layout_height="34dp"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView59"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.809"
-        app:layout_constraintStart_toEndOf="@+id/textView59" />
+        app:layout_constraintVertical_bias="0.103" />
 
     <TextView
         android:id="@+id/textView57"
@@ -66,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView59"
+        app:layout_constraintTop_toBottomOf="@+id/textView54"
         app:layout_constraintVertical_bias="0.077" />
 
     <EditText
@@ -123,6 +97,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText22"
         app:layout_constraintVertical_bias="0.33" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

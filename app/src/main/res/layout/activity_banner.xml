@@ -109,9 +109,9 @@
 
     <TextView
         android:id="@+id/textView49"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/BannerSample"
+        android:layout_width="246dp"
+        android:layout_height="26dp"
+        android:text="@string/image_url"
         android:textColor="#008ecc"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -121,33 +121,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView48"
         app:layout_constraintVertical_bias="0.097" />
-
-    <Button
-        android:id="@+id/buttonBannerUpload"
-        android:layout_width="167dp"
-        android:layout_height="32dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/btn_browse"
-        android:text="@string/browse"
-        android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView49"
-        app:layout_constraintVertical_bias="0.043" />
-
-    <TextView
-        android:id="@+id/textView50"
-        android:layout_width="181dp"
-        android:layout_height="33dp"
-        android:hint="@string/image"
-        android:textColorHighlight="@android:color/background_dark"
-        android:textColorHint="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonBannerUpload"
-        app:layout_constraintHorizontal_bias="0.586"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView49"
-        app:layout_constraintVertical_bias="0.041" />
 
     <TextView
         android:id="@+id/textView52"
@@ -191,10 +164,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView50"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        app:layout_constraintVertical_bias="0.059" />
 
     <EditText
         android:id="@+id/editTextBannerDes"
@@ -236,5 +209,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.745"
         app:layout_constraintStart_toEndOf="@+id/textView53" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="370dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:hint="https://mydrive.google.com"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView49"
+        app:layout_constraintVertical_bias="0.026" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
