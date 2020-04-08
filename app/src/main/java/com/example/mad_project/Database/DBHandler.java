@@ -66,4 +66,25 @@ public class DBHandler extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("select * from "+ ProjectTables.Users.TABLE_USERS,null);
         return res;
     }
+
+    public boolean checkUser(String user, String pwd){
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+
+        String[] columns = { ProjectTables.Users._ID };
+        String selection = "Name =? and Password =?";
+        String selectionArgs[] = { user, pwd };
+        Cursor cursor = sqLiteDatabase.query(ProjectTables.Users.TABLE_USERS,columns,selection,selectionArgs,null,null,null);
+
+        int count = cursor.getCount();
+        cursor.close();
+        //sqLiteDatabase.close();
+
+        if (count>0){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
 }
