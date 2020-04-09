@@ -28,4 +28,19 @@ public class ProjectTables {
         public static final String COLUMN_NETSALARY = "NetSalary";
 
     }
+
+    protected static class Creations implements BaseColumns {
+        //Creation Details table
+        public static final String TABLE_CREATION = "CreationDetails";
+        public static final String COLUMN_USERNAME = "Name";
+        public static final String COLUMN_CREATION = "Creation_Type";
+        public static final String COLUMN_WIDTH = "Width";
+        public static final String COLUMN_LENGTH = "Length";
+        public static final String COLUMN_DESCRIPTION = "Description";
+        public static final String COLUMN_QUANTITY = "Quantity";
+        public static final String COLUMN_AMOUNT = "Total_Amount";
+        public static final String COLUMN_TYPE = "Get_Type";
+        public static final String COLUMN_DATE = "Del_Date";
+
+    }
 }
