@@ -27,16 +27,34 @@ public class DBHandler extends SQLiteOpenHelper {
 
     private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + ProjectTables.Users.TABLE_USERS;
 
+
+
+    private static final String CREATE_TABLE_SALARY = "CREATE TABLE " + ProjectTables.Employee.TABLE_NAME + " (" +
+            ProjectTables.Users._ID + " INTEGER PRIMARY KEY," +
+            ProjectTables.Employee.COLUMN_NAME + " TEXT," +
+            ProjectTables.Employee.COLUMN_BASICSALARY + " TEXT," +
+            ProjectTables.Employee.COLUMN_ALLOWANCE + " TEXT," +
+            ProjectTables.Employee.COLUMN_OT + " TEXT," +
+            ProjectTables.Employee.COLUMN_SALARYADVANCE + " TEXT," +
+            ProjectTables.Employee.COLUMN_NETSALARY + " TEXT)";
+
+    private static final String SQL_DELETE_SALARY = "DROP TABLE IF EXISTS " + ProjectTables.Employee.TABLE_NAME;
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(CREATE_TABLE_USERS);
+        db.execSQL(CREATE_TABLE_SALARY);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         db.execSQL(SQL_DELETE_USERS);
+        onCreate(db);
+
+        db.execSQL(SQL_DELETE_SALARY);
         onCreate(db);
     }
 
