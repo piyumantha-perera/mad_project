@@ -82,7 +82,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editTextSalDetName"
         style="@android:style/Widget.Holo.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

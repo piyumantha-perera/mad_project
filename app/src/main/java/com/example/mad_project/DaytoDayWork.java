@@ -18,7 +18,7 @@ public class DaytoDayWork extends AppCompatActivity {
         setContentView(R.layout.activity_dayto_day_work);
 
         office=findViewById(R.id.btnOfficeEMP);
-        outside=findViewById(R.id.btnOutsideEMP);
+        outside=findViewById(R.id.btnAddSalary);
 
         outside.setOnClickListener(new View.OnClickListener() {
             @Override

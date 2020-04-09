@@ -35,7 +35,7 @@ public class Admin_Choose extends AppCompatActivity {
         salary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent( Admin_Choose.this,Employee_Salary.class);
+                Intent intent = new Intent( Admin_Choose.this,Employee_Salary.class);
                 startActivity(intent);
             }
         });
