@@ -57,7 +57,6 @@ public class Banner_Clone extends AppCompatActivity {
 
                 String deliveryDate = delDate.getText().toString();
                 String getType = spinner.getSelectedItem().toString();
-                //int fullAmount = Integer.parseInt(full.getText().toString());
 
                 long newID = dbHandler.addCreationDetails(username, c_type, length, width, imageUrl, description, quantity, "Rs."+amount, getType, deliveryDate);
                 if (newID > 0){
