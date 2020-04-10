@@ -72,7 +72,7 @@
         app:layout_constraintVertical_bias="0.112" />
 
     <EditText
-        android:id="@+id/editText22"
+        android:id="@+id/editTextCreDelDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -83,7 +83,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView58" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCreationAdd"
         android:layout_width="220dp"
         android:layout_height="57dp"
         android:background="@drawable/btn_add"
@@ -94,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText22"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCreDelDate"
         app:layout_constraintVertical_bias="0.33" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

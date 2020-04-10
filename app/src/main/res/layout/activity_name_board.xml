@@ -165,7 +165,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCreationUrl"
         app:layout_constraintVertical_bias="0.059" />
 
     <EditText
@@ -210,7 +210,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView53" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editTextCreationUrl"
         android:layout_width="370dp"
         android:layout_height="46dp"
         android:ems="10"

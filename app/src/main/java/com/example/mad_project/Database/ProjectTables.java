@@ -19,6 +19,7 @@ public class ProjectTables {
     }
 
     public static class Employee implements BaseColumns {
+        //Employee Salary Details table
         public static final String TABLE_NAME = "EmployeeDetails";
         public static final String COLUMN_NAME = "UserName";
         public static final String COLUMN_BASICSALARY = "BasicSalary";
@@ -34,8 +35,9 @@ public class ProjectTables {
         public static final String TABLE_CREATION = "CreationDetails";
         public static final String COLUMN_USERNAME = "Name";
         public static final String COLUMN_CREATION = "Creation_Type";
-        public static final String COLUMN_WIDTH = "Width";
         public static final String COLUMN_LENGTH = "Length";
+        public static final String COLUMN_WIDTH = "Width";
+        public static final String COLUMN_URL = "Sample_Images";
         public static final String COLUMN_DESCRIPTION = "Description";
         public static final String COLUMN_QUANTITY = "Quantity";
         public static final String COLUMN_AMOUNT = "Total_Amount";

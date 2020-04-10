@@ -16,10 +16,15 @@ public class Customer_Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer__profile);
         creation = findViewById(R.id.buttonProfileCreation);
+
+        Bundle bn = getIntent().getExtras();
+        final String username = bn.getString("Name");
+
         creation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Customer_Profile.this,Customer_Choose.class);
+                intent.putExtra("Name",username);
                 startActivity(intent);
             }
         });
