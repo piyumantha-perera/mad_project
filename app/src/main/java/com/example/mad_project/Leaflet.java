@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class Leaflet extends AppCompatActivity {
 
-    EditText qty;
+    EditText qty, url, des;
     TextView total;
     Button next;
 
@@ -23,8 +23,14 @@ public class Leaflet extends AppCompatActivity {
 
         qty = findViewById(R.id.editTextLeafletQty);
         total = findViewById(R.id.textViewLeafletTotal);
+        url = findViewById(R.id.editTextImageUrl);
+        des = findViewById(R.id.editTextCreationDes);
 
         next = findViewById(R.id.buttonLeafletNext);
+
+        Bundle bn = getIntent().getExtras();
+        final String username = bn.getString("Name");
+        final String c_type = bn.getString("creation_type");
 
         total.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +52,19 @@ public class Leaflet extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String quantity, price, image, description;
+                quantity = qty.getText().toString();
+                price = total.getText().toString();
+                image = url.getText().toString();
+                description = des.getText().toString();
+
                 Intent intent = new Intent(Leaflet.this, Leaflet_Clone.class);
+                intent.putExtra("Name",username);
+                intent.putExtra("creation_type", c_type);
+                intent.putExtra("Quantity", quantity);
+                intent.putExtra("Price", price);
+                intent.putExtra("ImageUrl", image);
+                intent.putExtra("Description", description);
                 startActivity(intent);
             }
         });
