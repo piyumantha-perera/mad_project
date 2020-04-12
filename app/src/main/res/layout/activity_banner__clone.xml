@@ -69,20 +69,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView59"
         app:layout_constraintVertical_bias="0.077" />
 
-    <EditText
-        android:id="@+id/editText21"
-        android:layout_width="264dp"
-        android:layout_height="47dp"
-        android:ems="10"
-        android:hint="@string/del_take"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.891"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView57"
-        app:layout_constraintVertical_bias="0.04" />
-
     <TextView
         android:id="@+id/textView58"
         android:layout_width="wrap_content"
@@ -93,13 +79,13 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText21"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerGetingType"
+        app:layout_constraintVertical_bias="0.094" />
 
     <EditText
-        android:id="@+id/editText22"
+        android:id="@+id/editTextCreDelDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -110,7 +96,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView58" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCreationAdd"
         android:layout_width="220dp"
         android:layout_height="57dp"
         android:background="@drawable/btn_add"
@@ -121,8 +107,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText22"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCreDelDate"
         app:layout_constraintVertical_bias="0.33" />
+
+    <Spinner
+        android:id="@+id/spinnerGetingType"
+        android:layout_width="202dp"
+        android:layout_height="41dp"
+        android:dropDownWidth="match_parent"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.399" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

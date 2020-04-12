@@ -95,7 +95,7 @@
         app:layout_constraintVertical_bias="0.086" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/editTextImageUrl"
         android:layout_width="368dp"
         android:layout_height="47dp"
         android:ems="10"
@@ -120,11 +120,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6"
+        app:layout_constraintTop_toBottomOf="@+id/editTextImageUrl"
         app:layout_constraintVertical_bias="0.053" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/editTextCreationDes"
         android:layout_width="322dp"
         android:layout_height="86dp"
         android:ems="10"
@@ -147,6 +147,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText7"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCreationDes"
         app:layout_constraintVertical_bias="0.342" />
 </androidx.constraintlayout.widget.ConstraintLayout>

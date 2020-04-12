@@ -33,6 +33,23 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
 
+    private static final String CREATE_TABLE_CREATIONS = "CREATE TABLE " + ProjectTables.Creations.TABLE_CREATION + " (" +
+            ProjectTables.Creations._ID + " INTEGER PRIMARY KEY," +
+            ProjectTables.Creations.COLUMN_USERNAME + " TEXT," +
+            ProjectTables.Creations.COLUMN_CREATION + " TEXT," +
+            ProjectTables.Creations.COLUMN_LENGTH + " TEXT," +
+            ProjectTables.Creations.COLUMN_WIDTH + " TEXT," +
+            ProjectTables.Creations.COLUMN_URL + " TEXT," +
+            ProjectTables.Creations.COLUMN_DESCRIPTION + " TEXT," +
+            ProjectTables.Creations.COLUMN_QUANTITY + " TEXT," +
+            ProjectTables.Creations.COLUMN_AMOUNT + " TEXT," +
+            ProjectTables.Creations.COLUMN_TYPE + " TEXT," +
+            ProjectTables.Creations.COLUMN_DATE + " TEXT)";
+
+    private static final String SQL_DELETE_CREATIONS = "DROP TABLE IF EXISTS " + ProjectTables.Users.TABLE_USERS;
+
+
+
     private static final String CREATE_TABLE_SALARY = "CREATE TABLE " + ProjectTables.Employee.TABLE_NAME + " (" +
             ProjectTables.Users._ID + " INTEGER PRIMARY KEY," +
             ProjectTables.Employee.COLUMN_NAME + " TEXT," +
@@ -50,6 +67,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_TABLE_USERS);
         db.execSQL(CREATE_TABLE_SALARY);
+        db.execSQL(CREATE_TABLE_CREATIONS);
     }
 
     @Override
@@ -59,6 +77,9 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
 
         db.execSQL(SQL_DELETE_SALARY);
+        onCreate(db);
+
+        db.execSQL(SQL_DELETE_CREATIONS);
         onCreate(db);
     }
 
@@ -82,6 +103,36 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
         return newRowId;
     }
+
+
+    public long addCreationDetails(String name, String creation, String length, String width, String imagesURL, String description, String qty, String total, String type, String dDate){
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(ProjectTables.Creations.COLUMN_USERNAME, name);
+        values.put(ProjectTables.Creations.COLUMN_CREATION, creation);
+        values.put(ProjectTables.Creations.COLUMN_LENGTH, length);
+        values.put(ProjectTables.Creations.COLUMN_WIDTH, width);
+        values.put(ProjectTables.Creations.COLUMN_URL, imagesURL);
+        values.put(ProjectTables.Creations.COLUMN_DESCRIPTION, description);
+        values.put(ProjectTables.Creations.COLUMN_QUANTITY, qty);
+        values.put(ProjectTables.Creations.COLUMN_AMOUNT, total);
+        values.put(ProjectTables.Creations.COLUMN_TYPE, type);
+        values.put(ProjectTables.Creations.COLUMN_DATE, dDate);
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId = db.insert(ProjectTables.Creations.TABLE_CREATION, null, values);
+
+        db.close();
+        return newRowId;
+
+    }
+
+
 
     public Cursor readUserDetails(){
         SQLiteDatabase db = this.getWritableDatabase();
