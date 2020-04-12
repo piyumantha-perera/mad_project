@@ -244,7 +244,7 @@ public class DBHandler extends SQLiteOpenHelper {
        // Specify arguments in placeholder order.
          String[] selectionArgs = { userName };
         // Issue SQL statement.
-        //int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
+        int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
     }
 
 }

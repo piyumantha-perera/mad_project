@@ -76,12 +76,29 @@ public class Employee_Salary extends AppCompatActivity {
                 Double tra=Double.parseDouble(TravellingAllowance.getText().toString());
                 Double Ot=Double.parseDouble(OverTime.getText().toString());
                 Double salad=Double.parseDouble(SalaryAdvance.getText().toString());
+                double tax;
                 Double netsalary;
 
-                netsalary = ((Salary + tra) + Ot*100) - salad;
+                if(Salary > 5000){
+                    tax = Salary *10/100;
+                    netsalary = ((Salary + tra) + Ot*100) - (salad + tax);
+
+
+
+                }
+                else if (Salary > 3000){
+                    tax = Salary * 5/100;
+
+                    netsalary = ((Salary + tra-tax) + Ot*100) - (salad + tax);
+
+                }
+                else {
+                    tax = 0;
+                    netsalary = ((Salary + tra-tax) + Ot*100) - (salad + tax);
+
+                }
 
                 NetSalary.setText(String.valueOf(netsalary));
-
 
 
 
