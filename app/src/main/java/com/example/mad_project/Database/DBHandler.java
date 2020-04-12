@@ -9,6 +9,9 @@ import android.provider.BaseColumns;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBHandler extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Test.db" ;
@@ -129,13 +132,11 @@ public class DBHandler extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    /*public void readEmployeeDetails(){
-        String UserName="piyumantha";
+    public List readEmployeeDetails(String userName){
+
 
         SQLiteDatabase db = getReadableDatabase();
 
-// Define a projection that specifies which columns from the database
-// you will actually use after this query.
         String[] projection = {
                 BaseColumns._ID,
                 ProjectTables.Employee.COLUMN_NAME,
@@ -148,12 +149,11 @@ public class DBHandler extends SQLiteOpenHelper {
         };
 
 // Filter results WHERE "title" = 'My Title'
-        String selection = ProjectTables.Employee.COLUMN_NAME + " = ?";
-        String[] selectionArgs = { "UserName " };
+        String selection = ProjectTables.Employee.COLUMN_NAME + " LIKE ?";
+        String[] selectionArgs = { userName };
 
 // How you want the results sorted in the resulting Cursor
-        String sortOrder =
-               ProjectTables.Employee.COLUMN_NAME + " DESC";
+        String sortOrder = ProjectTables.Employee.COLUMN_NAME + " ASC";
 
         Cursor cursor = db.query(
                 ProjectTables.Employee.TABLE_NAME,   // The table to query
@@ -164,6 +164,36 @@ public class DBHandler extends SQLiteOpenHelper {
                 null,                   // don't filter by row groups
                 sortOrder               // The sort order
         );
-    }*/
+
+        List employeeInfo = new ArrayList<>();
+        while(cursor.moveToNext()) {
+            String user = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NAME));
+            String BASICSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_BASICSALARY));
+            String ALLOWANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_ALLOWANCE));
+            String OT = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_OT));
+            String SALARYADVANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_SALARYADVANCE));
+            String NETSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NETSALARY));
+
+            employeeInfo.add(user);
+            employeeInfo.add(BASICSALARY);
+            employeeInfo.add(ALLOWANCE);
+            employeeInfo.add(OT);
+            employeeInfo.add(SALARYADVANCE);
+            employeeInfo.add(NETSALARY);
+        }
+        cursor.close();
+        return employeeInfo;
+    }
+
+    public void deleteEmployeeInfo(String userName){
+        SQLiteDatabase db = getWritableDatabase();
+
+        // Define 'where' part of query.
+        String selection = ProjectTables.Employee.COLUMN_NAME + " LIKE ?";
+       // Specify arguments in placeholder order.
+         String[] selectionArgs = { userName };
+        // Issue SQL statement.
+        //int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
+    }
 
 }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
@@ -16,7 +17,7 @@ public class Employee_Salary extends AppCompatActivity {
 
     ImageView home;
     EditText userName,BasicSalary,TravellingAllowance,OverTime,SalaryAdvance,NetSalary;
-    Button add;
+    Button add,viewDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +30,11 @@ public class Employee_Salary extends AppCompatActivity {
         TravellingAllowance = findViewById(R.id.editTextSalDetTravAll);
         OverTime = findViewById(R.id.editTextSalDetOt);
         SalaryAdvance = findViewById(R.id.editTextSalDetSalAdv);
-        NetSalary = findViewById(R.id.editTextSalDetNetSal);
+        NetSalary = findViewById(R.id.editTextEmpSalDetNet);
 
         add = findViewById(R.id.btnAddSalary);
+
+        viewDetails=findViewById(R.id.buttonSalViewDetails);
 
         home = findViewById(R.id.btn_home);
         home.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +67,39 @@ public class Employee_Salary extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        NetSalary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Double Salary=Double.parseDouble(BasicSalary.getText().toString());
+                Double tra=Double.parseDouble(TravellingAllowance.getText().toString());
+                Double Ot=Double.parseDouble(OverTime.getText().toString());
+                Double salad=Double.parseDouble(SalaryAdvance.getText().toString());
+                Double netsalary;
+
+                netsalary = ((Salary + tra) + Ot*100) - salad;
+
+                NetSalary.setText(String.valueOf(netsalary));
+
+
+
+
+            }
+        });
+
+
+        viewDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(Employee_Salary.this,Employee_Search.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
 
     }

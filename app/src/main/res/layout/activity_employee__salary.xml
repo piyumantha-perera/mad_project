@@ -170,52 +170,20 @@
         app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView31"
-        app:layout_constraintVertical_bias="0.211" />
+        app:layout_constraintVertical_bias="0.211" /><![CDATA[
 
-    <EditText
-        android:id="@+id/editTextSalDetNetSal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView32"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="106dp"
-        android:layout_height="52dp"
-        android:background="@drawable/btn_update"
-        android:text="@string/Sal_update"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
-        app:layout_constraintStart_toEndOf="@+id/btnAddSalary"
-        app:layout_constraintTop_toBottomOf="@+id/textView32"
-        app:layout_constraintVertical_bias="0.403" />
-        app:layout_constraintHorizontal_bias="0.181"
+
+    app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toEndOf="@+id/btnOutsideEMP"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.88" />
 
-    <Button
-        android:id="@+id/btnOfficeEMP"
-        android:layout_width="104dp"
-        android:layout_height="54dp"
-        android:background="@drawable/btn_delete"
-        android:text="@string/Sal_del"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSalDetNetSal"
-        app:layout_constraintVertical_bias="0.375" />
+
+
+
+
+    ]]>
 
     <Button
         android:id="@+id/btnAddSalary"
@@ -227,9 +195,29 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView32"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.247" />
+
+    <Button
+        android:id="@+id/buttonSalViewDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_details"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddSalary" />
+
+    <EditText
+        android:id="@+id/editTextEmpSalDetNet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView32"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView32" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
