@@ -1,6 +1,8 @@
 package com.example.mad_project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,8 @@ import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
 
+import static com.example.mad_project.Notification.CHANNEL_ID;
+
 public class Leaflet_Clone extends AppCompatActivity {
 
     EditText dDate;
@@ -19,10 +23,15 @@ public class Leaflet_Clone extends AppCompatActivity {
 
     DBHandler dbHandler;
 
+    private NotificationManagerCompat notificationManagerCompat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaflet__clone);
+
+        notificationManagerCompat = NotificationManagerCompat.from(this);
+
 
         dbHandler = new DBHandler(getApplicationContext());
 
@@ -59,6 +68,15 @@ public class Leaflet_Clone extends AppCompatActivity {
                 long newID = dbHandler.addCreationDetails(username, c_type, len, wid, url, des, qty, price, getType, deliveryDate);
                 if (newID > 0){
                     Toast.makeText(Leaflet_Clone.this, "Creation added Successfull", Toast.LENGTH_SHORT).show();
+
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(Leaflet_Clone.this, CHANNEL_ID)
+                            .setSmallIcon(R.drawable.ic_announcement_black_24dp)
+                            .setContentTitle("RUSH Advertising Notification")
+                            .setContentText("Your creations' total amount is " + price)
+                            .setPriority(NotificationCompat.PRIORITY_HIGH)
+                            .setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+                    notificationManagerCompat.notify(1, builder.build());
                 }
                 else {
                     Toast.makeText(Leaflet_Clone.this, "Creation not added", Toast.LENGTH_SHORT).show();

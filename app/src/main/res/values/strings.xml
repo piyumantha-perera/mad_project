@@ -95,6 +95,9 @@
     <string name="image_url">Enter the images driver URL :</string>
     <string name="nameboard_haed">Name Board Details</string>
     <string name="lighboard_head">Light Board Details</string>
+    <string name="logout">LOGOUT</string>
+    <string name="channel_name">Channel 1</string>
+    <string name="channel_description">This is Channel 1</string>
     <string name="view_details">View Details</string>
     <string name="Search_Emp_Salary">Salary Searching</string>
     <string name="Salary_Name_Search">Search</string>

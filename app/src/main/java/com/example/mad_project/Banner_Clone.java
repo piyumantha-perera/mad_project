@@ -1,6 +1,8 @@
 package com.example.mad_project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +15,8 @@ import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
 
+import static com.example.mad_project.Notification.CHANNEL_ID;
+
 public class Banner_Clone extends AppCompatActivity {
 
     TextView full;
@@ -21,10 +25,14 @@ public class Banner_Clone extends AppCompatActivity {
 
     DBHandler dbHandler;
 
+    private NotificationManagerCompat notificationManagerCompat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banner__clone);
+
+        notificationManagerCompat = NotificationManagerCompat.from(this);
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinnerGetingType);
 
@@ -61,6 +69,18 @@ public class Banner_Clone extends AppCompatActivity {
                 long newID = dbHandler.addCreationDetails(username, c_type, length, width, imageUrl, description, quantity, "Rs."+amount, getType, deliveryDate);
                 if (newID > 0){
                     Toast.makeText(Banner_Clone.this, "Creation added Successfull", Toast.LENGTH_SHORT).show();
+
+                    String full_total = full.getText().toString();
+
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(Banner_Clone.this, CHANNEL_ID)
+                            .setSmallIcon(R.drawable.ic_announcement_black_24dp)
+                            .setContentTitle("RUSH Advertising Notification")
+                            .setContentText("Your creations' total amount is " + full_total)
+                            .setPriority(NotificationCompat.PRIORITY_HIGH)
+                            .setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+                    notificationManagerCompat.notify(1, builder.build());
+
                 }
                 else {
                     Toast.makeText(Banner_Clone.this, "Creation not added", Toast.LENGTH_SHORT).show();

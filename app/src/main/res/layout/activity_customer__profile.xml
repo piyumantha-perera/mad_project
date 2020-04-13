@@ -7,7 +7,7 @@
     tools:context=".Customer_Profile">
 
     <include
-        layout="@layout/toolbar"
+        layout="@layout/toolbar_profile"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-2dp" />
 
