@@ -62,12 +62,23 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String SQL_DELETE_SALARY = "DROP TABLE IF EXISTS " + ProjectTables.Employee.TABLE_NAME;
 
 
+
+    private static final String CREATE_TABLE_THOUGHT = "CREATE TABLE " + ProjectTables.Thoughts.TABLE_Thought + " (" +
+            ProjectTables.Thoughts._ID + " INTEGER PRIMARY KEY," +
+            ProjectTables.Thoughts.COULMN_EMAIL + " TEXT," +
+            ProjectTables.Thoughts.COULMN_RATING + " TEXT," +
+            ProjectTables.Thoughts.COULMN_FEEDBACK + " TEXT)";
+
+    private static final String SQL_DELETE_THOUGHT = "DROP TABLE IF EXISTS " + ProjectTables.Thoughts.TABLE_Thought;
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(CREATE_TABLE_USERS);
         db.execSQL(CREATE_TABLE_SALARY);
         db.execSQL(CREATE_TABLE_CREATIONS);
+        db.execSQL(CREATE_TABLE_THOUGHT);
     }
 
     @Override
@@ -80,6 +91,9 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
 
         db.execSQL(SQL_DELETE_CREATIONS);
+        onCreate(db);
+
+        db.execSQL(SQL_DELETE_THOUGHT);
         onCreate(db);
     }
 
@@ -126,6 +140,26 @@ public class DBHandler extends SQLiteOpenHelper {
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId = db.insert(ProjectTables.Creations.TABLE_CREATION, null, values);
+
+        db.close();
+        return newRowId;
+
+    }
+
+    public long addThoughtDetails(String email, String rating, String feedback){
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(ProjectTables.Thoughts.COULMN_EMAIL, email);
+        values.put(ProjectTables.Thoughts.COULMN_RATING, rating);
+        values.put(ProjectTables.Thoughts.COULMN_FEEDBACK, feedback);
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId = db.insert(ProjectTables.Thoughts.TABLE_Thought, null, values);
 
         db.close();
         return newRowId;
