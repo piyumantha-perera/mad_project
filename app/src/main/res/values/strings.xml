@@ -102,6 +102,11 @@
     <string name="Search_Emp_Salary">Salary Searching</string>
     <string name="Salary_Name_Search">Search</string>
     <string name="Salary_Delete">DELETE</string>
-
+    <string name="thoughtHead">What is your thought ??</string>
+    <string name="thought_email">User Email :</string>
+    <string name="rate">Ratting :</string>
+    <string name="thought">Thought :</string>
+    <string name="submit">submit</string>
+    <string name="cancel">cancel</string>
 
 </resources>

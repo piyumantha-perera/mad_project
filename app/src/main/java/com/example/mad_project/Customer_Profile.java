@@ -11,13 +11,15 @@ import android.widget.TextView;
 public class Customer_Profile extends AppCompatActivity {
 
     Button creation;
-    TextView user, usrEmail, usrContact, usrAddress;
+    TextView user, usrEmail, usrContact, usrAddress, logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer__profile);
         creation = findViewById(R.id.buttonProfileCreation);
+
+        logout = findViewById(R.id.btn_logout);
 
         user = findViewById(R.id.textViewCusPUsername);
         usrEmail = findViewById(R.id.textViewCusPEmail);
@@ -40,6 +42,18 @@ public class Customer_Profile extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Customer_Profile.this,Customer_Choose.class);
                 intent.putExtra("Name",username);
+                startActivity(intent);
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String userEmail = usrEmail.getText().toString();
+
+                Intent intent = new Intent(Customer_Profile.this,Thought.class);
+                intent.putExtra("Email", userEmail);
                 startActivity(intent);
             }
         });
