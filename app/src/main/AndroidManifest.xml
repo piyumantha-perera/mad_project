@@ -13,7 +13,6 @@
         android:name=".Notification"
         <activity android:name=".Employee_SalaryEdit"></activity>
         <activity android:name=".Thought"></activity>
-        <activity android:name=".Employee_SalaryEdit" />
         <activity android:name=".Employee_Search" />
         <activity android:name=".LightBoard_Clone" />
         <activity android:name=".LightBoard" />
