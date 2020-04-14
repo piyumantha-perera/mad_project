@@ -10,9 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        android:name=".Notification"
-        <activity android:name=".Employee_SalaryEdit"></activity>
-        <activity android:name=".Thought"></activity>
+        <activity android:name=".Profile_Edit"></activity>
+        <activity android:name=".Employee_SalaryEdit" />
+        <activity android:name=".Thought" />
         <activity android:name=".Employee_Search" />
         <activity android:name=".LightBoard_Clone" />
         <activity android:name=".LightBoard" />

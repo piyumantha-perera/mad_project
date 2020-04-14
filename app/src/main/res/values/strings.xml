@@ -108,5 +108,8 @@
     <string name="thought">Thought :</string>
     <string name="submit">submit</string>
     <string name="cancel">cancel</string>
+    <string name="profEdit_head">Edit Profile</string>
+    <string name="update">update profile</string>
+    <string name="edit_user">customer username :</string>
 
 </resources>
