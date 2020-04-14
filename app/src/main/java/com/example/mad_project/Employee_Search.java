@@ -23,7 +23,6 @@ public class Employee_Search extends AppCompatActivity {
     EditText userName,BasicSalary,TravellingAllowance,OverTime,SalaryAdvance,NetSalary;
     Button seacrh,delete;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +45,7 @@ public class Employee_Search extends AppCompatActivity {
         List<String> names = new ArrayList<>();
         names.add(0, "Choose The Employee Names");
 
-        Cursor cursor = dbHandler.read();
+        Cursor cursor = dbHandler.readEmpspinNme();
         while (cursor.moveToNext()){
             String name = cursor.getString(1);
             names.add(name);

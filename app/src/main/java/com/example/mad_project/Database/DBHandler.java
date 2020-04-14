@@ -269,7 +269,7 @@ public class DBHandler extends SQLiteOpenHelper {
         return employeeInfo;
     }
 
-    public void deleteEmployeeInfo(String userName){
+    public int deleteEmployeeInfo(String userName){
         SQLiteDatabase db = getWritableDatabase();
 
         // Define 'where' part of query.
@@ -278,10 +278,11 @@ public class DBHandler extends SQLiteOpenHelper {
          String[] selectionArgs = { userName };
         // Issue SQL statement.
         int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
+        return  deletedRows;
     }
 
 
-    public Cursor read(){
+    public Cursor readEmpspinNme(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+ ProjectTables.Employee.TABLE_NAME,null);
         return res;
