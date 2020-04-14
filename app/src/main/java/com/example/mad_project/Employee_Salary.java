@@ -74,7 +74,6 @@ public class Employee_Salary extends AppCompatActivity {
                     userName.setError("please enter the name");
                     BasicSalary.setError("please enter the Salary");
 
-                    Toast.makeText(Employee_Salary.this, "salary not added", Toast.LENGTH_SHORT).show();
 
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(Employee_Salary.this, CHANNEL_ID)
                             .setSmallIcon(R.drawable.ic_announcement_black_24dp)
@@ -87,7 +86,7 @@ public class Employee_Salary extends AppCompatActivity {
                     notificationManagerCompat.notify(0, builder.build());
 
                 }
-                else {
+                else{
 
                     Toast.makeText(Employee_Salary.this, "salary add success. salary id: "+newId, Toast.LENGTH_SHORT).show();
 

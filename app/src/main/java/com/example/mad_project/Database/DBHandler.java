@@ -219,7 +219,6 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public List readEmployeeDetails(String userName){
 
-
         SQLiteDatabase db = getReadableDatabase();
 
         String[] projection = {
@@ -281,4 +280,11 @@ public class DBHandler extends SQLiteOpenHelper {
         int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
     }
 
+
+    public Cursor read(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ ProjectTables.Employee.TABLE_NAME,null);
+        return res;
+
+    }
 }
