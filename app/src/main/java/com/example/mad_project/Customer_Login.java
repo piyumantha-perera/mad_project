@@ -50,6 +50,8 @@ public class Customer_Login extends AppCompatActivity {
                 String email = null;
                 String contact = null;
                 String address = null;
+                String password = null;
+                String cnf_pass = null;
 
                 while (check.moveToNext()){
                     String name = check.getString(1);
@@ -59,6 +61,8 @@ public class Customer_Login extends AppCompatActivity {
                         email = check.getString(3);
                         contact = check.getString(2);
                         address = check.getString(4);
+                        password = check.getString(5);
+                        cnf_pass = check.getString(6);
                     }
                 }
 
@@ -76,6 +80,8 @@ public class Customer_Login extends AppCompatActivity {
                         intent.putExtra("Email",email);
                         intent.putExtra("ContactNo",contact);
                         intent.putExtra("Address",address);
+                        intent.putExtra("Password",password);
+                        intent.putExtra("CnfPassword",cnf_pass);
                         startActivity(intent);
 
                     }

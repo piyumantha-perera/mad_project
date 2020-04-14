@@ -14,7 +14,7 @@ import com.example.mad_project.Database.DBHandler;
 
 public class Customer_Profile extends AppCompatActivity {
 
-    Button creation;
+    Button creation, edit;
     TextView user, usrEmail, usrContact, usrAddress, logout;
 
     DBHandler dbHandler;
@@ -23,7 +23,9 @@ public class Customer_Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer__profile);
+
         creation = findViewById(R.id.buttonProfileCreation);
+        edit = findViewById(R.id.buttonProEdit);
 
         dbHandler = new DBHandler(getApplicationContext());
 
@@ -39,6 +41,8 @@ public class Customer_Profile extends AppCompatActivity {
         final String email = bn.getString("Email");
         final String contactNo = bn.getString("ContactNo");
         final String address = bn.getString("Address");
+        final String password = bn.getString("Password");
+        final String cnf_pass = bn.getString("CnfPassword");
 
         user.setText(username);
         usrEmail.setText(email);
@@ -77,6 +81,21 @@ public class Customer_Profile extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Customer_Profile.this,Profile_Edit.class);
+                intent.putExtra("Name",username);
+                intent.putExtra("Email",email);
+                intent.putExtra("ContactNo",contactNo);
+                intent.putExtra("Address",address);
+                intent.putExtra("Password",password);
+                intent.putExtra("CnfPassword",cnf_pass);
+                startActivity(intent);
             }
         });
     }
