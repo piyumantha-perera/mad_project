@@ -233,11 +233,11 @@ public class DBHandler extends SQLiteOpenHelper {
 
         };
 
-// Filter results WHERE "title" = 'My Title'
+        // Filter results WHERE "title" = 'My Title'
         String selection = ProjectTables.Employee.COLUMN_NAME + " LIKE ?";
         String[] selectionArgs = { userName };
 
-// How you want the results sorted in the resulting Cursor
+        // How you want the results sorted in the resulting Cursor
         String sortOrder = ProjectTables.Employee.COLUMN_NAME + " ASC";
 
         Cursor cursor = db.query(
@@ -280,5 +280,12 @@ public class DBHandler extends SQLiteOpenHelper {
         // Issue SQL statement.
         int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
     }
+
+    public Cursor readThoughtDetails(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ ProjectTables.Thoughts.TABLE_Thought,null);
+        return res;
+    }
+
 
 }

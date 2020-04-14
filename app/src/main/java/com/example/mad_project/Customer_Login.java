@@ -27,6 +27,7 @@ public class Customer_Login extends AppCompatActivity {
         user = findViewById(R.id.editTextLoginUsername);
         password = findViewById(R.id.editTextLoginPassword);
 
+
         register = findViewById(R.id.textViewLoginGoReg);
         login = findViewById(R.id.buttonCusLogin);
         register.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +55,7 @@ public class Customer_Login extends AppCompatActivity {
                     String name = check.getString(1);
                     String pass = check.getString(5);
 
-                    if(name.equals(username) || pass.equals(pwd)){
+                    if(name.equals(username) && pass.equals(pwd)){
                         email = check.getString(3);
                         contact = check.getString(2);
                         address = check.getString(4);
@@ -76,6 +77,7 @@ public class Customer_Login extends AppCompatActivity {
                         intent.putExtra("ContactNo",contact);
                         intent.putExtra("Address",address);
                         startActivity(intent);
+
                     }
                     else {
                         Toast.makeText(Customer_Login.this, "Please enter valid username or password.", Toast.LENGTH_SHORT).show();
