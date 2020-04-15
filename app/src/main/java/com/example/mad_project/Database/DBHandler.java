@@ -294,5 +294,33 @@ public class DBHandler extends SQLiteOpenHelper {
         return res;
     }
 
+    public boolean updateUserInfo(String name, String contact, String email, String address, String password, String cnfPassword){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(ProjectTables.Users.COULMN_CONTACTNO, contact);
+        values.put(ProjectTables.Users.COULMN_EMAIL, email);
+        values.put(ProjectTables.Users.COULMN_ADDRESS, address);
+        values.put(ProjectTables.Users.COULMN_PASSWORD, password);
+        values.put(ProjectTables.Users.COULMN_CNFPASSWORD, cnfPassword);
+
+        String selection = ProjectTables.Users.COULMN_USERNAME + " LIKE ?";
+        String[] selectionArgs = { name };
+
+        int count = db.update(
+                ProjectTables.Users.TABLE_USERS,
+                values,
+                selection,
+                selectionArgs
+        );
+
+        if (count >= 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 
 }
