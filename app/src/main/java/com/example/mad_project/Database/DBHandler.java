@@ -62,12 +62,23 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String SQL_DELETE_SALARY = "DROP TABLE IF EXISTS " + ProjectTables.Employee.TABLE_NAME;
 
 
+
+    private static final String CREATE_TABLE_THOUGHT = "CREATE TABLE " + ProjectTables.Thoughts.TABLE_Thought + " (" +
+            ProjectTables.Thoughts._ID + " INTEGER PRIMARY KEY," +
+            ProjectTables.Thoughts.COULMN_EMAIL + " TEXT," +
+            ProjectTables.Thoughts.COULMN_RATING + " TEXT," +
+            ProjectTables.Thoughts.COULMN_FEEDBACK + " TEXT)";
+
+    private static final String SQL_DELETE_THOUGHT = "DROP TABLE IF EXISTS " + ProjectTables.Thoughts.TABLE_Thought;
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(CREATE_TABLE_USERS);
         db.execSQL(CREATE_TABLE_SALARY);
         db.execSQL(CREATE_TABLE_CREATIONS);
+        db.execSQL(CREATE_TABLE_THOUGHT);
     }
 
     @Override
@@ -80,6 +91,9 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
 
         db.execSQL(SQL_DELETE_CREATIONS);
+        onCreate(db);
+
+        db.execSQL(SQL_DELETE_THOUGHT);
         onCreate(db);
     }
 
@@ -126,6 +140,26 @@ public class DBHandler extends SQLiteOpenHelper {
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId = db.insert(ProjectTables.Creations.TABLE_CREATION, null, values);
+
+        db.close();
+        return newRowId;
+
+    }
+
+    public long addThoughtDetails(String email, String rating, String feedback){
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(ProjectTables.Thoughts.COULMN_EMAIL, email);
+        values.put(ProjectTables.Thoughts.COULMN_RATING, rating);
+        values.put(ProjectTables.Thoughts.COULMN_FEEDBACK, feedback);
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId = db.insert(ProjectTables.Thoughts.TABLE_Thought, null, values);
 
         db.close();
         return newRowId;
@@ -185,7 +219,6 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public List readEmployeeDetails(String userName){
 
-
         SQLiteDatabase db = getReadableDatabase();
 
         String[] projection = {
@@ -199,11 +232,11 @@ public class DBHandler extends SQLiteOpenHelper {
 
         };
 
-// Filter results WHERE "title" = 'My Title'
+        // Filter results WHERE "title" = 'My Title'
         String selection = ProjectTables.Employee.COLUMN_NAME + " LIKE ?";
         String[] selectionArgs = { userName };
 
-// How you want the results sorted in the resulting Cursor
+        // How you want the results sorted in the resulting Cursor
         String sortOrder = ProjectTables.Employee.COLUMN_NAME + " ASC";
 
         Cursor cursor = db.query(
@@ -236,7 +269,7 @@ public class DBHandler extends SQLiteOpenHelper {
         return employeeInfo;
     }
 
-    public void deleteEmployeeInfo(String userName){
+    public int deleteEmployeeInfo(String userName){
         SQLiteDatabase db = getWritableDatabase();
 
         // Define 'where' part of query.
@@ -245,6 +278,49 @@ public class DBHandler extends SQLiteOpenHelper {
          String[] selectionArgs = { userName };
         // Issue SQL statement.
         int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
+        return  deletedRows;
     }
+
+
+    public Cursor readEmpspinNme(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ ProjectTables.Employee.TABLE_NAME,null);
+        return res;
+
+    }
+    public Cursor readThoughtDetails(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ ProjectTables.Thoughts.TABLE_Thought,null);
+        return res;
+    }
+
+    public boolean updateUserInfo(String name, String contact, String email, String address, String password, String cnfPassword){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(ProjectTables.Users.COULMN_CONTACTNO, contact);
+        values.put(ProjectTables.Users.COULMN_EMAIL, email);
+        values.put(ProjectTables.Users.COULMN_ADDRESS, address);
+        values.put(ProjectTables.Users.COULMN_PASSWORD, password);
+        values.put(ProjectTables.Users.COULMN_CNFPASSWORD, cnfPassword);
+
+        String selection = ProjectTables.Users.COULMN_USERNAME + " LIKE ?";
+        String[] selectionArgs = { name };
+
+        int count = db.update(
+                ProjectTables.Users.TABLE_USERS,
+                values,
+                selection,
+                selectionArgs
+        );
+
+        if (count >= 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 
 }

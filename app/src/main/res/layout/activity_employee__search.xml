@@ -16,19 +16,18 @@
         android:textSize="36sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editTextEmpNameSearch"
+    <Spinner
+        android:id="@+id/spinnerSalSearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/Emp_Sala_Name" />
+        android:layout_height="55dp" />
 
     <Button
         android:id="@+id/btnSalaryNameSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Salary_Name_Search" />
+        android:text="@string/Salary_Name_Search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -44,6 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

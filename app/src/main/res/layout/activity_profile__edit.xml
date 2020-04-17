@@ -4,35 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".Profile_Edit">
 
     <include
+        android:id="@+id/include2"
         layout="@layout/toolbar"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-2dp" />
 
-
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="126dp"
-        android:layout_height="48dp"
-        android:text="@string/register_head"
+        android:layout_width="158dp"
+        android:layout_height="43dp"
+        android:text="@string/profEdit_head"
         android:textColor="#3F51B5"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.112" />
+        app:layout_constraintVertical_bias="0.111" />
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="114dp"
-        android:layout_height="28dp"
+        android:layout_width="106dp"
+        android:layout_height="49dp"
         android:layout_marginStart="12dp"
-        android:text="@string/name"
+        android:text="@string/edit_user"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -41,22 +41,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:layout_constraintVertical_bias="0.074" />
 
-    <EditText
-        android:id="@+id/editTextRegisterName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toEndOf="@+id/textView10" />
-
     <TextView
         android:id="@+id/textView11"
         android:layout_width="107dp"
         android:layout_height="29dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
         android:text="@string/password"
         android:textColor="#000000"
         android:textSize="18sp"
@@ -64,7 +53,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintVertical_bias="0.16" />
 
     <EditText
         android:id="@+id/editTextRegisterPassword"
@@ -81,7 +70,7 @@
         android:id="@+id/textView12"
         android:layout_width="110dp"
         android:layout_height="32dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
         android:text="@string/contact"
         android:textColor="#000000"
         android:textSize="18sp"
@@ -89,7 +78,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.094" />
+        app:layout_constraintVertical_bias="0.101" />
 
     <EditText
         android:id="@+id/editTextRegContact"
@@ -114,7 +103,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.143" />
 
     <EditText
         android:id="@+id/editTextRegEmail"
@@ -131,7 +120,7 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
         android:text="@string/address"
         android:textColor="#000000"
         android:textSize="18sp"
@@ -139,7 +128,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13"
-        app:layout_constraintVertical_bias="0.124" />
+        app:layout_constraintVertical_bias="0.126" />
 
     <EditText
         android:id="@+id/editTextRegAddress"
@@ -156,7 +145,7 @@
         android:id="@+id/textView15"
         android:layout_width="107dp"
         android:layout_height="49dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
         android:text="@string/conf_password"
         android:textColor="#000000"
         android:textSize="18sp"
@@ -164,7 +153,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.223" />
+        app:layout_constraintVertical_bias="0.17" />
 
     <EditText
         android:id="@+id/editTextRegCnfPwd"
@@ -182,7 +171,7 @@
         android:layout_width="265dp"
         android:layout_height="60dp"
         android:background="@drawable/btn_register"
-        android:text="@string/registerbtn"
+        android:text="@string/update"
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -192,5 +181,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:layout_constraintVertical_bias="0.317" />
+
+    <TextView
+        android:id="@+id/textViewUsername"
+        android:layout_width="208dp"
+        android:layout_height="45dp"
+        android:textColor="#000"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/textView10" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
