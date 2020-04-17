@@ -26,7 +26,7 @@ public class Admin_Choose extends AppCompatActivity {
         work.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent( Admin_Choose.this,DaytoDayWork.class);
+                Intent intent=new Intent( Admin_Choose.this,OutsideEMP.class);
                 startActivity(intent);
 
             }
