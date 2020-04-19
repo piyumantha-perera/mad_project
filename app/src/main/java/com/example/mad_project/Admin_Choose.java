@@ -11,6 +11,7 @@ public class Admin_Choose extends AppCompatActivity {
 
     Button salary;
     Button work;
+    Button empadd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,16 @@ public class Admin_Choose extends AppCompatActivity {
 
         salary=findViewById(R.id.buttonAdChAddPayments);
         work = findViewById(R.id.buttonAdChAddWorks);
+        empadd=findViewById(R.id.buttonAdChAddEmp);
+
+        empadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent( Admin_Choose.this,Employee_Add.class);
+                startActivity(intent);
+
+            }
+        });
 
         work.setOnClickListener(new View.OnClickListener() {
             @Override
