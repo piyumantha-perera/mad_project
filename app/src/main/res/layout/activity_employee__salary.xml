@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Employee_Salary">
+    tools:context=".Employee_Details.Employee_Salary">
 
     <include
         layout="@layout/toolbar"

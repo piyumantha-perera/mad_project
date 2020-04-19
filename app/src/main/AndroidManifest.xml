@@ -12,9 +12,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".CreationUpdate"></activity>
         <activity android:name=".Profile_Edit" />
-        <activity android:name=".Employee_SalaryEdit" />
+        <activity android:name=".Employee_Details.Employee_SalaryEdit" />
         <activity android:name=".Thought" />
-        <activity android:name=".Employee_Search" />
+        <activity android:name=".Employee_Details.Employee_Search" />
         <activity android:name=".LightBoard_Clone" />
         <activity android:name=".LightBoard" />
         <activity android:name=".NameBoard_Clone" />
@@ -29,8 +29,8 @@
         <activity android:name=".OutsideEMP" />
         <activity android:name=".Customer_Choose" />
         <activity android:name=".Employee_Choose" />
-        <activity android:name=".Salary_View" />
-        <activity android:name=".Employee_Salary" />
+        <activity android:name=".Employee_Details.Employee_SalaryUpdate" />
+        <activity android:name=".Employee_Details.Employee_Salary" />
         <activity android:name=".Employee_Login" />
         <activity android:name=".Admin_Choose" />
         <activity android:name=".Admin_Login" />

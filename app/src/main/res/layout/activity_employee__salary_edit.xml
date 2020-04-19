@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Employee_SalaryEdit">
+    tools:context=".Employee_Details.Employee_SalaryEdit">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

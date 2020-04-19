@@ -1,8 +1,10 @@
-package com.example.mad_project;
+package com.example.mad_project.Employee_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.mad_project.R;
 
 public class Employee_SalaryEdit extends AppCompatActivity {
 

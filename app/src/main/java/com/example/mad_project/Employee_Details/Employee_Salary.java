@@ -1,20 +1,21 @@
-package com.example.mad_project;
+package com.example.mad_project.Employee_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mad_project.Admin_Choose;
+import com.example.mad_project.Check;
 import com.example.mad_project.Database.DBHandler;
+import com.example.mad_project.R;
 
 import static com.example.mad_project.Notification.CHANNEL_ID;
 
@@ -48,7 +49,7 @@ public class Employee_Salary extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =  new Intent(Employee_Salary.this,Check.class);
+                Intent intent =  new Intent(Employee_Salary.this, Check.class);
                 startActivity(intent);
             }
         });
@@ -90,7 +91,7 @@ public class Employee_Salary extends AppCompatActivity {
 
                     Toast.makeText(Employee_Salary.this, "salary add success. salary id: "+newId, Toast.LENGTH_SHORT).show();
 
-                    Intent intent=new Intent(Employee_Salary.this,Admin_Choose.class);
+                    Intent intent=new Intent(Employee_Salary.this, Admin_Choose.class);
                     startActivity(intent);
 
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(Employee_Salary.this, CHANNEL_ID)
@@ -148,7 +149,7 @@ public class Employee_Salary extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(Employee_Salary.this,Employee_Search.class);
+                Intent intent=new Intent(Employee_Salary.this, Employee_Search.class);
                 startActivity(intent);
             }
         });
