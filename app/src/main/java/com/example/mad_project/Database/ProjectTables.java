@@ -58,4 +58,14 @@ public class ProjectTables {
 
      }
 
+
+    protected static class Thoughts implements BaseColumns {
+        //Thought Details table
+        public static final String TABLE_Thought = "ThoughtDetails";
+        public static final String COULMN_EMAIL = "Email";
+        public static final String COULMN_RATING = "Rating";
+        public static final String COULMN_FEEDBACK = "FeedBack";
+
+    }
+
 }

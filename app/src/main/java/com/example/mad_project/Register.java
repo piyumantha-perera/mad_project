@@ -29,7 +29,7 @@ public class Register extends AppCompatActivity {
         pwd = findViewById(R.id.editTextRegisterPassword);
         cnf_pwd = findViewById(R.id.editTextRegCnfPwd);
 
-        register = findViewById(R.id.buttonRegister);
+        register = findViewById(R.id.buttonUpdate);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

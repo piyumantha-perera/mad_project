@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Thought">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
+    <TextView
+        android:id="@+id/textView64"
+        android:layout_width="345dp"
+        android:layout_height="35dp"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/thoughtHead"
+        android:textColor="#AD1457"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <ImageView
+        android:layout_height="181dp"
+        android:layout_width="185dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/imageView19"
+        app:layout_constraintVertical_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/thought"
+        app:layout_constraintTop_toBottomOf="@+id/textView64"
+        app:layout_constraintHorizontal_bias="0.455"
+        android:background="@drawable/btn_banner"/>
+
+    <TextView
+        android:layout_height="55dp"
+        android:layout_width="85dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/textView66"
+        app:layout_constraintVertical_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:text="@string/thought_email"
+        android:fontFamily="@font/amaranth_bold"
+        app:layout_constraintTop_toBottomOf="@+id/imageView19"
+        app:layout_constraintHorizontal_bias="0.093"
+        android:textAlignment="viewStart"/>
+
+    <TextView
+        android:layout_height="40dp"
+        android:layout_width="241dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/textViewThoughtEmail"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintStart_toEndOf="@+id/textView66"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView66"/>
+
+    <TextView
+        android:layout_height="33dp"
+        android:layout_width="91dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/textView68"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:text="@string/rate"
+        android:fontFamily="@font/amaranth_bold"
+        app:layout_constraintTop_toBottomOf="@+id/textView66"
+        app:layout_constraintHorizontal_bias="0.093"/>
+
+    <RatingBar
+        android:layout_height="53dp"
+        android:layout_width="237dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/ratingBar"
+        app:layout_constraintVertical_bias="0.08"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewThoughtEmail"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toEndOf="@+id/textView68"
+        android:stepSize="0.5"
+        android:numStars="5"/>
+
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="91dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/textView69"
+        app:layout_constraintVertical_bias="0.205"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:text="@string/thought"
+        android:fontFamily="@font/amaranth_bold"
+        app:layout_constraintTop_toBottomOf="@+id/textView68"
+        app:layout_constraintHorizontal_bias="0.093"/>
+
+    <EditText
+        android:layout_height="80dp"
+        android:layout_width="232dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/editTextThought"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toEndOf="@+id/textView69"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView69"
+        android:inputType="textMultiLine"
+        android:gravity="start|top"
+        android:ems="10"/>
+
+    <Button
+        android:layout_height="47dp"
+        android:layout_width="114dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/buttonThoughtCancel"
+        app:layout_constraintVertical_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="@string/cancel"
+        app:layout_constraintTop_toBottomOf="@+id/editTextThought"
+        app:layout_constraintHorizontal_bias="0.17"
+        android:background="@drawable/btn_delete"/>
+
+    <Button
+        android:layout_height="47dp"
+        android:layout_width="114dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/buttonThoughtSubmit"
+        app:layout_constraintVertical_bias="0.56"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="@string/submit"
+        app:layout_constraintTop_toBottomOf="@+id/editTextThought"
+        app:layout_constraintHorizontal_bias="0.59"
+        android:background="@drawable/btn_add"
+        app:layout_constraintStart_toEndOf="@+id/buttonThoughtCancel"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

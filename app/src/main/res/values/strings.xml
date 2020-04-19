@@ -118,5 +118,16 @@
     <string name="addemp">ADD EMPLOYEE</string>
     <string name="addemployee">ADD</string>
 
+    <string name="thoughtHead">What is your thought ??</string>
+    <string name="thought_email">User Email :</string>
+    <string name="rate">Ratting :</string>
+    <string name="thought">Thought :</string>
+    <string name="submit">submit</string>
+    <string name="cancel">cancel</string>
+    <string name="profEdit_head">Edit Profile</string>
+    <string name="update">update profile</string>
+    <string name="edit_user">customer username :</string>
+    <string name="creationHead">Update Creation Details</string>
+    <string name="enterID">Select the Creation ID</string>
 
 </resources>

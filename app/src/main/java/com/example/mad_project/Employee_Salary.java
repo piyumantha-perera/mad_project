@@ -1,7 +1,10 @@
 package com.example.mad_project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,11 +16,16 @@ import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
 
+import static com.example.mad_project.Notification.CHANNEL_ID;
+
 public class Employee_Salary extends AppCompatActivity {
+
+
 
     ImageView home;
     EditText userName,BasicSalary,TravellingAllowance,OverTime,SalaryAdvance,NetSalary;
     Button add,viewDetails;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +70,39 @@ public class Employee_Salary extends AppCompatActivity {
 
                 long newId = dbHandler.addEmployeeDetails(username, basSal, travAll, ot, salAdv, netSal);
 
-                Toast.makeText(Employee_Salary.this, "salary add success. salary id: "+newId, Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(Employee_Salary.this,Admin_Choose.class);
-                startActivity(intent);
+                if (username.isEmpty()  || basSal.isEmpty() || travAll.isEmpty() || ot.isEmpty() || salAdv.isEmpty() || netSal.isEmpty()){
+                    userName.setError("please enter the name");
+                    BasicSalary.setError("please enter the Salary");
+
+
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(Employee_Salary.this, CHANNEL_ID)
+                            .setSmallIcon(R.drawable.ic_announcement_black_24dp)
+                            .setContentTitle("RUSH Advertising Notification")
+                            .setContentText("SALARY NOT ADDED")
+                            .setPriority(NotificationCompat.PRIORITY_HIGH)
+                            .setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+                    NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(Employee_Salary.this);
+                    notificationManagerCompat.notify(0, builder.build());
+
+                }
+                else{
+
+                    Toast.makeText(Employee_Salary.this, "salary add success. salary id: "+newId, Toast.LENGTH_SHORT).show();
+
+                    Intent intent=new Intent(Employee_Salary.this,Admin_Choose.class);
+                    startActivity(intent);
+
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(Employee_Salary.this, CHANNEL_ID)
+                            .setSmallIcon(R.drawable.ic_announcement_black_24dp)
+                            .setContentTitle("RUSH Advertising Notification")
+                            .setContentText("SALARY ADDED")
+                            .setPriority(NotificationCompat.PRIORITY_HIGH)
+                            .setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+                    NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(Employee_Salary.this);
+                    notificationManagerCompat.notify(0, builder.build());
+                }
             }
         });
 
