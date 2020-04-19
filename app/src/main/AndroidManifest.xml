@@ -15,7 +15,6 @@
         <activity android:name=".Employee_SalaryEdit" />
         <activity android:name=".CreationUpdate"></activity>
         <activity android:name=".Profile_Edit" />
-        <activity android:name=".Employee_Details.Employee_SalaryEdit" />
         <activity android:name=".Thought" />
         <activity android:name=".Employee_Details.Employee_Search" />
         <activity android:name=".LightBoard_Clone" />
