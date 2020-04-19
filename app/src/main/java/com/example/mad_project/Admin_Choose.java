@@ -30,7 +30,7 @@ public class Admin_Choose extends AppCompatActivity {
         empadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent( Admin_Choose.this,Employee_Add.class);
+                Intent intent=new Intent( Admin_Choose.this,add_employee.class);
                 startActivity(intent);
 
             }

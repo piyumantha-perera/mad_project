@@ -92,6 +92,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_CREATIONS);
         db.execSQL(CREATE_TABLE_THOUGHT);
         db.execSQL(CREATE_TABLE_EMPLOYEEADD);
+        db.execSQL(CREATE_TABLE_THOUGHT);
     }
 
     @Override
@@ -110,6 +111,9 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
 
         db.execSQL(SQL_DELETE_EMPLOYEEADD);
+        onCreate(db);
+
+        db.execSQL(SQL_DELETE_THOUGHT);
         onCreate(db);
     }
 
