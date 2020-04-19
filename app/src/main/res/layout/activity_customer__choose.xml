@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Customer_Choose">
 
+    <include
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
     <TextView
         android:id="@+id/textView41"
         android:layout_width="278dp"
@@ -51,7 +56,7 @@
         app:layout_constraintVertical_bias="0.076" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imageButtonCusChoLeaflet"
         android:layout_width="130dp"
         android:layout_height="129dp"
         android:background="@drawable/btn_banner"
@@ -75,11 +80,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.708"
         app:layout_constraintStart_toEndOf="@+id/textView42"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonCusChoLeaflet"
         app:layout_constraintVertical_bias="0.08" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/imageButtonLightBoard"
         android:layout_width="130dp"
         android:layout_height="129dp"
         android:background="@drawable/btn_admin"
@@ -103,18 +108,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonLightBoard"
         app:layout_constraintVertical_bias="0.282" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/imageButtonNameBoard"
         android:layout_width="130dp"
         android:layout_height="129dp"
         android:background="@drawable/btn_admin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.646"
-        app:layout_constraintStart_toEndOf="@+id/imageButton3"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonLightBoard"
         app:layout_constraintTop_toBottomOf="@+id/textView43"
         app:layout_constraintVertical_bias="0.2"
         app:srcCompat="@drawable/nameboard" />
@@ -131,6 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.698"
         app:layout_constraintStart_toEndOf="@+id/textView44"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonNameBoard"
         app:layout_constraintVertical_bias="0.291" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

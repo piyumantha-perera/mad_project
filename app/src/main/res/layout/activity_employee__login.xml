@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Employee_Login">
 
+    <include
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
     <TextView
         android:id="@+id/textView22"
         android:layout_width="236dp"
@@ -49,7 +54,7 @@
         app:srcCompat="@drawable/admin_login" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/editTextEmpLogUsrNme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -78,7 +83,7 @@
         app:layout_constraintVertical_bias="0.206" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/editTextEmpLgnPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"

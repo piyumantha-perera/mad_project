@@ -6,9 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Employee_Choose">
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
     <Button
         android:id="@+id/buttonMonthlySal"
-        android:layout_width="309dp"
+        android:layout_width="310dp"
         android:layout_height="99dp"
         android:background="@drawable/btn_emp_salary"
         android:text="@string/monthly_salary"
@@ -17,10 +23,9 @@
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.598"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView14"
+        app:layout_constraintVertical_bias="0.068" />
 
     <Button
         android:id="@+id/buttonDayToWrk"
@@ -37,4 +42,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonMonthlySal"
         app:layout_constraintVertical_bias="0.28" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="215dp"
+        android:layout_height="197dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.164"
+        app:srcCompat="@drawable/emp_choose" />
 </androidx.constraintlayout.widget.ConstraintLayout>

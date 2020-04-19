@@ -3,16 +3,31 @@
     package="com.example.mad_project">
 
     <application
+        android:name=".Notification"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OutsideEMP"></activity>
-        <activity android:name=".OfficeEMP" />
-        <activity android:name=".DaytoDayWork" />
+        <activity android:name=".CreationUpdate"></activity>
+        <activity android:name=".Profile_Edit" />
+        <activity android:name=".Employee_SalaryEdit" />
+        <activity android:name=".Thought" />
+        <activity android:name=".Employee_Search" />
+        <activity android:name=".LightBoard_Clone" />
+        <activity android:name=".LightBoard" />
+        <activity android:name=".NameBoard_Clone" />
+        <activity android:name=".NameBoard" />
+        <activity android:name=".Leaflet_Clone" />
+        <activity android:name=".Leaflet" />
+        <activity android:name=".Banner_Clone" />
         <activity android:name=".Customer_Profile" />
+        <activity android:name=".Banner" />
+        <activity android:name=".DaytoDayWork" />
+        <activity android:name=".OfficeEMP" />
+        <activity android:name=".OutsideEMP" />
+        <activity android:name=".Customer_Choose" />
         <activity android:name=".Employee_Choose" />
         <activity android:name=".Salary_View" />
         <activity android:name=".Employee_Salary" />
