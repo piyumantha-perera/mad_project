@@ -102,6 +102,21 @@
     <string name="Search_Emp_Salary">Salary Searching</string>
     <string name="Salary_Name_Search">Search</string>
     <string name="Salary_Delete">DELETE</string>
+    <string name="FirstName">First Name</string>
+    <string name="LastName">Last Name</string>
+    <string name="NIC">NIC</string>
+    <string name="empID">Employee ID</string>
+    <string name="empType">Employee Type</string>
+    <string name="fname" />
+    <string name="lname" />
+    <string name="e_mail" />
+    <string name="addres" />
+    <string name="phone" />
+    <string name="nic" />
+    <string name="empid" />
+    <string name="emptype" />
+    <string name="addemp">ADD EMPLOYEE</string>
+    <string name="addemployee">ADD</string>
 
 
 </resources>

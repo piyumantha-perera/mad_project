@@ -45,4 +45,17 @@ public class ProjectTables {
         public static final String COLUMN_DATE = "Del_Date";
 
     }
+     public static class EmployeeAdd implements BaseColumns {
+       //employee add table
+        public static final String  TABLE_EMPLOYEEADD = "EmployeeAddDetails";
+        public static final String COLUMN_EMPLOYEEFNAME = "First_Name";
+        public static final String COLUMN_EMPLOYEELNAME = "Last_Name";
+        public static final String COLUMN_EMAIL = "Email";
+        public static final String COLUMN_ADDRESS = "Address";
+        public static final String COLUMN_CONTACT = "Contact";
+        public static final String COLUMN_NIC = "NIC";
+        public static final String COLUMN_EMPLOYEETYPE = "Employee_Type";
+
+     }
+
 }

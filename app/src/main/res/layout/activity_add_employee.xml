@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".add_employee">
+
+    <EditText
+        android:id="@+id/lname"
+        android:layout_width="176dp"
+        android:layout_height="37dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include4"
+        app:layout_constraintVertical_bias="0.351"
+        tools:text="@string/lname" />
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/toolbar_profile"
+        android:layout_width="404dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.008" />
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="421dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD EMPLOYEE"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include4"
+        app:layout_constraintVertical_bias="0.049"
+        tools:text="@string/addemp" />
+
+    <TextView
+        android:id="@+id/textViewfname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Name"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.263"
+        tools:text="@string/FirstName" />
+
+    <TextView
+        android:id="@+id/textViewlname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Name"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.361"
+        tools:text="@string/LastName" />
+
+    <TextView
+        android:id="@+id/textViewemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.449"
+        tools:text="@string/pro_email" />
+
+    <TextView
+        android:id="@+id/textViewaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.537"
+        tools:text="@string/pro_address" />
+
+    <TextView
+        android:id="@+id/textViewphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.629"
+        tools:text="@string/pro_contact" />
+
+    <TextView
+        android:id="@+id/textViewnic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIC"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.726"
+        tools:text="@string/NIC" />
+
+    <TextView
+        android:id="@+id/textViewtype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Employee Type"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.829"
+        tools:text="@string/empType" />
+
+    <Button
+        android:id="@+id/addempbutton"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:background="@drawable/empadd"
+        android:text="ADD"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.953"
+        tools:text="@string/addemployee" />
+
+    <EditText
+        android:id="@+id/fname"
+        android:layout_width="176dp"
+        android:layout_height="37dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include4"
+        app:layout_constraintVertical_bias="0.259"
+        tools:text="@string/fname" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="178dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442"
+        tools:text="@string/e_mail" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="173dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535"
+        tools:text="@string/addres" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="172dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.626"
+        tools:text="@string/phone" />
+
+    <EditText
+        android:id="@+id/nic"
+        android:layout_width="169dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.722"
+        tools:text="@string/nic" />
+
+    <EditText
+        android:id="@+id/type"
+        android:layout_width="169dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.814"
+        tools:text="@string/emptype" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

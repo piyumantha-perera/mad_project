@@ -62,12 +62,25 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String SQL_DELETE_SALARY = "DROP TABLE IF EXISTS " + ProjectTables.Employee.TABLE_NAME;
 
 
+    private static final String CREATE_TABLE_EMPLOYEEADD = "CREATE TABLE " + ProjectTables.EmployeeAdd.TABLE_EMPLOYEEADD + "(" +
+            ProjectTables.EmployeeAdd._ID + " INTEGER PRIMARY KEY," +
+            ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " TEXT," +
+            ProjectTables.EmployeeAdd.COLUMN_EMPLOYEELNAME + " TEXT," +
+            ProjectTables.EmployeeAdd.COLUMN_EMAIL + " TEXT," +
+            ProjectTables.EmployeeAdd.COLUMN_ADDRESS + " TEXT," +
+            ProjectTables.EmployeeAdd.COLUMN_CONTACT + " TEXT," +
+            ProjectTables.EmployeeAdd.COLUMN_NIC + " TEXT," +
+            ProjectTables.EmployeeAdd.COLUMN_EMPLOYEETYPE + " TEXT)" ;
+
+    private static final String SQL_DELETE_EMPLOYEEADD = "DROP TABLE IF EXISTS " + ProjectTables.EmployeeAdd.TABLE_EMPLOYEEADD;
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(CREATE_TABLE_USERS);
         db.execSQL(CREATE_TABLE_SALARY);
         db.execSQL(CREATE_TABLE_CREATIONS);
+        db.execSQL(CREATE_TABLE_EMPLOYEEADD);
     }
 
     @Override
@@ -80,6 +93,9 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
 
         db.execSQL(SQL_DELETE_CREATIONS);
+        onCreate(db);
+
+        db.execSQL(SQL_DELETE_EMPLOYEEADD);
         onCreate(db);
     }
 
@@ -245,6 +261,28 @@ public class DBHandler extends SQLiteOpenHelper {
          String[] selectionArgs = { userName };
         // Issue SQL statement.
         int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
+    }
+  //addemployee
+    public long addEmployeeAddDetails(String employeefname, String employeelname, String email, String address, String contactNo, String nic, String empType){
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME, employeefname);
+        values.put(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEELNAME, employeelname);
+        values.put(ProjectTables.EmployeeAdd.COLUMN_EMAIL, email);
+        values.put(ProjectTables.EmployeeAdd.COLUMN_ADDRESS, address);
+        values.put(ProjectTables.EmployeeAdd.COLUMN_CONTACT, contactNo);
+        values.put(ProjectTables.EmployeeAdd.COLUMN_NIC, nic);
+        values.put(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEETYPE, empType);
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId = db.insert(ProjectTables.EmployeeAdd.TABLE_EMPLOYEEADD, null, values);
+
+        db.close();
+        return newRowId;
     }
 
 }
