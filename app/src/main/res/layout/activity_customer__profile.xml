@@ -144,10 +144,10 @@
 
     <Button
         android:id="@+id/buttonProfileCreation"
-        android:layout_width="172dp"
-        android:layout_height="42dp"
+        android:layout_width="170dp"
+        android:layout_height="39dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/btn_creations"
         android:text="@string/creation"
         android:textColor="#ffffff"
@@ -155,6 +155,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="165dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_update"
+        android:text="@string/Sal_update"
+        android:textColor="#000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonProfileCreation"
         app:layout_constraintStart_toStartOf="parent" />
 
 

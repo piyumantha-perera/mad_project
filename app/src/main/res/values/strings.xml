@@ -111,5 +111,7 @@
     <string name="profEdit_head">Edit Profile</string>
     <string name="update">update profile</string>
     <string name="edit_user">customer username :</string>
+    <string name="creationHead">Update Creation Details</string>
+    <string name="enterID">Select the Creation ID</string>
 
 </resources>

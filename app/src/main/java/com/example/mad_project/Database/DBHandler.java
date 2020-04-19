@@ -288,6 +288,14 @@ public class DBHandler extends SQLiteOpenHelper {
         return res;
 
     }
+
+    public Cursor readCreationDetails(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ ProjectTables.Creations.TABLE_CREATION,null);
+        return res;
+
+    }
+
     public Cursor readThoughtDetails(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+ ProjectTables.Thoughts.TABLE_Thought,null);

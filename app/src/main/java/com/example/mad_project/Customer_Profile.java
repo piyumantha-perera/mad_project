@@ -14,7 +14,7 @@ import com.example.mad_project.Database.DBHandler;
 
 public class Customer_Profile extends AppCompatActivity {
 
-    Button creation, edit;
+    Button creation, edit, update;
     TextView user, usrEmail, usrContact, usrAddress, logout;
 
     DBHandler dbHandler;
@@ -26,6 +26,7 @@ public class Customer_Profile extends AppCompatActivity {
 
         creation = findViewById(R.id.buttonProfileCreation);
         edit = findViewById(R.id.buttonProEdit);
+        update = findViewById(R.id.buttonUpdate);
 
         dbHandler = new DBHandler(getApplicationContext());
 
@@ -95,6 +96,15 @@ public class Customer_Profile extends AppCompatActivity {
                 intent.putExtra("Address",address);
                 intent.putExtra("Password",password);
                 intent.putExtra("CnfPassword",cnf_pass);
+                startActivity(intent);
+            }
+        });
+
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Customer_Profile.this,CreationUpdate.class);
+                intent.putExtra("Name",username);
                 startActivity(intent);
             }
         });
