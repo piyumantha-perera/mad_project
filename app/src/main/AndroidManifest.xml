@@ -10,13 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Customer_Details.CreationUpdate_LeafClone"></activity>
+        <activity android:name=".Employee_Details.Salary_View"></activity>
+        <activity android:name=".Customer_Details.CreationUpdate_LeafClone" />
         <activity android:name=".Customer_Details.CreationUpdate_Clone" />
         <activity android:name=".Customer_Details.CreationUpdate" />
-        <activity android:name=".view_employee"></activity>
+        <activity android:name=".view_employee" />
         <activity android:name=".add_employee" />
         <activity android:name=".Employee_SalaryEdit" />
-        <activity android:name=".Customer_Details.CreationUpdate"></activity>
+        <activity android:name=".Customer_Details.CreationUpdate" />
         <activity android:name=".Customer_Details.Profile_Edit" />
         <activity android:name=".Customer_Details.Thought" />
         <activity android:name=".Employee_Details.Employee_Search" />
