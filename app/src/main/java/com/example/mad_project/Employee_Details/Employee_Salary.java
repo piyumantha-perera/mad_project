@@ -69,7 +69,7 @@ public class Employee_Salary extends AppCompatActivity {
                 salAdv = SalaryAdvance.getText().toString();
                 netSal = NetSalary.getText().toString();
 
-                long newId = dbHandler.addEmployeeDetails(username, basSal, travAll, ot, salAdv, netSal);
+
 
                 if (username.isEmpty()  || basSal.isEmpty() || travAll.isEmpty() || ot.isEmpty() || salAdv.isEmpty() || netSal.isEmpty()){
                     userName.setError("please enter the name");
@@ -88,6 +88,7 @@ public class Employee_Salary extends AppCompatActivity {
 
                 }
                 else{
+                    long newId = dbHandler.addEmployeeDetails(username, basSal, travAll, ot, salAdv, netSal);
 
                     Toast.makeText(Employee_Salary.this, "salary add success. salary id: "+newId, Toast.LENGTH_SHORT).show();
 

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,8 +23,8 @@ import java.util.List;
 public class Employee_Search extends AppCompatActivity {
     private Spinner spinner;
 
-    Button seacrh,delete;
-
+    Button delete;
+    ImageView search;
     TextView test;
 
     @Override
@@ -33,8 +34,8 @@ public class Employee_Search extends AppCompatActivity {
 
         DBHandler dbHandler = new DBHandler(getApplicationContext());
 
+        search = findViewById(R.id.btnSalaryNameSearch);
         spinner = findViewById(R.id.spinnerSalSearch);
-        seacrh=findViewById(R.id.btnSalaryNameSearch);
         delete=findViewById(R.id.btnSalaryDelete);
 
         //test = findViewById(R.id.textView67);
@@ -54,7 +55,7 @@ public class Employee_Search extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        seacrh.setOnClickListener(new View.OnClickListener() {
+        search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

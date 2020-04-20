@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".add_employee">
 
+
     <EditText
         android:id="@+id/lname"
         android:layout_width="176dp"
