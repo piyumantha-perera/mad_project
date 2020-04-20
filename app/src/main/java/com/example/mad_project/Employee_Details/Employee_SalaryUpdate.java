@@ -3,9 +3,11 @@ package com.example.mad_project.Employee_Details;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.R;
@@ -52,6 +54,56 @@ public class Employee_SalaryUpdate extends AppCompatActivity {
         SalAd.setText(salaryAdvance);
         NetSa.setText(netSalary);
 
+        Update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String userName = Username.getText().toString();
+                String basicSalary = BasicSal.getText().toString();
+                String travellingAllowance = TravAll.getText().toString();
+                String overTime = Ot.getText().toString();
+                String salaryAdvance = SalAd.getText().toString();
+                String netSalary = NetSa.getText().toString();
+
+                Boolean update = dbHandler.updateEmpSalary(userName,basicSalary, travellingAllowance, overTime, salaryAdvance, netSalary);
+
+                if(update){
+                    Toast.makeText(Employee_SalaryUpdate.this, "Salary Updated", Toast.LENGTH_SHORT).show();
+
+                    Double Salary=Double.parseDouble(BasicSal.getText().toString());
+                    Double tra=Double.parseDouble(TravAll.getText().toString());
+                    Double ot=Double.parseDouble(Ot.getText().toString());
+                    Double salad=Double.parseDouble(SalAd.getText().toString());
+                    double tax;
+                    Double netsalary;
+
+                    if(Salary > 5000){
+                        tax = Salary *10/100;
+                        netsalary = ((Salary + tra) + ot*100) - (salad + tax);
+
+
+
+                    }
+                    else if (Salary > 3000){
+                        tax = Salary * 5/100;
+
+                        netsalary = ((Salary + tra-tax) + ot*100) - (salad + tax);
+
+                    }
+                    else {
+                        tax = 0;
+                        netsalary = ((Salary + tra-tax) + ot*100) - (salad + tax);
+
+                    }
+
+                    NetSa.setText(String.valueOf(netsalary));
+
+                }
+                else {
+                    Toast.makeText(Employee_SalaryUpdate.this, "Salary Update failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
 
     }
