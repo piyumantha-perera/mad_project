@@ -1,4 +1,4 @@
-package com.example.mad_project;
+package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -10,15 +10,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
+import com.example.mad_project.R;
 
 import static com.example.mad_project.Notification.CHANNEL_ID;
 
-public class Leaflet_Clone extends AppCompatActivity {
+public class LightBoard_Clone extends AppCompatActivity {
 
-    EditText dDate;
+    TextView full;
+    EditText delDate;
     Button add;
 
     DBHandler dbHandler;
@@ -28,12 +31,10 @@ public class Leaflet_Clone extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_leaflet__clone);
+        setContentView(R.layout.activity_light_board__clone);
 
         notificationManagerCompat = NotificationManagerCompat.from(this);
 
-
-        dbHandler = new DBHandler(getApplicationContext());
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinnerGetingType);
 
@@ -41,50 +42,50 @@ public class Leaflet_Clone extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        dDate = findViewById(R.id.editTextCreDelDate);
+        full = findViewById(R.id.textViewBannerTotal);
+        delDate = findViewById(R.id.editTextCreDelDate);
         add = findViewById(R.id.buttonCreationAdd);
+
+        dbHandler = new DBHandler(getApplicationContext());
 
         Bundle bn = getIntent().getExtras();
         final String username = bn.getString("Name");
         final String c_type = bn.getString("creation_type");
-        final String qty = bn.getString("Quantity");
-        final String price = bn.getString("Price");
-        final String url = bn.getString("ImageUrl");
-        final String des = bn.getString("Description");
+        final String amount = bn.getString("Price");
+        final String length = bn.getString("Length");
+        final String width = bn.getString("Width");
+        final String imageUrl = bn.getString("Url");
+        final String description = bn.getString("Description");
+        final String quantity = bn.getString("Quantity");
 
-        final double length = 11.7;
-        final double width = 16.5;
+        full.setText("Rs."+String.valueOf(amount));
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String len = String.valueOf(length);
-                String wid = String.valueOf(width);
-                String deliveryDate = dDate.getText().toString();
+                String deliveryDate = delDate.getText().toString();
                 String getType = spinner.getSelectedItem().toString();
 
-
-                long newID = dbHandler.addCreationDetails(username, c_type, len, wid, url, des, qty, price, getType, deliveryDate);
+                long newID = dbHandler.addCreationDetails(username, c_type, length, width, imageUrl, description, quantity, "Rs."+amount, getType, deliveryDate);
                 if (newID > 0){
-                    Toast.makeText(Leaflet_Clone.this, "Creation added Successfull", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LightBoard_Clone.this, "Creation added Successfull", Toast.LENGTH_SHORT).show();
 
-                    NotificationCompat.Builder builder = new NotificationCompat.Builder(Leaflet_Clone.this, CHANNEL_ID)
+                    String full_total = full.getText().toString();
+
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(LightBoard_Clone.this, CHANNEL_ID)
                             .setSmallIcon(R.drawable.ic_announcement_black_24dp)
                             .setContentTitle("RUSH Advertising Notification")
-                            .setContentText("Your creations' total amount is " + price)
+                            .setContentText("Your creations' total amount is " + full_total)
                             .setPriority(NotificationCompat.PRIORITY_HIGH)
                             .setCategory(NotificationCompat.CATEGORY_MESSAGE);
 
                     notificationManagerCompat.notify(1, builder.build());
                 }
                 else {
-                    Toast.makeText(Leaflet_Clone.this, "Creation not added", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LightBoard_Clone.this, "Creation not added", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
-
 
     }
 }

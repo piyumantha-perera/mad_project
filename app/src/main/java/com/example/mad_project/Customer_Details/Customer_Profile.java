@@ -1,4 +1,4 @@
-package com.example.mad_project;
+package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.mad_project.Check;
 import com.example.mad_project.Database.DBHandler;
+import com.example.mad_project.Profile_Edit;
+import com.example.mad_project.R;
 
 public class Customer_Profile extends AppCompatActivity {
 
@@ -53,7 +55,7 @@ public class Customer_Profile extends AppCompatActivity {
         creation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Customer_Profile.this,Customer_Choose.class);
+                Intent intent = new Intent(Customer_Profile.this, Customer_Choose.class);
                 intent.putExtra("Name",username);
                 startActivity(intent);
             }
@@ -72,11 +74,11 @@ public class Customer_Profile extends AppCompatActivity {
                     usrmail = cursor.getString(1);
                 }
                 if(usrmail.equals(userEmail)){
-                    Intent intent = new Intent(Customer_Profile.this,Check.class);
+                    Intent intent = new Intent(Customer_Profile.this, Check.class);
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(Customer_Profile.this,Thought.class);
+                    Intent intent = new Intent(Customer_Profile.this, Thought.class);
                     intent.putExtra("Email", userEmail);
                     startActivity(intent);
                 }
@@ -89,7 +91,7 @@ public class Customer_Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Customer_Profile.this,Profile_Edit.class);
+                Intent intent = new Intent(Customer_Profile.this, Profile_Edit.class);
                 intent.putExtra("Name",username);
                 intent.putExtra("Email",email);
                 intent.putExtra("ContactNo",contactNo);
@@ -103,7 +105,7 @@ public class Customer_Profile extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Customer_Profile.this,CreationUpdate.class);
+                Intent intent = new Intent(Customer_Profile.this, CreationUpdate.class);
                 intent.putExtra("Name",username);
                 startActivity(intent);
             }

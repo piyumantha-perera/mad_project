@@ -1,4 +1,4 @@
-package com.example.mad_project;
+package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.mad_project.R;
 
 public class Leaflet extends AppCompatActivity {
 

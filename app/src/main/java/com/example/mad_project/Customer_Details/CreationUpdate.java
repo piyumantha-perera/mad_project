@@ -1,22 +1,19 @@
-package com.example.mad_project;
+package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.example.mad_project.Database.DBHandler;
+import com.example.mad_project.R;
 
 import java.util.ArrayList;
 import java.util.List;

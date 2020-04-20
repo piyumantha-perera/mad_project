@@ -1,12 +1,9 @@
-package com.example.mad_project;
+package com.example.mad_project.Customer_Details;
 
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,7 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.mad_project.Customer_Details.CreationUpdate_Clone;
 import com.example.mad_project.Database.DBHandler;
+import com.example.mad_project.R;
 
 public class FragmentBoard extends Fragment {
 
@@ -38,7 +37,6 @@ public class FragmentBoard extends Fragment {
         qty = view.findViewById(R.id.editTextBannerQty);
         imagesUrl = view.findViewById(R.id.editTextCreationUrl);
         des = view.findViewById(R.id.editTextBannerDes);
-
         next = view.findViewById(R.id.buttonBannerNext);
 
         Bundle bn = getArguments();

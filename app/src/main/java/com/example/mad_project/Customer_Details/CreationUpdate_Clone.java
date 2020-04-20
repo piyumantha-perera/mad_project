@@ -1,4 +1,4 @@
-package com.example.mad_project;
+package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
+import com.example.mad_project.R;
 
 import java.util.ArrayList;
 import java.util.List;

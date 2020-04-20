@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreationUpdate">
+    tools:context=".Customer_Details.CreationUpdate">
 
     <include
         layout="@layout/toolbar"
@@ -69,7 +69,7 @@
 
     <fragment
         android:id="@+id/fgmntDefault"
-        android:name="com.example.mad_project.FragmentDefault"
+        android:name="com.example.mad_project.Customer_Details.FragmentDefault"
         android:layout_width="match_parent"
         android:layout_height="473dp"
         app:layout_constraintBottom_toBottomOf="parent"

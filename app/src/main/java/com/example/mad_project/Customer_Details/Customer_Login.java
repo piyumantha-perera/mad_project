@@ -1,4 +1,4 @@
-package com.example.mad_project;
+package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
+import com.example.mad_project.R;
 
 public class Customer_Login extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class Customer_Login extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Customer_Login.this,Register.class);
+                Intent intent = new Intent(Customer_Login.this, Register.class);
                 startActivity(intent);
             }
         });
@@ -75,7 +76,7 @@ public class Customer_Login extends AppCompatActivity {
                 else {
                     if(result == true){
                         Toast.makeText(Customer_Login.this, "Login Successfull.", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Customer_Login.this,Customer_Profile.class);
+                        Intent intent = new Intent(Customer_Login.this, Customer_Profile.class);
                         intent.putExtra("Name",username);
                         intent.putExtra("Email",email);
                         intent.putExtra("ContactNo",contact);

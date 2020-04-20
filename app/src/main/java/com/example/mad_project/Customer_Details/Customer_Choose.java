@@ -1,4 +1,4 @@
-package com.example.mad_project;
+package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.mad_project.R;
 
 public class Customer_Choose extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class Customer_Choose extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String creation_type = "Banner";
-                Intent intent = new Intent(Customer_Choose.this,Banner.class);
+                Intent intent = new Intent(Customer_Choose.this, Banner.class);
                 intent.putExtra("Name",username);
                 intent.putExtra("creation_type", creation_type);
                 startActivity(intent);

@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mad_project.Customer_Details.Customer_Profile;
 import com.example.mad_project.Database.DBHandler;
 
 public class Profile_Edit extends AppCompatActivity {
@@ -66,7 +67,7 @@ public class Profile_Edit extends AppCompatActivity {
 
                 if (update){
                     Toast.makeText(Profile_Edit.this, "User Details updated", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Profile_Edit.this,Customer_Profile.class);
+                    Intent intent = new Intent(Profile_Edit.this, Customer_Profile.class);
                     intent.putExtra("Name",userName);
                     intent.putExtra("Email",userEmail);
                     intent.putExtra("ContactNo",contactno);

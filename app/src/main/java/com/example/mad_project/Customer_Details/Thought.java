@@ -1,4 +1,4 @@
-package com.example.mad_project;
+package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mad_project.Check;
 import com.example.mad_project.Database.DBHandler;
+import com.example.mad_project.R;
 
 public class Thought extends AppCompatActivity {
 
@@ -52,7 +54,7 @@ public class Thought extends AppCompatActivity {
                 long newId = dbHandler.addThoughtDetails(usrmail, String.valueOf(rt + "%"), feedback);
                 if (newId > 0){
                     Toast.makeText(Thought.this, "Thought Details added. Thought ID: "+newId, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Thought.this,Check.class);
+                    Intent intent = new Intent(Thought.this, Check.class);
                     startActivity(intent);
                 }
                 else {

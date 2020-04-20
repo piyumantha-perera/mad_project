@@ -1,4 +1,4 @@
-package com.example.mad_project;
+package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.mad_project.R;
 
 public class LightBoard extends AppCompatActivity {
 
@@ -55,7 +57,7 @@ public class LightBoard extends AppCompatActivity {
 
 
                 String amount = calculate.toString();
-                Intent intent = new Intent(LightBoard.this,LightBoard_Clone.class);
+                Intent intent = new Intent(LightBoard.this, LightBoard_Clone.class);
                 intent.putExtra("Name",username);
                 intent.putExtra("creation_type", c_type);
                 intent.putExtra("Length",crLength);

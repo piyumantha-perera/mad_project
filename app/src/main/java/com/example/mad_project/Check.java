@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.mad_project.Customer_Details.Customer_Login;
+
 public class Check extends AppCompatActivity {
 
     ImageView cutomer;
