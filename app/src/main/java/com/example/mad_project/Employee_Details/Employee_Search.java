@@ -2,6 +2,7 @@ package com.example.mad_project.Employee_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
@@ -20,8 +22,9 @@ import java.util.List;
 public class Employee_Search extends AppCompatActivity {
     private Spinner spinner;
 
-    EditText userName,BasicSalary,TravellingAllowance,OverTime,SalaryAdvance,NetSalary;
     Button seacrh,delete;
+
+    TextView test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +37,7 @@ public class Employee_Search extends AppCompatActivity {
         seacrh=findViewById(R.id.btnSalaryNameSearch);
         delete=findViewById(R.id.btnSalaryDelete);
 
-//        BasicSalary = findViewById(R.id.editTextSalDetBasSal);
-//        TravellingAllowance = findViewById(R.id.editTextSalDetTravAll);
-//        OverTime = findViewById(R.id.editTextSalDetOt);
-//        SalaryAdvance = findViewById(R.id.editTextSalDetSalAdv);
-//        NetSalary = findViewById(R.id.editTextSalDetNetSal);
+        //test = findViewById(R.id.textView67);
 
 
 
@@ -60,12 +59,34 @@ public class Employee_Search extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-               // DBHandler dbHandler = new DBHandler(getApplicationContext());
+                DBHandler dbHandler = new DBHandler(getApplicationContext());
+                String name = spinner.getSelectedItem().toString();
 
 
+                List user = dbHandler.readEmployeeDetails(name);
 
-                /*dbHandler.readEmployeeDetails();
-                Toast.makeText(Employee_Search.this, "Search success.", Toast.LENGTH_SHORT).show();*/
+                 //String ID = (user.get(0).toString());
+                 String userName=(user.get(0).toString());
+                 String basicSalary=(user.get(1).toString());
+                 String travellingAllowance=(user.get(2).toString());
+                 String overTime=(user.get(3).toString());
+                 String salaryAdvance=(user.get(4).toString());
+                 String netSalary=(user.get(5).toString());
+
+
+                // test.setText(userName);
+
+
+                Intent i = new Intent(Employee_Search.this,Employee_SalaryUpdate.class);
+                //i.putExtra("ID", ID);
+                i.putExtra("UserName", userName);
+                i.putExtra("BasicSalary", basicSalary);
+                i.putExtra("TravellingAllowance", travellingAllowance);
+                i.putExtra("OverTime", overTime);
+                i.putExtra("SalaryAdvance", salaryAdvance);
+                i.putExtra("NetSalary", netSalary);
+
+                startActivity(i);
 
 
 

@@ -238,7 +238,6 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public List readEmployeeDetails(String userName){
 
-
         SQLiteDatabase db = getReadableDatabase();
 
         String[] projection = {
@@ -364,6 +363,35 @@ public class DBHandler extends SQLiteOpenHelper {
                 selectionArgs
         );
 
+        if (count >= 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public boolean updateEmpSalary(String userName, String BasicSalary, String TravellingAllowance, String OverTime, String SalaryAdvance, String NetSalary){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        ContentValues values = new ContentValues();
+        values.put(ProjectTables.Employee.COLUMN_BASICSALARY,BasicSalary);
+        values.put(ProjectTables.Employee.COLUMN_ALLOWANCE,TravellingAllowance);
+        values.put(ProjectTables.Employee.COLUMN_OT,OverTime);
+        values.put(ProjectTables.Employee.COLUMN_SALARYADVANCE,SalaryAdvance);
+        values.put(ProjectTables.Employee.COLUMN_NETSALARY,NetSalary);
+
+
+        String selection = ProjectTables.Employee.COLUMN_NAME+ " LIKE ?";
+        String[] selectionArgs = { userName };
+
+        int count = db.update(
+                ProjectTables.Employee.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
         if (count >= 1){
             return true;
         }

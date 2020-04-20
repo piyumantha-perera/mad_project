@@ -129,5 +129,6 @@
     <string name="edit_user">customer username :</string>
     <string name="creationHead">Update Creation Details</string>
     <string name="enterID">Select the Creation ID</string>
+    <string name="Update_Salary">SALARY UPDATE</string>
 
 </resources>
