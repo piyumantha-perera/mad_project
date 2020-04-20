@@ -17,7 +17,6 @@
         <activity android:name=".view_employee" />
         <activity android:name=".add_employee" />
         <activity android:name=".Employee_SalaryEdit" />
-        <activity android:name=".Customer_Details.CreationUpdate" />
         <activity android:name=".Customer_Details.Profile_Edit" />
         <activity android:name=".Customer_Details.Thought" />
         <activity android:name=".Employee_Details.Employee_Search" />
