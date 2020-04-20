@@ -65,7 +65,7 @@ public class Profile_Edit extends AppCompatActivity {
                 Boolean update = dbHandler.updateUserInfo(userName,contactno, userEmail, usrAddr, usrPass, usrCnfPass);
 
                 if (update){
-                    Toast.makeText(Profile_Edit.this, "Creation Details updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Profile_Edit.this, "User Details updated", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Profile_Edit.this,Customer_Profile.class);
                     intent.putExtra("Name",userName);
                     intent.putExtra("Email",userEmail);

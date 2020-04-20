@@ -76,7 +76,7 @@
     <string name="image">banner.png</string>
     <string name="bannerdescription">Description :</string>
     <string name="bannerheading">Banner Details</string>
-    <string name="bnDes">How we design Banner?</string>
+    <string name="bnDes">How we design Your Creation?</string>
     <string name="toolbar">RUSH ADVERTISING</string>
     <string name="bannerDate">Date Of Need :</string>
     <string name="oneBanner">Price Of One Banner</string>
@@ -130,5 +130,8 @@
     <string name="creationHead">Update Creation Details</string>
     <string name="enterID">Select the Creation ID</string>
     <string name="Update_Salary">SALARY UPDATE</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

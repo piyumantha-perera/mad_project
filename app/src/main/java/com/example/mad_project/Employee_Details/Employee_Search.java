@@ -40,7 +40,6 @@ public class Employee_Search extends AppCompatActivity {
         //test = findViewById(R.id.textView67);
 
 
-
        List<String> names = new ArrayList<>();
         names.add(0, "Choose The Employee Names");
 

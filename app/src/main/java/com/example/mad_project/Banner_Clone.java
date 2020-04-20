@@ -40,7 +40,6 @@ public class Banner_Clone extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-
         full = findViewById(R.id.textViewBannerTotal);
         delDate = findViewById(R.id.editTextCreDelDate);
         add = findViewById(R.id.buttonCreationAdd);

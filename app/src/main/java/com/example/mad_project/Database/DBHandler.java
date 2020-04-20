@@ -400,5 +400,37 @@ public class DBHandler extends SQLiteOpenHelper {
         }
     }
 
+    public boolean updateCreationInfo(String id, String userName, String creationName, String length, String width, String imagesURL, String description, String qty, String total, String type, String dDate){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(ProjectTables.Creations.COLUMN_USERNAME, userName);
+        values.put(ProjectTables.Creations.COLUMN_CREATION, creationName);
+        values.put(ProjectTables.Creations.COLUMN_LENGTH, length);
+        values.put(ProjectTables.Creations.COLUMN_WIDTH, width);
+        values.put(ProjectTables.Creations.COLUMN_URL, imagesURL);
+        values.put(ProjectTables.Creations.COLUMN_DESCRIPTION, description);
+        values.put(ProjectTables.Creations.COLUMN_QUANTITY, qty);
+        values.put(ProjectTables.Creations.COLUMN_AMOUNT, total);
+        values.put(ProjectTables.Creations.COLUMN_TYPE, type);
+        values.put(ProjectTables.Creations.COLUMN_DATE, dDate);
+
+        String selection = ProjectTables.Creations._ID + " LIKE ?";
+        String[] selectionArgs = { id };
+
+        int count = db.update(
+                ProjectTables.Creations.TABLE_CREATION,
+                values,
+                selection,
+                selectionArgs
+        );
+
+        if (count >= 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 }

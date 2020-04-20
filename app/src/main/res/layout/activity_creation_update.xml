@@ -47,6 +47,7 @@
         android:layout_height="28dp"
         android:layout_marginEnd="52dp"
         android:background="#fff"
+        android:onClick="search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -65,5 +66,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView56"
         app:layout_constraintVertical_bias="0.034" />
+
+    <fragment
+        android:id="@+id/fgmntDefault"
+        android:name="com.example.mad_project.FragmentDefault"
+        android:layout_width="match_parent"
+        android:layout_height="473dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.708" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

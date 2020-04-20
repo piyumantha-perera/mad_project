@@ -29,19 +29,19 @@
         app:layout_constraintVertical_bias="0.103" />
 
     <TextView
-        android:id="@+id/textView56"
-        android:layout_width="92dp"
-        android:layout_height="30dp"
-        android:text="@string/Bannerqty"
-        android:textColor="#008ecc"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView54"
-        app:layout_constraintVertical_bias="0.058" />
+    android:id="@+id/textView56"
+    android:layout_width="92dp"
+    android:layout_height="30dp"
+    android:text="@string/Bannerqty"
+    android:textColor="#008ecc"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.068"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView54"
+    app:layout_constraintVertical_bias="0.058" />
 
     <EditText
         android:id="@+id/editTextLeafletQty"
@@ -110,7 +110,7 @@
 
     <TextView
         android:id="@+id/textView50"
-        android:layout_width="211dp"
+        android:layout_width="253dp"
         android:layout_height="34dp"
         android:text="@string/bnDes"
         android:textColor="#008ecc"
