@@ -17,7 +17,7 @@
         <activity android:name=".add_employee" />
         <activity android:name=".Employee_SalaryEdit" />
         <activity android:name=".Customer_Details.CreationUpdate"></activity>
-        <activity android:name=".Profile_Edit" />
+        <activity android:name=".Customer_Details.Profile_Edit" />
         <activity android:name=".Customer_Details.Thought" />
         <activity android:name=".Employee_Details.Employee_Search" />
         <activity android:name=".Customer_Details.LightBoard_Clone" />
@@ -39,10 +39,10 @@
         <activity android:name=".Employee_Login" />
         <activity android:name=".Admin_Choose" />
         <activity android:name=".Admin_Login" />
-        <activity android:name=".Check" />
+        <activity android:name=".Home.Check" />
         <activity android:name=".Customer_Details.Register" />
         <activity android:name=".Customer_Details.Customer_Login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

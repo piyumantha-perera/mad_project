@@ -1,4 +1,4 @@
-package com.example.mad_project;
+package com.example.mad_project.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.example.mad_project.R;
 
 public class MainActivity extends AppCompatActivity {
 

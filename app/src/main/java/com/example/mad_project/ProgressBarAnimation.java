@@ -7,6 +7,7 @@ import android.view.animation.Transformation;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.mad_project.Home.Check;
 
 
 public class ProgressBarAnimation extends Animation {

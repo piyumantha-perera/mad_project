@@ -1,4 +1,4 @@
-package com.example.mad_project;
+package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.mad_project.Customer_Details.Customer_Profile;
 import com.example.mad_project.Database.DBHandler;
+import com.example.mad_project.R;
 
 public class Profile_Edit extends AppCompatActivity {
 

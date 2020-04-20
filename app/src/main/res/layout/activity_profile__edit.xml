@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile_Edit">
+    tools:context=".Customer_Details.Profile_Edit">
 
     <include
         android:id="@+id/include2"

@@ -9,9 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.mad_project.Check;
+import com.example.mad_project.Home.Check;
 import com.example.mad_project.Database.DBHandler;
-import com.example.mad_project.Profile_Edit;
 import com.example.mad_project.R;
 
 public class Customer_Profile extends AppCompatActivity {
