@@ -39,10 +39,10 @@
         <activity android:name=".Employee_Login" />
         <activity android:name=".Admin_Choose" />
         <activity android:name=".Admin_Login" />
-        <activity android:name=".Home.Check" />
+        <activity android:name=".Check" />
         <activity android:name=".Customer_Details.Register" />
         <activity android:name=".Customer_Details.Customer_Login" />
-        <activity android:name=".Home.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

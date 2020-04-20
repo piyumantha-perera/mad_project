@@ -11,7 +11,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.mad_project.Home.Check;
+import com.example.mad_project.Check;
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.R;
 

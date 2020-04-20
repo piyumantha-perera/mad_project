@@ -1,4 +1,4 @@
-package com.example.mad_project.Home;
+package com.example.mad_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,10 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.mad_project.Admin_Login;
 import com.example.mad_project.Customer_Details.Customer_Login;
-import com.example.mad_project.Employee_Login;
-import com.example.mad_project.R;
 
 public class Check extends AppCompatActivity {
 
