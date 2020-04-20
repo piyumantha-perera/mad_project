@@ -92,7 +92,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_CREATIONS);
         db.execSQL(CREATE_TABLE_THOUGHT);
         db.execSQL(CREATE_TABLE_EMPLOYEEADD);
-        db.execSQL(CREATE_TABLE_THOUGHT);
+       // db.execSQL(CREATE_TABLE_THOUGHT);
     }
 
     @Override

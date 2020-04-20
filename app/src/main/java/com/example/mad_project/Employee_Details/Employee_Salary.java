@@ -149,7 +149,7 @@ public class Employee_Salary extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(Employee_Salary.this, Employee_Search.class);
+                Intent intent = new Intent(Employee_Salary.this, Employee_Search.class);
                 startActivity(intent);
             }
         });

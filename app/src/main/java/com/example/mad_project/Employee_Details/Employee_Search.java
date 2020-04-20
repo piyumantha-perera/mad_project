@@ -42,7 +42,7 @@ public class Employee_Search extends AppCompatActivity {
 
 
 
-        List<String> names = new ArrayList<>();
+       List<String> names = new ArrayList<>();
         names.add(0, "Choose The Employee Names");
 
         Cursor cursor = dbHandler.readEmpspinNme();
