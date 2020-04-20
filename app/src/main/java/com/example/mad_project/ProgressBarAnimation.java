@@ -1,4 +1,4 @@
-package com.example.mad_project.Home;
+package com.example.mad_project;
 
 import android.content.Context;
 import android.content.Intent;
