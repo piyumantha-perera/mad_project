@@ -1,6 +1,8 @@
 package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +15,8 @@ import android.widget.Toast;
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.R;
 
+import static com.example.mad_project.Notification.CHANNEL_ID;
+
 public class CreationUpdate_LeafClone extends AppCompatActivity {
 
     EditText dDate;
@@ -20,10 +24,14 @@ public class CreationUpdate_LeafClone extends AppCompatActivity {
 
     DBHandler dbHandler;
 
+    private NotificationManagerCompat notificationManagerCompat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creation_update__leaf_clone);
+
+        notificationManagerCompat = NotificationManagerCompat.from(this);
 
         dbHandler = new DBHandler(getApplicationContext());
 
@@ -64,6 +72,18 @@ public class CreationUpdate_LeafClone extends AppCompatActivity {
                 boolean res = dbHandler.updateCreationInfo(creation_id, userName, creationName,len, wid, url, des, qty, price, getType, deliveryDate);
                 if (res){
                     Toast.makeText(CreationUpdate_LeafClone.this, "Creation Details updated", Toast.LENGTH_SHORT).show();
+
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(CreationUpdate_LeafClone.this, CHANNEL_ID)
+                            .setSmallIcon(R.drawable.ic_announcement_black_24dp)
+                            .setContentTitle("RUSH Advertising Notification")
+                            .setContentText("Your creations' total amount is " + price)
+                            .setPriority(NotificationCompat.PRIORITY_HIGH)
+                            .setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+                    notificationManagerCompat.notify(1, builder.build());
+                }
+                else {
+                    Toast.makeText(CreationUpdate_LeafClone.this, "Creation not added", Toast.LENGTH_SHORT).show();
                 }
 
 

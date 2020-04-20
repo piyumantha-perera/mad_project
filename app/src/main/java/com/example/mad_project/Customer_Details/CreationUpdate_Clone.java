@@ -1,6 +1,8 @@
 package com.example.mad_project.Customer_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +19,8 @@ import com.example.mad_project.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.mad_project.Notification.CHANNEL_ID;
+
 public class CreationUpdate_Clone extends AppCompatActivity {
 
     TextView full;
@@ -26,10 +30,14 @@ public class CreationUpdate_Clone extends AppCompatActivity {
 
     DBHandler dbHandler;
 
+    private NotificationManagerCompat notificationManagerCompat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creation_update__clone);
+
+        notificationManagerCompat = NotificationManagerCompat.from(this);
 
         dbHandler = new DBHandler(getApplicationContext());
 
@@ -73,6 +81,18 @@ public class CreationUpdate_Clone extends AppCompatActivity {
                 boolean res = dbHandler.updateCreationInfo(cretion_id, user_name, cretion_name, length, width, imageUrl, description, quantity, amount, get, deliveryDate);
                 if (res){
                     Toast.makeText(CreationUpdate_Clone.this, "Creation Update Successfull", Toast.LENGTH_SHORT).show();
+
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(CreationUpdate_Clone.this, CHANNEL_ID)
+                            .setSmallIcon(R.drawable.ic_announcement_black_24dp)
+                            .setContentTitle("RUSH Advertising Notification")
+                            .setContentText("Your creations' total amount is " + amount)
+                            .setPriority(NotificationCompat.PRIORITY_HIGH)
+                            .setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+                    notificationManagerCompat.notify(1, builder.build());
+                }
+                else {
+                    Toast.makeText(CreationUpdate_Clone.this, "Creation not added", Toast.LENGTH_SHORT).show();
                 }
             }
         });
