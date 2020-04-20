@@ -2,9 +2,7 @@ package com.example.mad_project.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void progressAnimation (){
-        com.example.mad_project.ProgressBarAnimation amin = new com.example.mad_project.ProgressBarAnimation(this, progressBar , textView , 0f,  100f);
+        ProgressBarAnimation amin = new ProgressBarAnimation(this, progressBar , textView , 0f,  100f);
         amin.setDuration(6000);
         progressBar.setAnimation(amin);
     }
