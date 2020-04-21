@@ -29,11 +29,13 @@ public class Salary_View extends AppCompatActivity {
 
         db=new DBHandler(getApplicationContext());
 
+        ListViewAdapter adapter;
+
         Bundle bn = getIntent().getExtras();
         final String userName = bn.getString("Name");
 
 
-        List<String> salaryList = new ArrayList<>();
+        List<Salary> salaryList = new ArrayList<>();
 
         Cursor cursor = db.readEmployeeSalary();
         while (cursor.moveToNext()){
@@ -44,17 +46,14 @@ public class Salary_View extends AppCompatActivity {
                 String ot = cursor.getString(4);
                 String add = cursor.getString(5);
                 String net = cursor.getString(6);
-                salaryList.add("BasicSalary:" + basic);
-                salaryList.add("Allowance:" + all);
-                salaryList.add("OT: "+ ot);
-                salaryList.add("Advance Salary:" + add);
-                salaryList.add("Net salary:" + net);
+                salaryList.add(new Salary(name,basic,all,ot,add,net));
+
             }
 
         }
 
 
-        adapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,salaryList);
+        adapter = new ListViewAdapter(getApplicationContext(), salaryList);
         listView.setAdapter(adapter);
 
     }

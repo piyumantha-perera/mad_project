@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:background="#ffffff">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/basSal"
+        android:text="bas"
+        android:textSize="20dp"
+        android:textColor="#f92a3f"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/travAll"
+        android:text="tra"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ot"
+        android:text="over"
+        android:textSize="20dp"
+        android:textColor="#8B4513"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/salAdv"
+        android:text="adva"
+        android:textSize="20dp"
+        android:textColor="#7CFC00"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/netSal"
+        android:text="net"
+        android:textSize="20dp"
+        android:textColor="#FF4500"/>
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
