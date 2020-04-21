@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Employee_Details.Salary_View"></activity>
+        <activity android:name=".Customer_Details.Delete_Creation"></activity>
+        <activity android:name=".Employee_Details.Salary_View" />
         <activity android:name=".Customer_Details.CreationUpdate_LeafClone" />
         <activity android:name=".Customer_Details.CreationUpdate_Clone" />
         <activity android:name=".Customer_Details.CreationUpdate" />
