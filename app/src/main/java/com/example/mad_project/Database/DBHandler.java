@@ -470,17 +470,11 @@ public class DBHandler extends SQLiteOpenHelper {
         while(cursor.moveToNext()) {
             String user = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NAME));
             String BASICSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_BASICSALARY));
-            String ALLOWANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_ALLOWANCE));
-            String OT = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_OT));
-            String SALARYADVANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_SALARYADVANCE));
             String NETSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NETSALARY));
 
-            employeeInfo.add(user);
-            employeeInfo.add(BASICSALARY);
-            employeeInfo.add(ALLOWANCE);
-            employeeInfo.add(OT);
-            employeeInfo.add(SALARYADVANCE);
-            employeeInfo.add(NETSALARY);
+            employeeInfo.add(user);//0
+            employeeInfo.add(BASICSALARY);//1
+            employeeInfo.add(NETSALARY);//2
         }
         cursor.close();
         return employeeInfo;

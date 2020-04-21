@@ -32,6 +32,9 @@ public class Salary_View extends AppCompatActivity {
         db=new DBHandler(getApplicationContext());
 
         salaryList = db.readSalaryDetails();
+        salaryList.add(0);
+        salaryList.add(1);
+        salaryList.add(2);
 
         adapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,salaryList);
         listView.setAdapter(adapter);
