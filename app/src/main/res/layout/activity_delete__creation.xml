@@ -92,6 +92,7 @@
         android:id="@+id/textView65"
         android:layout_width="8dp"
         android:layout_height="15dp"
+        android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.543"
