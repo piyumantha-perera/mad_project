@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.mad_project.Employee_Details.Employee_SalaryUpdate;
+import com.example.mad_project.Employee_Details.Salary_View;
 
 public class Employee_Choose extends AppCompatActivity {
 
@@ -24,7 +25,7 @@ public class Employee_Choose extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(Employee_Choose.this, Employee_SalaryUpdate.class);
+                Intent intent=new Intent(Employee_Choose.this, Salary_View.class);
                 startActivity(intent);
 
             }

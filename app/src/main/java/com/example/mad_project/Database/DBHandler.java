@@ -433,56 +433,57 @@ public class DBHandler extends SQLiteOpenHelper {
         }
     }
 
-//    public ArrayList readSalaryDetails(){
-//
-//        SQLiteDatabase db = getReadableDatabase();
-//
-//        String[] projection = {
-//                BaseColumns._ID,
-//                ProjectTables.Employee.COLUMN_NAME,
-//                ProjectTables.Employee.COLUMN_BASICSALARY,
-//                ProjectTables.Employee.COLUMN_ALLOWANCE,
-//                ProjectTables.Employee.COLUMN_OT,
-//                ProjectTables.Employee.COLUMN_SALARYADVANCE,
-//                ProjectTables.Employee.COLUMN_NETSALARY,
-//
-//        };
-//
-//        // Filter results WHERE "title" = 'My Title'
-//        String selection = ProjectTables.Employee.COLUMN_NAME + " LIKE ?";
-//        String[] selectionArgs = { userName };
-//
-//        // How you want the results sorted in the resulting Cursor
-//        String sortOrder = ProjectTables.Employee.COLUMN_NAME + " ASC";
-//
-//        Cursor cursor = db.query(
-//                ProjectTables.Employee.TABLE_NAME,   // The table to query
-//                projection,             // The array of columns to return (pass null to get all)
-//                selection,              // The columns for the WHERE clause
-//                selectionArgs,          // The values for the WHERE clause
-//                null,                   // don't group the rows
-//                null,                   // don't filter by row groups
-//                sortOrder               // The sort order
-//        );
-//
-//        ArrayList employeeInfo = new ArrayList<>();
-//        while(cursor.moveToNext()) {
-//            String user = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NAME));
-//            String BASICSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_BASICSALARY));
-//            String ALLOWANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_ALLOWANCE));
-//            String OT = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_OT));
-//            String SALARYADVANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_SALARYADVANCE));
-//            String NETSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NETSALARY));
-//
-//            employeeInfo.add(user);
-//            employeeInfo.add(BASICSALARY);
-//            employeeInfo.add(ALLOWANCE);
-//            employeeInfo.add(OT);
-//            employeeInfo.add(SALARYADVANCE);
-//            employeeInfo.add(NETSALARY);
-//        }
-//        cursor.close();
-//        return employeeInfo;
-//    }
+    public ArrayList readSalaryDetails(){
+        String userName="rpp";
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] projection = {
+                BaseColumns._ID,
+                ProjectTables.Employee.COLUMN_NAME,
+                ProjectTables.Employee.COLUMN_BASICSALARY,
+                ProjectTables.Employee.COLUMN_ALLOWANCE,
+                ProjectTables.Employee.COLUMN_OT,
+                ProjectTables.Employee.COLUMN_SALARYADVANCE,
+                ProjectTables.Employee.COLUMN_NETSALARY,
+
+        };
+
+        // Filter results WHERE "title" = 'My Title'
+        String selection = ProjectTables.Employee.COLUMN_NAME + " LIKE ?";
+        String[] selectionArgs = { userName };
+
+        // How you want the results sorted in the resulting Cursor
+        String sortOrder = ProjectTables.Employee.COLUMN_NAME + " ASC";
+
+        Cursor cursor = db.query(
+                ProjectTables.Employee.TABLE_NAME,   // The table to query
+                projection,             // The array of columns to return (pass null to get all)
+                selection,              // The columns for the WHERE clause
+                selectionArgs,          // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder               // The sort order
+        );
+
+        ArrayList employeeInfo = new ArrayList<>();
+        while(cursor.moveToNext()) {
+            String user = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NAME));
+            String BASICSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_BASICSALARY));
+            String ALLOWANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_ALLOWANCE));
+            String OT = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_OT));
+            String SALARYADVANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_SALARYADVANCE));
+            String NETSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NETSALARY));
+
+            employeeInfo.add(user);
+            employeeInfo.add(BASICSALARY);
+            employeeInfo.add(ALLOWANCE);
+            employeeInfo.add(OT);
+            employeeInfo.add(SALARYADVANCE);
+            employeeInfo.add(NETSALARY);
+        }
+        cursor.close();
+        return employeeInfo;
+    }
 
 }
