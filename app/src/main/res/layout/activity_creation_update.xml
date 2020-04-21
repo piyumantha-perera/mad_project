@@ -43,10 +43,10 @@
 
     <ImageButton
         android:id="@+id/imageButtonSearch"
-        android:layout_width="40dp"
-        android:layout_height="28dp"
+        android:layout_width="32dp"
+        android:layout_height="27dp"
         android:layout_marginEnd="52dp"
-        android:background="#fff"
+        android:background="@drawable/search"
         android:onClick="search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
