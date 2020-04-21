@@ -486,4 +486,22 @@ public class DBHandler extends SQLiteOpenHelper {
         return data;
     }
 
+    public boolean deleteCreationInfo(String creationID){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String selection = ProjectTables.Creations._ID + " LIKE ?";
+        String[] selectionArgs = { creationID };
+
+        int deleteRow = db.delete(ProjectTables.Creations.TABLE_CREATION, selection, selectionArgs);
+
+        if (deleteRow >= 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
 }
