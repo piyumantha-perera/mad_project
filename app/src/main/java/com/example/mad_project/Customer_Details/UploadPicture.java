@@ -86,4 +86,19 @@ public class UploadPicture extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+    public void storeImage(View view){
+        try {
+            if (!username.isEmpty() && viewPhoto.getDrawable() != null && imageToStore != null){
+                dbHandler.storeImage(new Profile(username,imageToStore));
+            }
+            else{
+                Toast.makeText(this, "Please select image name and image", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+        catch (Exception e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
 }

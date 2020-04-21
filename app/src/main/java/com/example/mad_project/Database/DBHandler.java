@@ -5,19 +5,27 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
 import android.provider.BaseColumns;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.example.mad_project.Customer_Details.Profile;
+
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DBHandler extends SQLiteOpenHelper {
 
+    Context context;
+
     public static final String DATABASE_NAME = "Test.db" ;
 
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, 1);
+        this.context = context;
     }
 
     private static final String CREATE_TABLE_USERS = "CREATE TABLE " + ProjectTables.Users.TABLE_USERS + " (" +
@@ -84,6 +92,17 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String SQL_DELETE_THOUGHT = "DROP TABLE IF EXISTS " + ProjectTables.Thoughts.TABLE_Thought;
 
 
+
+
+    private static String CREATE_TABLE_PROFILE = "create table imageInfo (id INTEGER PRIMARY KEY"+", imageName TEXT"+
+            ", image BLOB)";
+    private static final String SQL_DELETE_PROFILE = "DROP TABLE IF EXISTS imageInfo";
+
+
+    private ByteArrayOutputStream objectByteArrayOutputStream;
+    private byte[] imageInBytes;
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -92,6 +111,8 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_CREATIONS);
         db.execSQL(CREATE_TABLE_THOUGHT);
         db.execSQL(CREATE_TABLE_EMPLOYEEADD);
+
+        db.execSQL(CREATE_TABLE_PROFILE);
 
     }
 
@@ -113,7 +134,8 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_EMPLOYEEADD);
         onCreate(db);
 
-
+        db.execSQL(SQL_DELETE_PROFILE);
+        onCreate(db);
     }
 
     public long addUserDetails(String userName, String contactNo, String email, String address, String password, String cnfPassword){
@@ -483,5 +505,35 @@ public class DBHandler extends SQLiteOpenHelper {
         }
 
     }
+
+    public void storeImage(Profile profile){
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            Bitmap imageToStoreBitmap = profile.getImage();
+
+            objectByteArrayOutputStream = new ByteArrayOutputStream();
+            imageToStoreBitmap.compress(Bitmap.CompressFormat.JPEG,100,objectByteArrayOutputStream);
+
+            imageInBytes = objectByteArrayOutputStream.toByteArray();
+            ContentValues objectContentValues = new ContentValues();
+
+            objectContentValues.put("imageName",profile.getImageName());
+            objectContentValues.put("image",imageInBytes);
+
+            long checkIfQueryRuns = db.insert("imageInfo",null,objectContentValues);
+            if (checkIfQueryRuns != 0){
+                Toast.makeText(context, "Image add successfull.", Toast.LENGTH_SHORT).show();
+                db.close();
+            }
+            else {
+                Toast.makeText(context, "Image not Added.", Toast.LENGTH_SHORT).show();
+            }
+        }
+        catch (Exception e){
+            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
 
 }

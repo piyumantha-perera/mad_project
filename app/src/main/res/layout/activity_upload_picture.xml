@@ -42,6 +42,7 @@
         android:layout_width="289dp"
         android:layout_height="82dp"
         android:background="@drawable/btn_office"
+        android:onClick="storeImage"
         android:text="@string/Profile_picture_Upload"
         android:textAllCaps="true"
         android:textColor="#000"
