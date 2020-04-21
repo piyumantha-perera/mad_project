@@ -33,7 +33,6 @@
         <activity android:name=".Customer_Details.Banner_Clone" />
         <activity android:name=".Customer_Details.Customer_Profile" />
         <activity android:name=".Customer_Details.Banner" />
-        <activity android:name=".DaytoDayWork" />
         <activity android:name=".OfficeEMP" />
         <activity android:name=".OutsideEMP" />
         <activity android:name=".Customer_Details.Customer_Choose" />
