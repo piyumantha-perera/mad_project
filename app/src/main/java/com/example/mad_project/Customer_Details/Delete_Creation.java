@@ -21,7 +21,7 @@ public class Delete_Creation extends AppCompatActivity {
     public static final String TAG = "CreationDeleteActivity";
 
     TextView test;
-    Button delete, cancel;
+    Button delete;
 
 
     @Override
@@ -31,59 +31,6 @@ public class Delete_Creation extends AppCompatActivity {
 
         test = findViewById(R.id.textView65);
         delete = findViewById(R.id.buttonCreationDelete);
-        cancel = findViewById(R.id.buttonDeleteCancel);
-
-
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String username = test.getText().toString();
-                DBHandler dbHandler = new DBHandler(getApplicationContext());
-
-                Cursor res = dbHandler.readCreationDetails();
-                String id = test.getText().toString();
-                String user = "";
-                String email = "";
-                String contact = "";
-                String addr = "";
-                String password = "";
-                String cnf_pass = "";
-
-                while (res.moveToNext()){
-                    String crId = res.getString(0);
-                    if(crId.equals(id)){
-                        user = res.getString(1);
-                    }
-                }
-
-                Cursor check = dbHandler.readUserDetails();
-
-                String name = "";
-                while (check.moveToNext()) {
-                    name = check.getString(1);
-
-                    if (name.equals(user)){
-                        contact = check.getString(2);
-                        email = check.getString(3);
-                        addr = check.getString(4);
-                        password = check.getString(5);
-                        cnf_pass = check.getString(6);
-                    }
-
-                }
-
-
-                Intent intent = new Intent(Delete_Creation.this,Customer_Profile.class);
-                intent.putExtra("Name",name);
-                intent.putExtra("Email",email);
-                intent.putExtra("ContactNo",contact);
-                intent.putExtra("Address",addr);
-                intent.putExtra("Password",password);
-                intent.putExtra("CnfPassword",cnf_pass);
-                startActivity(intent);
-
-            }
-        });
 
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
