@@ -17,7 +17,7 @@
         android:layout_height="49dp"
         android:text="@string/salary_heading"
         android:textAlignment="center"
-        android:textColor="#03A9F4"
+        android:textColor="#534E48"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -183,32 +183,39 @@
 
 
 
+
+
     ]]>
 
     <Button
         android:id="@+id/btnAddSalary"
-        android:layout_width="102dp"
-        android:layout_height="52dp"
+        android:layout_width="118dp"
+        android:layout_height="35dp"
         android:background="@drawable/btn_add"
         android:text="@string/Sal_add"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView32"
-        app:layout_constraintVertical_bias="0.247" />
+        app:layout_constraintVertical_bias="0.475" />
 
     <Button
         android:id="@+id/buttonSalViewDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="141dp"
+        android:layout_height="37dp"
+        android:background="@drawable/btn_emp_salary"
         android:text="@string/view_details"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddSalary" />
+        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintStart_toEndOf="@+id/btnAddSalary"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmpSalDetNet"
+        app:layout_constraintVertical_bias="0.443" />
 
     <EditText
         android:id="@+id/editTextEmpSalDetNet"

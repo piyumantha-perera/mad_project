@@ -4,19 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d1d1d1"
     tools:context=".Employee_Details.Salary_View">
 
-    <ListView
-        android:id="@+id/salaryList"
-        android:layout_width="405dp"
-        android:layout_height="283dp"
-        android:background="#FFEB3B"
+    <LinearLayout
+        android:layout_width="421dp"
+        android:layout_height="730dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintTop_toTopOf="parent">
 
-
+        <ListView
+            android:id="@+id/salaryList"
+            android:layout_width="match_parent"
+            android:layout_height="469dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:divider="#d1d1d1"
+            android:dividerHeight="10dp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

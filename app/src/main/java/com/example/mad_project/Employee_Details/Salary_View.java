@@ -44,11 +44,11 @@ public class Salary_View extends AppCompatActivity {
                 String ot = cursor.getString(4);
                 String add = cursor.getString(5);
                 String net = cursor.getString(6);
-                salaryList.add("Basic"+basic);
-                salaryList.add("Allowance"+all);
-                salaryList.add("OT "+ot);
-                salaryList.add("Advance"+add);
-                salaryList.add("Net salary"+net);
+                salaryList.add("BasicSalary:" + basic);
+                salaryList.add("Allowance:" + all);
+                salaryList.add("OT: "+ ot);
+                salaryList.add("Advance Salary:" + add);
+                salaryList.add("Net salary:" + net);
             }
 
         }
