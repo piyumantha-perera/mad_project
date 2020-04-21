@@ -1,7 +1,9 @@
 package com.example.mad_project.Employee_Details;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mad_project.Customer_Details.Delete_Creation;
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.R;
 
@@ -97,16 +100,42 @@ public class Employee_Search extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                DBHandler dbHandler = new DBHandler(getApplicationContext());
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Employee_Search.this);
+                alertDialogBuilder.setTitle("Delete Salary!");
+                alertDialogBuilder.setMessage("Are you Sure, You want to Delete?");
+                alertDialogBuilder.setCancelable(false);
+
+                alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    DBHandler dbHandler = new DBHandler(getApplicationContext());
 
                 String name = spinner.getSelectedItem().toString();
 
-                dbHandler.deleteEmployeeInfo(name);
-                Toast.makeText(Employee_Search.this, " Deleted success .", Toast.LENGTH_SHORT).show();
+                Boolean delete = dbHandler.deleteEmployeeInfo(name);
+
+                        if (delete){
+                            Toast.makeText(Employee_Search.this, "Salary Deleted", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(Employee_Search.this, "Salary not Deleted", Toast.LENGTH_SHORT).show();
+                        }
+
 
             }
         });
+                alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getApplicationContext(),"Delete Cancelled",Toast.LENGTH_SHORT).show();
+                    }
+                });
 
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        });
 
 
     }

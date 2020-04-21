@@ -311,7 +311,7 @@ public class DBHandler extends SQLiteOpenHelper {
         return employeeInfo;
     }
 
-    public int deleteEmployeeInfo(String userName){
+    public boolean deleteEmployeeInfo(String userName){
         SQLiteDatabase db = getWritableDatabase();
 
         // Define 'where' part of query.
@@ -319,8 +319,14 @@ public class DBHandler extends SQLiteOpenHelper {
        // Specify arguments in placeholder order.
          String[] selectionArgs = { userName };
         // Issue SQL statement.
-        int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
-        return  deletedRows;
+         int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
+
+        if (deletedRows >= 1){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
   //addemployee
     public long addEmployeeAddDetails(String employeefname, String employeelname, String email, String address, String contactNo, String nic, String empType){
