@@ -38,6 +38,7 @@ public class Customer_Profile extends AppCompatActivity {
     Integer cnt = 0;
 
     ImageView drop;
+    ImageView moveProfilePick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,8 @@ public class Customer_Profile extends AppCompatActivity {
         creation = findViewById(R.id.buttonProfileCreation);
         edit = findViewById(R.id.buttonProEdit);
         update = findViewById(R.id.buttonUpdate);
+
+        moveProfilePick = findViewById(R.id.imageViewUploadProfle);
 
         dbHandler = new DBHandler(getApplicationContext());
 
@@ -103,6 +106,25 @@ public class Customer_Profile extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+        moveProfilePick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userName = user.getText().toString();
+                String email = usrEmail.getText().toString();
+                String contact = usrContact.getText().toString();
+                String addr = usrAddress.getText().toString();
+
+                Intent intent = new Intent(Customer_Profile.this,UploadPicture.class);
+                intent.putExtra("UserName", userName);
+                intent.putExtra("Email", email);
+                intent.putExtra("ContactNo", contact);
+                intent.putExtra("Address", addr);
+                intent.putExtra("Password",password);
+                intent.putExtra("CnfPassword",cnf_pass);
+                startActivity(intent);
             }
         });
 

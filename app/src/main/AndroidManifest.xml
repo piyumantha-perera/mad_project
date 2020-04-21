@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mad_project">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".Notification"
@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Customer_Details.Delete_Creation"></activity>
+        <activity android:name=".Customer_Details.UploadPicture"></activity>
+        <activity android:name=".Customer_Details.Delete_Creation" />
         <activity android:name=".Employee_Details.Salary_View" />
         <activity android:name=".Customer_Details.CreationUpdate_LeafClone" />
         <activity android:name=".Customer_Details.CreationUpdate_Clone" />
