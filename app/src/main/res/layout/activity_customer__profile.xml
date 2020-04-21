@@ -137,17 +137,44 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonProEdit"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.055" />
+
+
+    <ImageButton
+        android:id="@+id/imageButtonDropdown"
+        android:layout_width="38dp"
+        android:layout_height="24dp"
+        android:background="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toEndOf="@+id/textView40"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCusPCompany"
+        app:layout_constraintVertical_bias="0.066"
+        app:srcCompat="@drawable/ic_arrow_drop_down_circle_black_24dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="387dp"
+        android:layout_height="198dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonProfileCreation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView40">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <Button
         android:id="@+id/buttonProfileCreation"
         android:layout_width="170dp"
         android:layout_height="39dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/btn_creations"
         android:text="@string/creation"
         android:textColor="#ffffff"
@@ -161,7 +188,7 @@
         android:id="@+id/buttonUpdate"
         android:layout_width="165dp"
         android:layout_height="39dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/btn_update"
         android:text="@string/Sal_update"
         android:textColor="#000"
@@ -169,6 +196,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonProfileCreation"
+        app:layout_constraintHorizontal_bias="0.229"
         app:layout_constraintStart_toStartOf="parent" />
 
 
