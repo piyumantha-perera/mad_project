@@ -51,7 +51,7 @@ public class Employee_Login extends AppCompatActivity {
                     if(result == true){
                         Toast.makeText(Employee_Login.this, "Login Successfull.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Employee_Login.this, Employee_Choose.class);
-                        //intent.putExtra("Name",username);
+                        intent.putExtra("Name",username);
 
                         startActivity(intent);
 

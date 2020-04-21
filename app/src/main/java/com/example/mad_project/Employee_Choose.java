@@ -21,11 +21,15 @@ public class Employee_Choose extends AppCompatActivity {
 
         monthlySal=findViewById(R.id.buttonMonthlySal);
 
+        Bundle bn = getIntent().getExtras();
+        final String userName = bn.getString("Name");
+
         monthlySal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent=new Intent(Employee_Choose.this, Salary_View.class);
+                intent.putExtra("Name",userName);
                 startActivity(intent);
 
             }
