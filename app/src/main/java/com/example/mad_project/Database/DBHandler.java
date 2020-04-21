@@ -486,4 +486,10 @@ public class DBHandler extends SQLiteOpenHelper {
         return employeeInfo;
     }
 
+    public Cursor getListConents(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + ProjectTables.Creations.TABLE_CREATION , null);
+        return data;
+    }
+
 }

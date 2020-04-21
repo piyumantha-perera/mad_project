@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="#ffae42"
     android:layout_marginBottom="10dp"
-    android:layout_height="wrap_content"
+    android:layout_height="50dp"
     android:orientation="vertical">
 
 
@@ -45,8 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="11dp"
         android:layout_toRightOf="@id/userId"
         android:fontFamily="@font/armata"
         android:text="Banner"
@@ -56,12 +56,14 @@
 
     <TextView
         android:id="@+id/user_name"
-        android:layout_width="142dp"
-        android:layout_height="wrap_content"
+        android:layout_width="139dp"
+        android:layout_height="38dp"
         android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="159dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="3dp"
         android:layout_toRightOf="@id/userId"
         android:fontFamily="@font/armata"
         android:text="Canada"
@@ -71,14 +73,16 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/delete_image"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="41dp"
+        android:layout_height="37dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="3dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="5dp"
         android:layout_toEndOf="@+id/user_name"
         android:src="@mipmap/ic_launcher_round" />
 

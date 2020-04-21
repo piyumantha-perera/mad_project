@@ -14,7 +14,7 @@
     <TextView
         android:id="@+id/textView21"
         android:layout_width="196dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="@string/customer_profile_heading"
         android:textColor="#000000"
         android:textSize="30sp"
@@ -25,18 +25,18 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123" />
+        app:layout_constraintVertical_bias="0.111" />
 
     <ImageView
         android:id="@+id/imageViewProImage"
-        android:layout_width="157dp"
-        android:layout_height="158dp"
+        android:layout_width="133dp"
+        android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.059"
+        app:layout_constraintVertical_bias="0.028"
         app:srcCompat="@drawable/proimage" />
 
     <TextView
@@ -49,10 +49,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toEndOf="@+id/imageViewProImage"
         app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.019" />
 
     <TextView
         android:id="@+id/textViewCusPEmail"
@@ -64,10 +64,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCusPUsername"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.021" />
 
     <TextView
         android:id="@+id/textViewCusPContact"
@@ -79,16 +79,16 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCusPEmail"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.019" />
 
     <TextView
         android:id="@+id/textViewCusPCompany"
         android:layout_width="169dp"
         android:layout_height="44dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
         android:hint="@string/pro_address"
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -96,7 +96,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCusPContact"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.029" />
 
     <Button
         android:id="@+id/buttonProEdit"
@@ -109,23 +109,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewProImage"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.035" />
+
 
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textViewCusPContact"
-        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toEndOf="@+id/imageViewProImage"
         app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.262"
-        app:srcCompat="@drawable/ic_add_box_black_24dp"
-        android:contentDescription="TODO" />
+        app:layout_constraintVertical_bias="0.204"
+        app:srcCompat="@drawable/ic_add_box_black_24dp" />
 
     <TextView
         android:id="@+id/textView40"
@@ -137,11 +138,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonProEdit"
-        app:layout_constraintVertical_bias="0.055" />
-
+        app:layout_constraintVertical_bias="0.023" />
 
     <ImageButton
         android:id="@+id/imageButtonDropdown"
@@ -150,16 +150,16 @@
         android:background="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toEndOf="@+id/textView40"
         app:layout_constraintTop_toBottomOf="@+id/textViewCusPCompany"
-        app:layout_constraintVertical_bias="0.066"
+        app:layout_constraintVertical_bias="0.084"
         app:srcCompat="@drawable/ic_arrow_drop_down_circle_black_24dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
-        android:layout_width="387dp"
-        android:layout_height="198dp"
+        android:layout_width="408dp"
+        android:layout_height="251dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonProfileCreation"
         app:layout_constraintEnd_toEndOf="parent"
