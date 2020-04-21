@@ -174,7 +174,7 @@ public class Customer_Profile extends AppCompatActivity {
                 userCreation.add(data.getString(2));
                 creationID.add(data.getString(0));
 
-                deleteImageUrls.add("https://img.icons8.com/ios-glyphs/60/000000/delete-forever.png");
+                deleteImageUrls.add("https://img.icons8.com/ios-glyphs/30/000000/delete-forever.png");
 
                 RecycleViewAdapter adapter = new RecycleViewAdapter(userName,userId,userCreation,deleteImageUrls,creationID, this);
                 recyclerView.setAdapter(adapter);

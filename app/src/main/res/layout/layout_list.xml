@@ -73,16 +73,16 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/delete_image"
-        android:layout_width="41dp"
-        android:layout_height="37dp"
+        android:layout_width="37dp"
+        android:layout_height="33dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="26dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="9dp"
         android:layout_toEndOf="@+id/user_name"
         android:src="@mipmap/ic_launcher_round" />
 
