@@ -33,20 +33,21 @@ public class Delete_Creation extends AppCompatActivity {
         delete = findViewById(R.id.buttonCreationDelete);
         cancel = findViewById(R.id.buttonDeleteCancel);
 
+
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String username = test.getText().toString();
+                String username = test.getText().toString();
                 DBHandler dbHandler = new DBHandler(getApplicationContext());
 
                 Cursor res = dbHandler.readCreationDetails();
                 String id = test.getText().toString();
-                String user = null;
-                String email = null;
-                String contact = null;
-                String addr = null;
-                String password = null;
-                String cnf_pass = null;
+                String user = "";
+                String email = "";
+                String contact = "";
+                String addr = "";
+                String password = "";
+                String cnf_pass = "";
 
                 while (res.moveToNext()){
                     String crId = res.getString(0);
@@ -55,8 +56,25 @@ public class Delete_Creation extends AppCompatActivity {
                     }
                 }
 
+                Cursor check = dbHandler.readUserDetails();
+
+                String name = "";
+                while (check.moveToNext()) {
+                    name = check.getString(1);
+
+                    if (name.equals(user)){
+                        contact = check.getString(2);
+                        email = check.getString(3);
+                        addr = check.getString(4);
+                        password = check.getString(5);
+                        cnf_pass = check.getString(6);
+                    }
+
+                }
+
+
                 Intent intent = new Intent(Delete_Creation.this,Customer_Profile.class);
-                intent.putExtra("Name",user);
+                intent.putExtra("Name",name);
                 intent.putExtra("Email",email);
                 intent.putExtra("ContactNo",contact);
                 intent.putExtra("Address",addr);
