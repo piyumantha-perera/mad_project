@@ -22,7 +22,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ViewHolder> {
 
-    private static final String TAG = "test.sliit.recyclerview.RecyclerViewAdapter";
+    private static final String TAG = "creationViewrecycleAdapter";
     private ArrayList<String> userNames = new ArrayList<>();
     private ArrayList<String> userID = new ArrayList<>();
     private ArrayList<String> userCreations = new ArrayList<>();

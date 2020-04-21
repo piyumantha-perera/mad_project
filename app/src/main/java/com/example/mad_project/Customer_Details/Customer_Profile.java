@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class Customer_Profile extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "Customer_Profile";
 
     private ArrayList<String> userName = new ArrayList<>();
     private ArrayList<String> userId = new ArrayList<>();
@@ -39,6 +39,8 @@ public class Customer_Profile extends AppCompatActivity {
 
     ImageView drop;
     ImageView moveProfilePick;
+    ImageView getPic;
+    ImageView viewPic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,9 @@ public class Customer_Profile extends AppCompatActivity {
         update = findViewById(R.id.buttonUpdate);
 
         moveProfilePick = findViewById(R.id.imageViewUploadProfle);
+        getPic = findViewById(R.id.imageViewProImage);
+        getPic = findViewById(R.id.imageViewProImage);
+        viewPic = findViewById(R.id.imageViewProImage);
 
         dbHandler = new DBHandler(getApplicationContext());
 
@@ -125,6 +130,14 @@ public class Customer_Profile extends AppCompatActivity {
                 intent.putExtra("Password",password);
                 intent.putExtra("CnfPassword",cnf_pass);
                 startActivity(intent);
+            }
+        });
+
+        getPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String uname = user.getText().toString();
+                viewPic.setImageBitmap(dbHandler.getImage(uname));
             }
         });
 

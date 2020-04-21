@@ -11,6 +11,8 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-2dp" />
 
+    imageViewProImage
+
     <TextView
         android:id="@+id/textView21"
         android:layout_width="196dp"
@@ -27,21 +29,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.111" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewProImage"
-        android:layout_width="133dp"
-        android:layout_height="130dp"
+        android:layout_width="130dp"
+        android:layout_height="149dp"
+        android:background="@drawable/profile_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.028"
-        app:srcCompat="@drawable/proimage" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.233" />
 
     <TextView
         android:id="@+id/textViewCusPUsername"
-        android:layout_width="173dp"
+        android:layout_width="183dp"
         android:layout_height="29dp"
         android:hint="@string/profile_username"
         android:textAllCaps="false"
@@ -49,14 +51,14 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintHorizontal_bias="0.743"
         app:layout_constraintStart_toEndOf="@+id/imageViewProImage"
         app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintVertical_bias="0.031" />
 
     <TextView
         android:id="@+id/textViewCusPEmail"
-        android:layout_width="173dp"
+        android:layout_width="183dp"
         android:layout_height="29dp"
         android:hint="@string/pro_email"
         android:textAllCaps="false"
@@ -64,31 +66,31 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.894"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCusPUsername"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintVertical_bias="0.032" />
 
     <TextView
         android:id="@+id/textViewCusPContact"
-        android:layout_width="173dp"
-        android:layout_height="29dp"
+        android:layout_width="180dp"
+        android:layout_height="31dp"
         android:hint="@string/pro_contact"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCusPEmail"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <TextView
         android:id="@+id/textViewCusPCompany"
-        android:layout_width="169dp"
-        android:layout_height="44dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="184dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
         android:hint="@string/pro_address"
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -96,7 +98,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCusPContact"
-        app:layout_constraintVertical_bias="0.029" />
+        app:layout_constraintVertical_bias="0.04" />
 
     <Button
         android:id="@+id/buttonProEdit"
@@ -122,10 +124,10 @@
         android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textViewCusPContact"
-        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintHorizontal_bias="0.243"
         app:layout_constraintStart_toEndOf="@+id/imageViewProImage"
         app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.204"
+        app:layout_constraintVertical_bias="0.232"
         app:srcCompat="@drawable/ic_add_box_black_24dp" />
 
     <TextView
@@ -150,10 +152,10 @@
         android:background="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toEndOf="@+id/textView40"
         app:layout_constraintTop_toBottomOf="@+id/textViewCusPCompany"
-        app:layout_constraintVertical_bias="0.084"
+        app:layout_constraintVertical_bias="0.047"
         app:srcCompat="@drawable/ic_arrow_drop_down_circle_black_24dp" />
 
     <androidx.recyclerview.widget.RecyclerView

@@ -34,6 +34,8 @@ public class UploadPicture extends AppCompatActivity {
     String email = null;
     String contact = null;
     String address = null;
+    String password = null;
+    String cnf_pass = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +52,8 @@ public class UploadPicture extends AppCompatActivity {
         email = bn.getString("Email");
         contact = bn.getString("ContactNo");
         address = bn.getString("Address");
-        final String password = bn.getString("Password");
-        final String cnf_pass = bn.getString("CnfPassword");
+        password = bn.getString("Password");
+        cnf_pass = bn.getString("CnfPassword");
     }
     public void chooseImage(View objectView){
         try {
@@ -91,6 +93,14 @@ public class UploadPicture extends AppCompatActivity {
         try {
             if (!username.isEmpty() && viewPhoto.getDrawable() != null && imageToStore != null){
                 dbHandler.storeImage(new Profile(username,imageToStore));
+                Intent intent = new Intent(this,Customer_Profile.class);
+                intent.putExtra("Name",username);
+                intent.putExtra("Email",email);
+                intent.putExtra("ContactNo",contact);
+                intent.putExtra("Address",address);
+                intent.putExtra("Password",password);
+                intent.putExtra("CnfPassword",cnf_pass);
+                startActivity(intent);
             }
             else{
                 Toast.makeText(this, "Please select image name and image", Toast.LENGTH_SHORT).show();
