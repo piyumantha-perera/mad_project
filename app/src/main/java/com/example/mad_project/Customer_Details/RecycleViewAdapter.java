@@ -79,7 +79,6 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             }
         });
 
-
     }
 
     @Override

@@ -470,14 +470,41 @@ public class DBHandler extends SQLiteOpenHelper {
         while(cursor.moveToNext()) {
             String user = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NAME));
             String BASICSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_BASICSALARY));
+            String ALLOWANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_ALLOWANCE));
+            String OT = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_OT));
+            String SALARYADVANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_SALARYADVANCE));
             String NETSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NETSALARY));
 
-            employeeInfo.add(user);//0
-            employeeInfo.add(BASICSALARY);//1
-            employeeInfo.add(NETSALARY);//2
+            employeeInfo.add(user);
+            employeeInfo.add(BASICSALARY);
+            employeeInfo.add(ALLOWANCE);
+            employeeInfo.add(OT);
+            employeeInfo.add(SALARYADVANCE);
+            employeeInfo.add(NETSALARY);
         }
         cursor.close();
         return employeeInfo;
+    }
+
+    public boolean checkEmployee(String user, String nic){
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+
+        String[] columns = { ProjectTables.EmployeeAdd._ID };
+        String selection = "First_Name =? and NIC =?";
+        String selectionArgs[] = { user, nic };
+        Cursor cursor = sqLiteDatabase.query(ProjectTables.EmployeeAdd.TABLE_EMPLOYEEADD,columns,selection,selectionArgs,null,null,null);
+
+        int count = cursor.getCount();
+        cursor.close();
+        //sqLiteDatabase.close();
+
+        if (count>0){
+            return true;
+        }
+        else {
+            return false;
+        }
+
     }
 
     public Cursor getListConents(){

@@ -14,7 +14,9 @@ import com.example.mad_project.Database.DBHandler;
 
 public class Employee_Login extends AppCompatActivity {
 
-    Button dayWork;
+    Button login;
+    EditText name,pss;
+
 
 
 
@@ -23,14 +25,42 @@ public class Employee_Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee__login);
 
-        dayWork=findViewById(R.id.buttonEmployeeLogin);
+        login=findViewById(R.id.buttonEmployeeLogin);
+        name=findViewById(R.id.editTextEmpLogUsrNme);
+        pss=findViewById(R.id.editTextEmpLgnPass);
 
-        dayWork.setOnClickListener(new View.OnClickListener() {
+
+
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(Employee_Login.this,Employee_Choose.class);
-                startActivity(intent);
+                DBHandler dbHandler = new DBHandler(getApplicationContext());
+
+                String username = name.getText().toString();
+                String pwd  = pss.getText().toString();
+
+                Boolean result = dbHandler.checkEmployee(username, pwd);
+
+
+
+                if (username.isEmpty() || pwd.isEmpty()){
+                    Toast.makeText(Employee_Login.this, "Login error, First enter your Name and Password", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if(result == true){
+                        Toast.makeText(Employee_Login.this, "Login Successfull.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Employee_Login.this, Employee_Choose.class);
+                        //intent.putExtra("Name",username);
+
+                        startActivity(intent);
+
+                    }
+                    else {
+                        Toast.makeText(Employee_Login.this, "Please enter valid username or password.", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
             }
         });
 
