@@ -128,6 +128,12 @@
     <string name="edit_user">customer username :</string>
     <string name="creationHead">Update Creation Details</string>
     <string name="enterID">Select the Creation ID</string>
+    <string name="view" />
+    <string name="VIEW">VIEW</string>
+    <string name="emEmail">Email</string>
+    <string name="eAddr">Address</string>
+    <string name="con">Contact No</string>
+    <string name="empType1">Employee Type</string>
     <string name="Update_Salary">SALARY UPDATE</string>
     <string name="delete_creation">Creation Delete</string>
     <string name="delete">Sure, Are you want to Delete Your Creation ?</string>

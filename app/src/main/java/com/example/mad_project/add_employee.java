@@ -2,6 +2,8 @@ package com.example.mad_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -14,8 +16,10 @@ import com.example.mad_project.Database.DBHandler;
 
 public class add_employee extends AppCompatActivity {
 
+
+
     EditText fname, lname, email, address, contact, nic, emp_type;
-    Button add;
+    Button add,update;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +34,23 @@ public class add_employee extends AppCompatActivity {
         emp_type = findViewById(R.id.type);
 
         add = findViewById(R.id.addempbutton);
-        add.setOnClickListener(new View.OnClickListener() {
+        update = findViewById(R.id.updateempbutton);
+
+        update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),view_employee.class);
+                startActivity(intent);
+
+            }
+        });
+
+        add.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+
                 DBHandler dbHandler = new DBHandler(getApplicationContext());
 
                 String empfname,emplname,empEmail,addr,cntNo,emp_nic,employee_type;
@@ -45,9 +63,18 @@ public class add_employee extends AppCompatActivity {
                 employee_type = emp_type.getText().toString();
 
                 long newId =  dbHandler.addEmployeeAddDetails(empfname, emplname, empEmail, addr, cntNo, emp_nic, employee_type);
-                Toast.makeText(add_employee.this, "Added successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(add_employee.this, "Added successfully.employeeID :" +newId, Toast.LENGTH_SHORT).show();
 
+                Intent intent=new Intent(getApplicationContext(),view_employee.class);
+                startActivity(intent);
 
+                fname.setText(null);
+                lname.setText(null);
+                email.setText(null);
+                address.setText(null);
+                contact.setText(null);
+                nic.setText(null);
+                emp_type.setText(null);
             }
 
 

@@ -9,8 +9,8 @@
     <include
         android:id="@+id/include5"
         layout="@layout/toolbar"
-        android:layout_width="421dp"
-        android:layout_height="66dp"
+        android:layout_width="457dp"
+        android:layout_height="61dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,32 +18,159 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView65"
+        android:id="@+id/editemployee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VIEW EMPLOYEE"
+        android:text="EDIT EMPLOYEE"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintVertical_bias="0.108" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="148dp"
-        android:layout_height="40dp"
-        android:background="@drawable/empupdate"
-        android:text="UPDATE"
+        android:id="@+id/empeditbutton"
+        android:layout_width="153dp"
+        android:layout_height="48dp"
+        android:background="@drawable/empview"
+        android:text="EDIT"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.949" />
+        app:layout_constraintVertical_bias="0.938" />
+
+    <Button
+        android:id="@+id/empdeletebutton"
+        android:layout_width="146dp"
+        android:layout_height="44dp"
+        android:background="@drawable/empdelete"
+        android:text="DELETE"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939"
+        tools:text="@string/Sal_del" />
+
+    <EditText
+        android:id="@+id/editfname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/FirstName"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <EditText
+        android:id="@+id/editlname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/LastName"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include5"
+        app:layout_constraintVertical_bias="0.344" />
+
+    <EditText
+        android:id="@+id/editemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/emEmail"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.432" />
+
+    <EditText
+        android:id="@+id/editaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/eAddr"
+        android:inputType="textPostalAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <EditText
+        android:id="@+id/editphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/con"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.611" />
+
+    <EditText
+        android:id="@+id/editnic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/NIC"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702" />
+
+    <EditText
+        android:id="@+id/edittype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/empType"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include5"
+        app:layout_constraintVertical_bias="0.798" />
+
+    <Button
+        android:id="@+id/empsearchbutton"
+        android:layout_width="211dp"
+        android:layout_height="42dp"
+        android:text="SEARCH"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include5"
+        app:layout_constraintVertical_bias="0.268" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

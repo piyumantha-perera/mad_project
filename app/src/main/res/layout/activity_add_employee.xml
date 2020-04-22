@@ -36,6 +36,7 @@
         app:layout_constraintVertical_bias="0.008" />
 
     <include
+        android:id="@+id/include6"
         layout="@layout/toolbar"
         android:layout_width="421dp"
         android:layout_height="66dp"
@@ -176,10 +177,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953"
+        app:layout_constraintVertical_bias="0.956"
         tools:text="@string/addemployee" />
 
     <EditText
@@ -215,8 +216,8 @@
 
     <EditText
         android:id="@+id/address"
-        android:layout_width="173dp"
-        android:layout_height="35dp"
+        android:layout_width="166dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPostalAddress"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
@@ -272,5 +273,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.814"
         tools:text="@string/emptype" />
+
+    <Button
+        android:id="@+id/updateempbutton"
+        android:layout_width="151dp"
+        android:layout_height="50dp"
+        android:background="@drawable/empupdate"
+        android:text="UPDATE"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956"
+        tools:text="@string/Sal_update" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="135dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include6"
+        app:layout_constraintVertical_bias="0.117"
+        app:srcCompat="@drawable/emp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

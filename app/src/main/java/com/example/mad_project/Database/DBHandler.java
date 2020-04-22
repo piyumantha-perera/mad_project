@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.example.mad_project.Database.ProjectTables.EmployeeAdd.COLUMN_ADDRESS;
+import static com.example.mad_project.Database.ProjectTables.EmployeeAdd.TABLE_EMPLOYEEADD;
+
 public class DBHandler extends SQLiteOpenHelper {
 
     Context context;
@@ -72,7 +75,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String SQL_DELETE_SALARY = "DROP TABLE IF EXISTS " + ProjectTables.Employee.TABLE_NAME;
 
 
-    private static final String CREATE_TABLE_EMPLOYEEADD = "CREATE TABLE " + ProjectTables.EmployeeAdd.TABLE_EMPLOYEEADD + "(" +
+    private static final String CREATE_TABLE_EMPLOYEEADD = "CREATE TABLE " + TABLE_EMPLOYEEADD + "(" +
             ProjectTables.EmployeeAdd._ID + " INTEGER PRIMARY KEY," +
             ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " TEXT," +
             ProjectTables.EmployeeAdd.COLUMN_EMPLOYEELNAME + " TEXT," +
@@ -356,6 +359,105 @@ public class DBHandler extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Boolean updateemployeeaddInfo(String employeefname, String employeelname, String email, String address, String contactNo, String nic, String empType) {
+        SQLiteDatabase db = getWritableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(ProjectTables.EmployeeAdd.COLUMN_EMAIL, email);
+        values.put(ProjectTables.EmployeeAdd.COLUMN_ADDRESS, address);
+        values.put(ProjectTables.EmployeeAdd.COLUMN_CONTACT, contactNo);
+        values.put(ProjectTables.EmployeeAdd.COLUMN_NIC, nic);
+        values.put(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEETYPE, empType);
+        values.put(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEELNAME, employeelname);
+// Which row to update, based on the title
+        String selection = ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " LIKE ?";
+        String[] selectionArgs = { employeefname };
+
+        int count = db.update(
+                TABLE_EMPLOYEEADD,
+                values,
+                selection,
+                selectionArgs);
+
+        if (count >= 1){
+            return true;
+        } else
+        {
+            return false;
+        }
+
+    }
+     public void deleteemployeeaddInfo(String employeefname) {
+         SQLiteDatabase db = getWritableDatabase();
+         // Define 'where' part of query.
+         String selection = ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " LIKE ?";
+// Specify arguments in placeholder order.
+         String[] selectionArgs = {employeefname};
+// Issue SQL statement.
+         int deletedRows = db.delete(TABLE_EMPLOYEEADD, selection, selectionArgs);
+
+     }
+
+
+    public List readallemployeeaddInfo(String employeefname) {
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        // Define a projection that specifies which columns from the database
+// you will actually use after this query.
+        String[] projection = {
+                BaseColumns._ID,
+                ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME,
+                ProjectTables.EmployeeAdd.COLUMN_EMPLOYEELNAME,
+                ProjectTables.EmployeeAdd.COLUMN_EMAIL,
+                ProjectTables.EmployeeAdd.COLUMN_ADDRESS,
+                ProjectTables.EmployeeAdd.COLUMN_CONTACT,
+                ProjectTables.EmployeeAdd.COLUMN_NIC,
+                ProjectTables.EmployeeAdd.COLUMN_EMPLOYEETYPE,
+
+        };
+
+        // Filter results WHERE "title" = 'My Title'
+        String selection = ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " LIKE ?";
+        String[] selectionArgs = {employeefname};
+
+        // How you want the results sorted in the resulting Cursor
+        String sortOrder =
+                ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " ASC ";
+
+        Cursor cursor = db.query(
+                TABLE_EMPLOYEEADD,   // The table to query
+                projection,             // The array of columns to return (pass null to get all)
+                selection,              // The columns for the WHERE clause
+                selectionArgs,          // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder               // The sort order
+        );
+
+        List employeeaddInfo = new ArrayList<>();
+        while(cursor.moveToNext()) {
+            String employee= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME));
+            String employeelname= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEELNAME));
+            String email= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_EMAIL));
+            String address= cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ADDRESS));
+            String contactNo= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_CONTACT));
+            String nic= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_NIC));
+            String empType= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEETYPE));
+            employeeaddInfo.add(employee);
+            employeeaddInfo.add(employeelname);
+            employeeaddInfo.add(email);
+            employeeaddInfo.add(address);
+            employeeaddInfo.add(contactNo);
+            employeeaddInfo.add(nic);
+            employeeaddInfo.add(empType);
+        }
+        cursor.close();
+        return employeeaddInfo;
+
+    }
+
 
     public Cursor readEmpspinNme(){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -589,5 +691,10 @@ public class DBHandler extends SQLiteOpenHelper {
      }
 
      //EMPWork END
+    public Cursor readEmployeeAddDetails(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ TABLE_EMPLOYEEADD,null);
+        return res;
 
+    }
 }
