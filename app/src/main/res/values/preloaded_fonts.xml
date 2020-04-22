@@ -2,8 +2,10 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/aclonica</item>
+        <item>@font/alfa_slab_one</item>
         <item>@font/amaranth_bold</item>
         <item>@font/amaranth_bold_italic</item>
+        <item>@font/archivo_black</item>
         <item>@font/arizonia</item>
         <item>@font/armata</item>
     </array>
