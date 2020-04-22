@@ -7,62 +7,66 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textviewTitle1"
-        android:layout_width="212dp"
-        android:layout_height="44dp"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/main_heading"
-        android:textAllCaps="true"
-        android:textColor="#800A38"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.085" />
 
-    <TextView
-        android:id="@+id/textViewTitle2"
-        android:layout_width="364dp"
-        android:layout_height="55dp"
-        android:fontFamily="@font/archivo_black"
-        android:text="@string/main_topic"
-        android:textColor="#0B4996"
-        android:textSize="30sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textviewTitle1"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/textviewTitle1"
+            android:layout_width="212dp"
+            android:layout_height="44dp"
+            android:fontFamily="@font/aclonica"
+            android:text="@string/main_heading"
+            android:textAllCaps="true"
+            android:textColor="#800A38"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.085" />
 
-    <TextView
-        android:id="@+id/textViewDes"
-        android:layout_width="341dp"
-        android:layout_height="53dp"
-        android:text="@string/Advertising_moto"
-        android:textAllCaps="false"
-        android:textColor="#00695C"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewHome"
-        app:layout_constraintVertical_bias="0.311" />
+        <TextView
+            android:id="@+id/textViewTitle2"
+            android:layout_width="364dp"
+            android:layout_height="55dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="@string/main_topic"
+            android:textColor="#0B4996"
+            android:textSize="30sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textviewTitle1"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageViewHome"
-        android:layout_width="322dp"
-        android:layout_height="313dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle2"
-        app:layout_constraintVertical_bias="0.097"
-        app:srcCompat="@drawable/ad" />
+        <TextView
+            android:id="@+id/textViewDes"
+            android:layout_width="357dp"
+            android:layout_height="61dp"
+            android:fontFamily="@font/aclonica"
+            android:text="@string/Advertising_moto"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#00695C"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewHome"
+            app:layout_constraintVertical_bias="0.361" />
+
+        <ImageView
+            android:id="@+id/imageViewHome"
+            android:layout_width="307dp"
+            android:layout_height="422dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle2"
+            app:layout_constraintVertical_bias="0.072"
+            app:srcCompat="@drawable/home" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

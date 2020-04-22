@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     TextView text, title1, title2;
     ImageView pic;
 
-    private static int SPLASH_SCREEN = 3000;
+    private static int SPLASH_SCREEN = 5000;
 
 
     Animation frombottom, fromtop;
