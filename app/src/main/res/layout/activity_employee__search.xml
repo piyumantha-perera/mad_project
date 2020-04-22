@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
 
         <include
             layout="@layout/toolbar"
@@ -23,6 +24,7 @@
             android:layout_height="59dp"
             android:text="@string/Search_Emp_Salary"
             android:textAlignment="center"
+            android:textColor="#000"
             android:textSize="36sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

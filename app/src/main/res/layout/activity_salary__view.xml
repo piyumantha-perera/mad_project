@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="421dp"
         android:layout_height="730dp"
+        android:background="@drawable/background"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

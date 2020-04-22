@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".Customer_Details.Thought">
 
     <include
@@ -28,130 +29,130 @@
         app:layout_constraintVertical_bias="0.105" />
 
     <ImageView
-        android:layout_height="181dp"
-        android:layout_width="185dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/imageView19"
-        app:layout_constraintVertical_bias="0.027"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="185dp"
+        android:layout_height="181dp"
+        android:background="@drawable/btn_banner"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/thought"
-        app:layout_constraintTop_toBottomOf="@+id/textView64"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
-        android:background="@drawable/btn_banner"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView64"
+        app:layout_constraintVertical_bias="0.027"
+        app:srcCompat="@drawable/thought" />
 
     <TextView
-        android:layout_height="55dp"
-        android:layout_width="85dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/textView66"
-        app:layout_constraintVertical_bias="0.094"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textColor="#000"
+        android:layout_width="85dp"
+        android:layout_height="55dp"
+        android:fontFamily="@font/amaranth_bold"
         android:text="@string/thought_email"
-        android:fontFamily="@font/amaranth_bold"
-        app:layout_constraintTop_toBottomOf="@+id/imageView19"
-        app:layout_constraintHorizontal_bias="0.093"
-        android:textAlignment="viewStart"/>
-
-    <TextView
-        android:layout_height="40dp"
-        android:layout_width="241dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/textViewThoughtEmail"
-        android:textSize="18sp"
+        android:textAlignment="viewStart"
         android:textColor="#000"
-        app:layout_constraintStart_toEndOf="@+id/textView66"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView66"/>
-
-    <TextView
-        android:layout_height="33dp"
-        android:layout_width="91dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/textView68"
-        app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView19"
+        app:layout_constraintVertical_bias="0.094" />
+
+    <TextView
+        android:id="@+id/textViewThoughtEmail"
+        android:layout_width="241dp"
+        android:layout_height="40dp"
         android:textColor="#000"
-        android:text="@string/rate"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView66"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView66" />
+
+    <TextView
+        android:id="@+id/textView68"
+        android:layout_width="91dp"
+        android:layout_height="33dp"
         android:fontFamily="@font/amaranth_bold"
+        android:text="@string/rate"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView66"
-        app:layout_constraintHorizontal_bias="0.093"/>
+        app:layout_constraintVertical_bias="0.1" />
 
     <RatingBar
-        android:layout_height="53dp"
-        android:layout_width="237dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/ratingBar"
-        app:layout_constraintVertical_bias="0.08"
+        android:layout_width="237dp"
+        android:layout_height="53dp"
+        android:numStars="5"
+        android:stepSize="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewThoughtEmail"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toEndOf="@+id/textView68"
-        android:stepSize="0.5"
-        android:numStars="5"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewThoughtEmail"
+        app:layout_constraintVertical_bias="0.08" />
 
     <TextView
-        android:layout_height="30dp"
-        android:layout_width="91dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/textView69"
-        app:layout_constraintVertical_bias="0.205"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textColor="#000"
-        android:text="@string/thought"
+        android:layout_width="91dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/amaranth_bold"
+        android:text="@string/thought"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView68"
-        app:layout_constraintHorizontal_bias="0.093"/>
+        app:layout_constraintVertical_bias="0.205" />
 
     <EditText
-        android:layout_height="80dp"
-        android:layout_width="232dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/editTextThought"
-        app:layout_constraintHorizontal_bias="0.425"
-        app:layout_constraintStart_toEndOf="@+id/textView69"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView69"
-        android:inputType="textMultiLine"
+        android:layout_width="232dp"
+        android:layout_height="80dp"
+        android:ems="10"
         android:gravity="start|top"
-        android:ems="10"/>
+        android:inputType="textMultiLine"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView69"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toEndOf="@+id/textView69" />
 
     <Button
-        android:layout_height="47dp"
-        android:layout_width="114dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/buttonThoughtCancel"
-        app:layout_constraintVertical_bias="0.552"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textStyle="bold"
-        android:textSize="18sp"
+        android:layout_width="114dp"
+        android:layout_height="47dp"
+        android:background="@drawable/btn_delete"
         android:text="@string/cancel"
-        app:layout_constraintTop_toBottomOf="@+id/editTextThought"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.17"
-        android:background="@drawable/btn_delete"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextThought"
+        app:layout_constraintVertical_bias="0.552" />
 
     <Button
-        android:layout_height="47dp"
-        android:layout_width="114dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/buttonThoughtSubmit"
-        app:layout_constraintVertical_bias="0.56"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="@string/submit"
-        app:layout_constraintTop_toBottomOf="@+id/editTextThought"
-        app:layout_constraintHorizontal_bias="0.59"
+        android:layout_width="114dp"
+        android:layout_height="47dp"
         android:background="@drawable/btn_add"
-        app:layout_constraintStart_toEndOf="@+id/buttonThoughtCancel"/>
+        android:text="@string/submit"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintStart_toEndOf="@+id/buttonThoughtCancel"
+        app:layout_constraintTop_toBottomOf="@+id/editTextThought"
+        app:layout_constraintVertical_bias="0.56" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
