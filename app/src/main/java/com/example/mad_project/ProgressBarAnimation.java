@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class ProgressBarAnimation extends Animation {
 
-    private Context context;
+    /*private Context context;
     private ProgressBar progressBar;
     private TextView textView;
     private float from;
@@ -34,5 +34,5 @@ public class ProgressBarAnimation extends Animation {
         if (value == to) {
             context.startActivity(new Intent(context, Check.class));
         }
-    }
+    }*/
 }
