@@ -7,14 +7,19 @@
     android:background="@drawable/background"
     tools:context=".OfficeEMP">
 
+    <include
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
     <TextView
         android:id="@+id/textviewTitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
         android:layout_marginTop="68dp"
         android:text="OFFICE EMPLOYEES"
+        android:textColor="#000"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
