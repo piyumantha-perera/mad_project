@@ -555,4 +555,33 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
 
+    //EMPWork Start
+    private static final String SQL_CREATE_ENTRIES =
+            "CREATE TABLE " + ProjectTables.EMPWorks.TABLE_work + " (" +
+                    ProjectTables.EMPWorks.COLUMN_EMPID + " INTEGER PRIMARY KEY," +
+                    ProjectTables.EMPWorks.COLUMN_EMPName + " TEXT," +
+                    ProjectTables.EMPWorks.COLUMN_Work_Description + " TEXT)"+
+                    ProjectTables.EMPWorks.COLUMN_Location + " TEXT)";
+
+     public long addInfo(String empname, String workdescription, String location){
+
+         // Gets the data repository in write mode
+         SQLiteDatabase db = getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+         ContentValues values = new ContentValues();
+         //values.put(ProjectTables.EMPWorks.COLUMN_EMPID, empname);
+         values.put(ProjectTables.EMPWorks.COLUMN_EMPName, empname);
+         values.put(ProjectTables.EMPWorks.COLUMN_Work_Description,workdescription);
+         values.put(ProjectTables.EMPWorks.COLUMN_Location,location);
+
+        // Insert the new row, returning the primary key value of the new row
+         long newRowId = db.insert(ProjectTables.EMPWorks.TABLE_work, null, values);
+
+
+         return newRowId;
+     }
+
+     //EMPWork END
+
 }

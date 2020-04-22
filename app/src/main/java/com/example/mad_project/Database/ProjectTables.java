@@ -68,4 +68,14 @@ public class ProjectTables {
 
     }
 
-}
+        public static class EMPWorks implements BaseColumns {
+            //work table
+            public static final String TABLE_work = "EMPWorkDetails";
+            public static final String COLUMN_EMPID = "employee_ID";
+            public static final String COLUMN_EMPName = "employee_Name";
+            public static final String COLUMN_Work_Description = "work_Description";
+            public static final String COLUMN_Location = "location";
+        }
+    }
+
+

@@ -34,7 +34,7 @@ public class Employee_Salary extends AppCompatActivity {
         setContentView(R.layout.activity_employee__salary);
 
 
-        userName = findViewById(R.id.editTextSalDetName);
+        userName = findViewById(R.id.workDescW);
         BasicSalary = findViewById(R.id.editTextSalDetBasSal);
         TravellingAllowance = findViewById(R.id.editTextSalDetTravAll);
         OverTime = findViewById(R.id.editTextSalDetOt);

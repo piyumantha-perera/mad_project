@@ -3,7 +3,6 @@ package com.example.mad_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,8 +22,8 @@ public class Admin_Login extends AppCompatActivity {
         setContentView(R.layout.activity_admin__login);
 
         adlog = findViewById(R.id.buttonAdminLogin);
-        name=findViewById(R.id.editTextAdminName);
-        password=findViewById(R.id.editTextAdminPassword);
+        name=findViewById(R.id.empIDW);
+        password=findViewById(R.id.empNameW);
 
 
         adlog.setOnClickListener(new View.OnClickListener() {

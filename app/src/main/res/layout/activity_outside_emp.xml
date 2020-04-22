@@ -79,7 +79,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextAdminName"
+        android:id="@+id/empIDW"
         android:layout_width="193dp"
         android:layout_height="51dp"
         android:layout_marginTop="184dp"
@@ -90,7 +90,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextAdminPassword"
+        android:id="@+id/empNameW"
         android:layout_width="193dp"
         android:layout_height="51dp"
         android:layout_marginTop="260dp"
@@ -101,7 +101,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextSalDetName"
+        android:id="@+id/workDescW"
         style="@android:style/Widget.Holo.AutoCompleteTextView"
         android:layout_width="193dp"
         android:layout_height="51dp"
@@ -116,7 +116,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonBannerUpload"
+        android:id="@+id/btnAddW"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="113dp"
         android:layout_height="46dp"
@@ -155,7 +155,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/locationW"
         android:layout_width="193dp"
         android:layout_height="51dp"
         android:layout_marginTop="396dp"
