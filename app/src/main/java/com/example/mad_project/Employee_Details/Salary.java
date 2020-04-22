@@ -8,8 +8,10 @@ public class Salary {
     private String ot;
     private String salAdva;
     private String netSal;
+    private String date;
 
-    public Salary(String name, String basSal, String travAll, String ot, String salAdva, String netSal) {
+
+    public Salary(String name, String basSal, String travAll, String ot, String salAdva, String netSal, String date) {
 
         this.name = name;
         this.basSal = basSal;
@@ -17,6 +19,8 @@ public class Salary {
         this.ot = ot;
         this.salAdva = salAdva;
         this.netSal = netSal;
+        this.date = date;
+
     }
 
 
@@ -68,6 +72,15 @@ public class Salary {
     public void setNetSal(String netSal) {
         this.netSal = netSal;
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
 }
 
 

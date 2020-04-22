@@ -27,6 +27,7 @@ public class ProjectTables {
         public static final String COLUMN_OT = "OverTime";
         public static final String COLUMN_SALARYADVANCE = "SalaryAdvance";
         public static final String COLUMN_NETSALARY = "NetSalary";
+        public static final String COLUMN_DATE = "Date";
 
     }
 

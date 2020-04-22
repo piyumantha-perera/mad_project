@@ -12,7 +12,10 @@ import android.widget.Toast;
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class Employee_SalaryUpdate extends AppCompatActivity {
 
@@ -65,7 +68,9 @@ public class Employee_SalaryUpdate extends AppCompatActivity {
                 String salaryAdvance = SalAd.getText().toString();
                 String netSalary = NetSa.getText().toString();
 
-                Boolean update = dbHandler.updateEmpSalary(userName,basicSalary, travellingAllowance, overTime, salaryAdvance, netSalary);
+                String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
+                Boolean update = dbHandler.updateEmpSalary(userName,basicSalary, travellingAllowance, overTime, salaryAdvance, netSalary,date);
 
                 if(update){
                     Toast.makeText(Employee_SalaryUpdate.this, "Salary Updated", Toast.LENGTH_SHORT).show();

@@ -46,7 +46,8 @@ public class Salary_View extends AppCompatActivity {
                 String ot = cursor.getString(4);
                 String add = cursor.getString(5);
                 String net = cursor.getString(6);
-                salaryList.add(new Salary(name,basic,all,ot,add,net));
+                String date = cursor.getString(7);
+                salaryList.add(new Salary(name,basic,all,ot,add,net,date));
 
             }
 

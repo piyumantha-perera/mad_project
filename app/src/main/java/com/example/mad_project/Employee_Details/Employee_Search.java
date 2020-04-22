@@ -10,13 +10,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.mad_project.Customer_Details.Delete_Creation;
+
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.R;
 

@@ -44,6 +44,7 @@ public class ListViewAdapter extends BaseAdapter {
         TextView otHours = (TextView)v.findViewById(R.id.ot);
         TextView salaryAdv = (TextView)v.findViewById(R.id.salAdv);
         TextView netSalary = (TextView)v.findViewById(R.id.netSal);
+        TextView date = (TextView)v.findViewById(R.id.date);
 
         //Set text for TextView
 
@@ -52,6 +53,7 @@ public class ListViewAdapter extends BaseAdapter {
         otHours.setText("OT Hours: "+salaryList.get(position).getOt());
         salaryAdv.setText("Salary Advance: "+salaryList.get(position).getSalAdva());
         netSalary.setText("Net Salary: "+salaryList.get(position).getNetSal());
+        date.setText("Date: "+salaryList.get(position).getDate());
 
         //Save product name to tag
         v.setTag(salaryList.get(position).getName());

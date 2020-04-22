@@ -17,6 +17,10 @@ import com.example.mad_project.Check;
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import static com.example.mad_project.Notification.CHANNEL_ID;
 
 public class Employee_Salary extends AppCompatActivity {
@@ -69,6 +73,8 @@ public class Employee_Salary extends AppCompatActivity {
                 salAdv = SalaryAdvance.getText().toString();
                 netSal = NetSalary.getText().toString();
 
+                String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
 
 
                 if (username.isEmpty()  || basSal.isEmpty() || travAll.isEmpty() || ot.isEmpty() || salAdv.isEmpty() || netSal.isEmpty()){
@@ -88,7 +94,7 @@ public class Employee_Salary extends AppCompatActivity {
 
                 }
                 else{
-                    long newId = dbHandler.addEmployeeDetails(username, basSal, travAll, ot, salAdv, netSal);
+                    long newId = dbHandler.addEmployeeDetails(username, basSal, travAll, ot, salAdv, netSal,date);
 
                     Toast.makeText(Employee_Salary.this, "salary add success. salary id: "+newId, Toast.LENGTH_SHORT).show();
 

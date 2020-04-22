@@ -16,6 +16,7 @@ import com.example.mad_project.Customer_Details.Profile;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DBHandler extends SQLiteOpenHelper {
@@ -66,8 +67,8 @@ public class DBHandler extends SQLiteOpenHelper {
             ProjectTables.Employee.COLUMN_ALLOWANCE + " TEXT," +
             ProjectTables.Employee.COLUMN_OT + " TEXT," +
             ProjectTables.Employee.COLUMN_SALARYADVANCE + " TEXT," +
-            ProjectTables.Employee.COLUMN_NETSALARY + " TEXT)";
-
+            ProjectTables.Employee.COLUMN_NETSALARY + " TEXT,"+
+            ProjectTables.Employee.COLUMN_DATE + " TEXT)";
     private static final String SQL_DELETE_SALARY = "DROP TABLE IF EXISTS " + ProjectTables.Employee.TABLE_NAME;
 
 
@@ -238,7 +239,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
 
-    public long addEmployeeDetails(String userName, String BasicSalary, String TravellingAllowance, String OverTime, String SalaryAdvance, String NetSalary){
+    public long addEmployeeDetails(String userName, String BasicSalary, String TravellingAllowance, String OverTime, String SalaryAdvance, String NetSalary, String Date){
 
         // Gets the data repository in write mode
         SQLiteDatabase db = getWritableDatabase();
@@ -251,6 +252,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(ProjectTables.Employee.COLUMN_OT, OverTime);
         values.put(ProjectTables.Employee.COLUMN_SALARYADVANCE, SalaryAdvance);
         values.put(ProjectTables.Employee.COLUMN_NETSALARY, NetSalary);
+        values.put(ProjectTables.Employee.COLUMN_DATE, Date);
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId = db.insert(ProjectTables.Employee.TABLE_NAME, null, values);
@@ -271,6 +273,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 ProjectTables.Employee.COLUMN_OT,
                 ProjectTables.Employee.COLUMN_SALARYADVANCE,
                 ProjectTables.Employee.COLUMN_NETSALARY,
+                ProjectTables.Employee.COLUMN_DATE,
 
         };
 
@@ -299,6 +302,7 @@ public class DBHandler extends SQLiteOpenHelper {
             String OT = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_OT));
             String SALARYADVANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_SALARYADVANCE));
             String NETSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NETSALARY));
+            String DATE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_DATE));
 
             employeeInfo.add(user);
             employeeInfo.add(BASICSALARY);
@@ -306,6 +310,7 @@ public class DBHandler extends SQLiteOpenHelper {
             employeeInfo.add(OT);
             employeeInfo.add(SALARYADVANCE);
             employeeInfo.add(NETSALARY);
+            employeeInfo.add(DATE);
         }
         cursor.close();
         return employeeInfo;
@@ -406,7 +411,7 @@ public class DBHandler extends SQLiteOpenHelper {
         }
     }
 
-    public boolean updateEmpSalary(String userName, String BasicSalary, String TravellingAllowance, String OverTime, String SalaryAdvance, String NetSalary){
+    public boolean updateEmpSalary(String userName, String BasicSalary, String TravellingAllowance, String OverTime, String SalaryAdvance, String NetSalary,String Date){
 
         SQLiteDatabase db = getWritableDatabase();
 
@@ -417,6 +422,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(ProjectTables.Employee.COLUMN_OT,OverTime);
         values.put(ProjectTables.Employee.COLUMN_SALARYADVANCE,SalaryAdvance);
         values.put(ProjectTables.Employee.COLUMN_NETSALARY,NetSalary);
+        values.put(ProjectTables.Employee.COLUMN_DATE,Date);
 
 
         String selection = ProjectTables.Employee.COLUMN_NAME+ " LIKE ?";
