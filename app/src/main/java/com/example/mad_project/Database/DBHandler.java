@@ -662,6 +662,24 @@ public class DBHandler extends SQLiteOpenHelper {
         return bt;
     }
 
+    public boolean deleteUserInfo(String userName){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String selection = ProjectTables.Users.COULMN_USERNAME + " LIKE ?";
+        String[] selectionArgs = { userName };
+
+        int deleteRow = db.delete(ProjectTables.Users.TABLE_USERS, selection, selectionArgs);
+
+        if (deleteRow >= 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
 
     //EMPWork Start
     private static final String SQL_CREATE_ENTRIES =

@@ -1,9 +1,11 @@
 package com.example.mad_project.Customer_Details;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -157,16 +159,43 @@ public class Customer_Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Customer_Profile.this, Profile_Edit.class);
-                intent.putExtra("Name",username);
-                intent.putExtra("Email",email);
-                intent.putExtra("ContactNo",contactNo);
-                intent.putExtra("Address",address);
-                intent.putExtra("Password",password);
-                intent.putExtra("CnfPassword",cnf_pass);
-                startActivity(intent);
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Customer_Profile.this);
+                alertDialogBuilder.setTitle("Delete Creation!");
+                alertDialogBuilder.setMessage("Are you want to, Delete or Update?");
+                alertDialogBuilder.setCancelable(false);
+
+                alertDialogBuilder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        Intent intent = new Intent(Customer_Profile.this, Profile_Edit.class);
+                        intent.putExtra("Name",username);
+                        intent.putExtra("Email",email);
+                        intent.putExtra("ContactNo",contactNo);
+                        intent.putExtra("Address",address);
+                        intent.putExtra("Password",password);
+                        intent.putExtra("CnfPassword",cnf_pass);
+                        startActivity(intent);
+                    }
+                });
+
+                alertDialogBuilder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(Customer_Profile.this, Delete_User.class);
+                        intent.putExtra("Name",username);
+                        startActivity(intent);
+                    }
+                });
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+
             }
         });
+
+        Log.d(TAG,"onCreate: started.");
+        setIncomingIntent();
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -177,11 +206,17 @@ public class Customer_Profile extends AppCompatActivity {
             }
         });
     }
+
+    public void setIncomingIntent(){
+        Log.d(TAG, "getIncomingIntent: checking for the incoming intent.");
+
+    }
+
     private void initImageBitmaps(){
         Log.d(TAG, "initImageBitmaps: started");
-
         initRecyclerView();
     }
+
 
     private void initRecyclerView(){
         Log.d(TAG, "initRecyclerView: started");

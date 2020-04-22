@@ -84,17 +84,6 @@
         app:layout_constraintTop_toBottomOf="@+id/spinnerGetingType"
         app:layout_constraintVertical_bias="0.094" />
 
-    <EditText
-        android:id="@+id/editTextCreDelDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView58"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.774"
-        app:layout_constraintStart_toEndOf="@+id/textView58" />
-
     <Button
         android:id="@+id/buttonCreationAdd"
         android:layout_width="220dp"
@@ -107,8 +96,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCreDelDate"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonDelDate"
+        app:layout_constraintVertical_bias="0.363" />
 
     <Spinner
         android:id="@+id/spinnerGetingType"
@@ -122,6 +111,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.399" />
+    <Button
+        android:id="@+id/buttonDelDate"
+        android:layout_width="123dp"
+        android:layout_height="26dp"
+        android:background="@drawable/btn_date"
+        android:text="Date"
+        android:textColor="#fff"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView58"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/editTextCreDelDate"
+        android:layout_width="194dp"
+        android:layout_height="25dp"
+        android:textColor="#000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toEndOf="@+id/buttonDelDate"
+        app:layout_constraintTop_toBottomOf="@+id/textView58"
+        app:layout_constraintVertical_bias="0.079" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

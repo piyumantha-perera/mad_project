@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,13 +18,18 @@ import android.widget.Toast;
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.R;
 
+import java.util.Calendar;
+
 import static com.example.mad_project.Notification.CHANNEL_ID;
 
-public class LightBoard_Clone extends AppCompatActivity {
+public class LightBoard_Clone extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
     TextView full;
     EditText delDate;
     Button add;
+
+    Button deliveryDate;
+    TextView dDate;
 
     DBHandler dbHandler;
 
@@ -34,6 +41,8 @@ public class LightBoard_Clone extends AppCompatActivity {
         setContentView(R.layout.activity_light_board__clone);
 
         notificationManagerCompat = NotificationManagerCompat.from(this);
+        dDate = findViewById(R.id.editTextCreDelDate);
+        deliveryDate = findViewById(R.id.buttonDelDate);
 
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinnerGetingType);
@@ -43,7 +52,7 @@ public class LightBoard_Clone extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
         full = findViewById(R.id.textViewBannerTotal);
-        delDate = findViewById(R.id.editTextCreDelDate);
+
         add = findViewById(R.id.buttonCreationAdd);
 
         dbHandler = new DBHandler(getApplicationContext());
@@ -63,7 +72,7 @@ public class LightBoard_Clone extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String deliveryDate = delDate.getText().toString();
+                String deliveryDate = dDate.getText().toString();
                 String getType = spinner.getSelectedItem().toString();
 
                 long newID = dbHandler.addCreationDetails(username, c_type, length, width, imageUrl, description, quantity, "Rs."+amount, getType, deliveryDate);
@@ -87,5 +96,30 @@ public class LightBoard_Clone extends AppCompatActivity {
             }
         });
 
+        deliveryDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showDatePickerDialog();
+            }
+        });
+
+    }
+    private void showDatePickerDialog(){
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                this,
+                Calendar.getInstance().get(Calendar.YEAR),
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+        );
+        datePickerDialog.show();
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+        String date = (month+1) + "/" + dayOfMonth + "/" + year;
+        dDate.setText(date);
     }
 }

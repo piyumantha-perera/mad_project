@@ -4,23 +4,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.R;
 
+import java.util.Calendar;
+
 import static com.example.mad_project.Notification.CHANNEL_ID;
 
-public class CreationUpdate_LeafClone extends AppCompatActivity {
+public class CreationUpdate_LeafClone extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
-    EditText dDate;
+    TextView dDate;
     Button update;
+    Button deliveryDate;
 
     DBHandler dbHandler;
 
@@ -32,6 +38,7 @@ public class CreationUpdate_LeafClone extends AppCompatActivity {
         setContentView(R.layout.activity_creation_update__leaf_clone);
 
         notificationManagerCompat = NotificationManagerCompat.from(this);
+        deliveryDate = findViewById(R.id.buttonDelDate);
 
         dbHandler = new DBHandler(getApplicationContext());
 
@@ -90,5 +97,29 @@ public class CreationUpdate_LeafClone extends AppCompatActivity {
             }
         });
 
+        deliveryDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
+    }
+
+    private void showDatePickerDialog(){
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                this,
+                Calendar.getInstance().get(Calendar.YEAR),
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+        );
+        datePickerDialog.show();
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+        String date = (month+1) + "/" + dayOfMonth + "/" + year;
+        dDate.setText(date);
     }
 }
