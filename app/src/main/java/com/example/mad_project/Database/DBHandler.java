@@ -264,7 +264,7 @@ public class DBHandler extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public List readEmployeeDetails(String userName){
+    public List readEmployeeDetails(String id){
 
         SQLiteDatabase db = getReadableDatabase();
 
@@ -281,11 +281,11 @@ public class DBHandler extends SQLiteOpenHelper {
         };
 
         // Filter results WHERE "title" = 'My Title'
-        String selection = ProjectTables.Employee.COLUMN_NAME + " LIKE ?";
-        String[] selectionArgs = { userName };
+        String selection = ProjectTables.Employee._ID + " LIKE ?";
+        String[] selectionArgs = { id };
 
         // How you want the results sorted in the resulting Cursor
-        String sortOrder = ProjectTables.Employee.COLUMN_NAME + " ASC";
+        String sortOrder = ProjectTables.Employee._ID + " ASC";
 
         Cursor cursor = db.query(
                 ProjectTables.Employee.TABLE_NAME,   // The table to query
@@ -299,6 +299,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         List employeeInfo = new ArrayList<>();
         while(cursor.moveToNext()) {
+
             String user = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_NAME));
             String BASICSALARY = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_BASICSALARY));
             String ALLOWANCE = cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.Employee.COLUMN_ALLOWANCE));
@@ -319,13 +320,13 @@ public class DBHandler extends SQLiteOpenHelper {
         return employeeInfo;
     }
 
-    public boolean deleteEmployeeInfo(String userName){
+    public boolean deleteEmployeeInfo(String salaryID){
         SQLiteDatabase db = getWritableDatabase();
 
         // Define 'where' part of query.
-        String selection = ProjectTables.Employee.COLUMN_NAME + " LIKE ?";
+        String selection = ProjectTables.Employee._ID + " LIKE ?";
        // Specify arguments in placeholder order.
-         String[] selectionArgs = { userName };
+         String[] selectionArgs = {salaryID};
         // Issue SQL statement.
          int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
 
@@ -513,12 +514,13 @@ public class DBHandler extends SQLiteOpenHelper {
         }
     }
 
-    public boolean updateEmpSalary(String userName, String BasicSalary, String TravellingAllowance, String OverTime, String SalaryAdvance, String NetSalary,String Date){
+    public boolean updateEmpSalary(String id, String userName, String BasicSalary, String TravellingAllowance, String OverTime, String SalaryAdvance, String NetSalary,String Date){
 
         SQLiteDatabase db = getWritableDatabase();
 
 
         ContentValues values = new ContentValues();
+        values.put(ProjectTables.Employee.COLUMN_NAME,userName);
         values.put(ProjectTables.Employee.COLUMN_BASICSALARY,BasicSalary);
         values.put(ProjectTables.Employee.COLUMN_ALLOWANCE,TravellingAllowance);
         values.put(ProjectTables.Employee.COLUMN_OT,OverTime);
@@ -527,8 +529,8 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(ProjectTables.Employee.COLUMN_DATE,Date);
 
 
-        String selection = ProjectTables.Employee.COLUMN_NAME+ " LIKE ?";
-        String[] selectionArgs = { userName };
+        String selection = ProjectTables.Employee._ID+ " LIKE ?";
+        String[] selectionArgs = { id };
 
         int count = db.update(
                 ProjectTables.Employee.TABLE_NAME,

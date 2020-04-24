@@ -43,6 +43,7 @@ public class Employee_SalaryUpdate extends AppCompatActivity {
 
          Bundle bn = getIntent().getExtras();
 
+         final String id=bn.getString("ID");
          String userName = bn.getString("UserName");
          String basicSalary = bn.getString("BasicSalary");
          String travellingAllowance = bn.getString("TravellingAllowance");
@@ -61,6 +62,7 @@ public class Employee_SalaryUpdate extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 String userName = Username.getText().toString();
                 String basicSalary = BasicSal.getText().toString();
                 String travellingAllowance = TravAll.getText().toString();
@@ -68,9 +70,10 @@ public class Employee_SalaryUpdate extends AppCompatActivity {
                 String salaryAdvance = SalAd.getText().toString();
                 String netSalary = NetSa.getText().toString();
 
+
                 String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
-                Boolean update = dbHandler.updateEmpSalary(userName,basicSalary, travellingAllowance, overTime, salaryAdvance, netSalary,date);
+                Boolean update = dbHandler.updateEmpSalary(id,userName,basicSalary, travellingAllowance, overTime, salaryAdvance, netSalary,date);
 
                 if(update){
                     Toast.makeText(Employee_SalaryUpdate.this, "Salary Updated", Toast.LENGTH_SHORT).show();

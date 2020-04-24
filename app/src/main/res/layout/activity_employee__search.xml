@@ -56,10 +56,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.286"
+            app:layout_constraintHorizontal_bias="0.374"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerSalSearch"
-            app:layout_constraintVertical_bias="0.102" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.59" />
 
         <ImageButton
             android:id="@+id/btnSalaryNameSearch"
@@ -68,10 +68,10 @@
             android:background="@drawable/search"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.49"
-            app:layout_constraintStart_toEndOf="@+id/btnSalaryDelete"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerSalSearch"
-            app:layout_constraintVertical_bias="0.097"
+            app:layout_constraintHorizontal_bias="0.629"
+            app:layout_constraintStart_toEndOf="@+id/editTextID"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.392"
             app:srcCompat="@drawable/ic_search_black_24dp" />
 
         <ImageView
@@ -85,6 +85,21 @@
             app:layout_constraintTop_toBottomOf="@+id/btnSalaryDelete"
             app:layout_constraintVertical_bias="0.621"
             app:srcCompat="@drawable/delete" />
+
+        <EditText
+            android:id="@+id/editTextID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="TYPE ID AND SEARCH"
+            android:inputType="textPersonName"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnSalaryDelete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.308"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerSalSearch"
+            app:layout_constraintVertical_bias="0.335" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

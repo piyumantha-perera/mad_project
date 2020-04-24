@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,9 @@ public class Employee_Search extends AppCompatActivity {
     ImageView search;
     TextView test;
 
+    EditText salaryID;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,16 +45,18 @@ public class Employee_Search extends AppCompatActivity {
         spinner = findViewById(R.id.spinnerSalSearch);
         delete=findViewById(R.id.btnSalaryDelete);
 
-        //test = findViewById(R.id.textView67);
+        salaryID = findViewById(R.id.editTextID);
+        //test = findViewById(R.id.textView2);
 
 
-       List<String> names = new ArrayList<>();
-        names.add(0, "Choose The Employee Names");
+       final List<String> names = new ArrayList<>();
+        names.add(0, "View Employee Names");
 
         Cursor cursor = dbHandler.readEmpspinNme();
         while (cursor.moveToNext()){
             String name = cursor.getString(1);
-            names.add(name);
+            String id = cursor.getString(0);
+            names.add("Name "+name + " "+ "ID " +id);
         }
 
         ArrayAdapter<String> adapter;
@@ -57,17 +64,28 @@ public class Employee_Search extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 DBHandler dbHandler = new DBHandler(getApplicationContext());
-                String name = spinner.getSelectedItem().toString();
+                //String name = spinner.getSelectedItem().toString();
 
+                String getId = salaryID.getText().toString();
 
-                List user = dbHandler.readEmployeeDetails(name);
+                /*Cursor check = dbHandler.readEmployeeSalary();
+                while (check.moveToNext()){
+                    String empName = check.getString(1);
+                    if (empName.equals(name)){
 
-                 //String ID = (user.get(0).toString());
+                        salaryID = check.getString(0);
+                    }
+                }*/
+                //test.setText(salaryID);
+
+                List user = dbHandler.readEmployeeDetails(getId);
+
                  String userName=(user.get(0).toString());
                  String basicSalary=(user.get(1).toString());
                  String travellingAllowance=(user.get(2).toString());
@@ -76,11 +94,11 @@ public class Employee_Search extends AppCompatActivity {
                  String netSalary=(user.get(5).toString());
 
 
-                // test.setText(userName);
+
 
 
                 Intent i = new Intent(Employee_Search.this,Employee_SalaryUpdate.class);
-                //i.putExtra("ID", ID);
+                i.putExtra("ID", getId);
                 i.putExtra("UserName", userName);
                 i.putExtra("BasicSalary", basicSalary);
                 i.putExtra("TravellingAllowance", travellingAllowance);
@@ -89,7 +107,6 @@ public class Employee_Search extends AppCompatActivity {
                 i.putExtra("NetSalary", netSalary);
 
                 startActivity(i);
-
 
 
             }
@@ -110,12 +127,24 @@ public class Employee_Search extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                     DBHandler dbHandler = new DBHandler(getApplicationContext());
 
-                String name = spinner.getSelectedItem().toString();
+                //String salaryName = spinner.getSelectedItem().toString();
 
-                Boolean delete = dbHandler.deleteEmployeeInfo(name);
+                String getId = salaryID.getText().toString();
+
+                /*Cursor check = dbHandler.readEmployeeSalary();
+                while (check.moveToNext()){
+                    String empName = check.getString(1);
+                    if (empName.equals(salaryName)){
+
+                        salaryID = check.getString(0);
+                    }
+                }*/
+
+                Boolean delete = dbHandler.deleteEmployeeInfo(getId);
 
                         if (delete){
                             Toast.makeText(Employee_Search.this, "Salary Deleted", Toast.LENGTH_SHORT).show();
+                            //spinner.setAdapter((SpinnerAdapter) names);
                         }
                         else {
                             Toast.makeText(Employee_Search.this, "Salary not Deleted", Toast.LENGTH_SHORT).show();
