@@ -12,6 +12,7 @@ import com.example.mad_project.R;
 public class Customer_Choose extends AppCompatActivity {
 
     ImageView banner, leaflet, nameboard, lightboard;
+    ImageView profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,15 @@ public class Customer_Choose extends AppCompatActivity {
                 Intent intent = new Intent(Customer_Choose.this, LightBoard.class);
                 intent.putExtra("Name",username);
                 intent.putExtra("creation_type", creation_type);
+                startActivity(intent);
+            }
+        });
+
+        profile = findViewById(R.id.btn_profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Customer_Choose.this,Customer_Profile.class);
                 startActivity(intent);
             }
         });

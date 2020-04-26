@@ -8,7 +8,7 @@
     tools:context=".Customer_Details.Banner">
 
     <include
-        layout="@layout/toolbar"
+        layout="@layout/toolbar_new"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-2dp" />
 

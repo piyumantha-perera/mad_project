@@ -70,4 +70,5 @@ public class LightBoard extends AppCompatActivity {
             }
         });
     }
+
 }

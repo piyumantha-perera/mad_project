@@ -65,4 +65,5 @@ public class Thought extends AppCompatActivity {
         });
 
     }
+
 }

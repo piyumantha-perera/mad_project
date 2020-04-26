@@ -75,7 +75,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String SQL_DELETE_SALARY = "DROP TABLE IF EXISTS " + ProjectTables.Employee.TABLE_NAME;
 
 
-    private static final String CREATE_TABLE_EMPLOYEEADD = "CREATE TABLE " + TABLE_EMPLOYEEADD + "(" +
+    private static final String CREATE_TABLE_EMPLOYEEADD = "CREATE TABLE " + ProjectTables.EmployeeAdd.TABLE_EMPLOYEEADD + "(" +
             ProjectTables.EmployeeAdd._ID + " INTEGER PRIMARY KEY," +
             ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " TEXT," +
             ProjectTables.EmployeeAdd.COLUMN_EMPLOYEELNAME + " TEXT," +
@@ -389,7 +389,7 @@ public class DBHandler extends SQLiteOpenHelper {
         }
 
     }
-     public void deleteemployeeaddInfo(String employeefname) {
+     public boolean deleteemployeeaddInfo(String employeefname) {
          SQLiteDatabase db = getWritableDatabase();
          // Define 'where' part of query.
          String selection = ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " LIKE ?";
@@ -398,10 +398,16 @@ public class DBHandler extends SQLiteOpenHelper {
 // Issue SQL statement.
          int deletedRows = db.delete(TABLE_EMPLOYEEADD, selection, selectionArgs);
 
+         if (deletedRows >= 1){
+             return true;
+         }
+         else {
+             return false;
+         }
      }
 
 
-    public List readallemployeeaddInfo(String employeefname) {
+    /*public List readallemployeeaddInfo(String employeefname) {
 
         SQLiteDatabase db = getReadableDatabase();
 
@@ -457,8 +463,13 @@ public class DBHandler extends SQLiteOpenHelper {
         cursor.close();
         return employeeaddInfo;
 
-    }
+    }*/
 
+    public Cursor readallemployeeaddInfo(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ ProjectTables.EmployeeAdd.TABLE_EMPLOYEEADD,null);
+        return res;
+    }
 
     public Cursor readEmpspinNme(){
         SQLiteDatabase db = this.getWritableDatabase();

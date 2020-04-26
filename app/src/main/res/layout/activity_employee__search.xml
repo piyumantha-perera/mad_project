@@ -58,6 +58,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.374"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerSalSearch"
+            app:layout_constraintVertical_bias="0.089" />
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.59" />
 
