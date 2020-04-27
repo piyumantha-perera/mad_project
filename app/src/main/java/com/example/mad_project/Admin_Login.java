@@ -31,20 +31,20 @@ public class Admin_Login extends AppCompatActivity {
             public void onClick(View v) {
 
 
-               /* String user;
-                String pwd;*/
+               // String user;
+                //String pwd;
 
-                String user = name.getText().toString();
-                String pwd  = password.getText().toString();
+               // String user = name.getText().toString();
+               // String pwd  = password.getText().toString();
 
-                //if (user.equals("admin") && pwd.equals("123")){
+               // if (user.equals("admin") && pwd.equals("123")){
                     Toast.makeText(Admin_Login.this, "Login Successfull.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Admin_Login.this,Admin_Choose.class);
                     startActivity(intent);
-               // }
-               // else {
-                   // Toast.makeText(Admin_Login.this, "Login unsuccessfully.", Toast.LENGTH_SHORT).show();
                 //}
+              // else {
+                   // Toast.makeText(Admin_Login.this, "Login unsuccessfully.", Toast.LENGTH_SHORT).show();
+               // }
 
 
 

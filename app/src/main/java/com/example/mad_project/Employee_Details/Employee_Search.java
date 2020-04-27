@@ -131,6 +131,9 @@ public class Employee_Search extends AppCompatActivity {
 
                 String getId = salaryID.getText().toString();
 
+                        salaryID.setError("please enter the ID");
+
+
                 /*Cursor check = dbHandler.readEmployeeSalary();
                 while (check.moveToNext()){
                     String empName = check.getString(1);
