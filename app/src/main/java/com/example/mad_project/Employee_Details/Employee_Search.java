@@ -71,8 +71,10 @@ public class Employee_Search extends AppCompatActivity {
 
                 DBHandler dbHandler = new DBHandler(getApplicationContext());
                 //String name = spinner.getSelectedItem().toString();
+               // salaryID.setError("please enter the ID");
 
                 String getId = salaryID.getText().toString();
+
 
                 /*Cursor check = dbHandler.readEmployeeSalary();
                 while (check.moveToNext()){
@@ -98,6 +100,7 @@ public class Employee_Search extends AppCompatActivity {
 
 
                 Intent i = new Intent(Employee_Search.this,Employee_SalaryUpdate.class);
+
                 i.putExtra("ID", getId);
                 i.putExtra("UserName", userName);
                 i.putExtra("BasicSalary", basicSalary);
@@ -131,7 +134,7 @@ public class Employee_Search extends AppCompatActivity {
 
                 String getId = salaryID.getText().toString();
 
-                        salaryID.setError("please enter the ID");
+
 
 
                 /*Cursor check = dbHandler.readEmployeeSalary();
@@ -144,13 +147,17 @@ public class Employee_Search extends AppCompatActivity {
                 }*/
 
                 Boolean delete = dbHandler.deleteEmployeeInfo(getId);
+                        salaryID.setText(null);
 
                         if (delete){
                             Toast.makeText(Employee_Search.this, "Salary Deleted", Toast.LENGTH_SHORT).show();
                             //spinner.setAdapter((SpinnerAdapter) names);
+
                         }
                         else {
                             Toast.makeText(Employee_Search.this, "Salary not Deleted", Toast.LENGTH_SHORT).show();
+                            salaryID.setError("please enter the ID");
+
                         }
 
 
