@@ -88,18 +88,24 @@ public class Employee_Search extends AppCompatActivity {
 
                 List user = dbHandler.readEmployeeDetails(getId);
 
-                 String userName=(user.get(0).toString());
-                 String basicSalary=(user.get(1).toString());
-                 String travellingAllowance=(user.get(2).toString());
-                 String overTime=(user.get(3).toString());
-                 String salaryAdvance=(user.get(4).toString());
-                 String netSalary=(user.get(5).toString());
 
 
 
+            if(getId.isEmpty()){
+                    salaryID.setError("please enter the ID");
 
+            }
 
-                Intent i = new Intent(Employee_Search.this,Employee_SalaryUpdate.class);
+           else {
+
+                Intent i = new Intent(Employee_Search.this, Employee_SalaryUpdate.class);
+
+                String userName=(user.get(0).toString());
+                String basicSalary=(user.get(1).toString());
+                String travellingAllowance=(user.get(2).toString());
+                String overTime=(user.get(3).toString());
+                String salaryAdvance=(user.get(4).toString());
+                String netSalary=(user.get(5).toString());
 
                 i.putExtra("ID", getId);
                 i.putExtra("UserName", userName);
@@ -110,7 +116,7 @@ public class Employee_Search extends AppCompatActivity {
                 i.putExtra("NetSalary", netSalary);
 
                 startActivity(i);
-
+            }
 
             }
         });
