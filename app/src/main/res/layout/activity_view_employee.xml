@@ -164,14 +164,28 @@
 
     <Button
         android:id="@+id/empsearchbutton"
-        android:layout_width="211dp"
-        android:layout_height="42dp"
+        android:layout_width="194dp"
+        android:layout_height="39dp"
+        android:background="@drawable/employeesearch"
         android:text="SEARCH"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include5"
-        app:layout_constraintVertical_bias="0.268" />
+        app:layout_constraintVertical_bias="0.255" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="125dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.093"
+        app:srcCompat="@drawable/empedit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

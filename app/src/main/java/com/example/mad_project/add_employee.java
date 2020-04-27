@@ -65,8 +65,8 @@ public class add_employee extends AppCompatActivity {
                 long newId =  dbHandler.addEmployeeAddDetails(empfname, emplname, empEmail, addr, cntNo, emp_nic, employee_type);
                 Toast.makeText(add_employee.this, "Added successfully.employeeID :" +newId, Toast.LENGTH_SHORT).show();
 
-                Intent intent=new Intent(getApplicationContext(),view_employee.class);
-                startActivity(intent);
+                //Intent intent=new Intent(getApplicationContext(),view_employee.class);
+                //startActivity(intent);
 
                 fname.setText(null);
                 lname.setText(null);

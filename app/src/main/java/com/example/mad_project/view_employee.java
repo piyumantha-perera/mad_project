@@ -92,10 +92,20 @@ public class view_employee extends AppCompatActivity {
 
                 Boolean result = dbHandler.updateemployeeaddInfo(fName,lName,eEmail,addr,con,eNIC,eType);
 
-                if (result){
+                if (result) {
                     Toast.makeText(view_employee.this, "Update successfully.", Toast.LENGTH_SHORT).show();
+
+
+                    fname.setText(null);
+                    lname.setText(null);
+                    email.setText(null);
+                    address.setText(null);
+                    contact.setText(null);
+                    nic.setText(null);
+                    emp_type.setText(null);
+
                 }
-            }
+                }
         });
 
         delete.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +116,14 @@ public class view_employee extends AppCompatActivity {
                 Boolean result = dbHandler.deleteemployeeaddInfo(fName);
                 if (result){
                     Toast.makeText(view_employee.this, "Delete successfully.", Toast.LENGTH_SHORT).show();
+
+                    fname.setText(null);
+                    lname.setText(null);
+                    email.setText(null);
+                    address.setText(null);
+                    contact.setText(null);
+                    nic.setText(null);
+                    emp_type.setText(null);
                 }
             }
         });
