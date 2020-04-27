@@ -99,6 +99,12 @@ public class Employee_Salary extends AppCompatActivity {
                     Toast.makeText(Employee_Salary.this, "salary add success. salary id: "+newId, Toast.LENGTH_SHORT).show();
 
                     Intent intent=new Intent(Employee_Salary.this, Admin_Choose.class);
+                    userName.setText(null);
+                    BasicSalary.setText(null);
+                    TravellingAllowance.setText(null);
+                    OverTime.setText(null);
+                    SalaryAdvance.setText(null);
+                    NetSalary.setText(null);
                     startActivity(intent);
 
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(Employee_Salary.this, CHANNEL_ID)
