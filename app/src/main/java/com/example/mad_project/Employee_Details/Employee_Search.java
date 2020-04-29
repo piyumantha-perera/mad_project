@@ -157,6 +157,8 @@ public class Employee_Search extends AppCompatActivity {
 
                         if (delete){
                             Toast.makeText(Employee_Search.this, "Salary Deleted", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Employee_Search.this,Employee_Search.class);
+                            startActivity(intent);
                             //spinner.setAdapter((SpinnerAdapter) names);
 
                         }
