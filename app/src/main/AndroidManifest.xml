@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Customer_Details.Delete_User"></activity>
+        <activity android:name=".ViewWorks"></activity>
+        <activity android:name=".SearchWorks" />
+        <activity android:name=".Customer_Details.Delete_User" />
         <activity android:name=".Customer_Details.UploadPicture" />
         <activity android:name=".Customer_Details.Delete_Creation" />
         <activity android:name=".Employee_Details.Salary_View" />

@@ -7,22 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class OutsideEMP extends AppCompatActivity {
+public class ViewWorks extends AppCompatActivity {
 
-    Button search;
+    Button addnewwork;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_outside_emp);
+        setContentView(R.layout.activity_view_works);
 
-        search = findViewById(R.id.btnSearchW);
+        addnewwork = findViewById(R.id.btnSearchview);
 
-
-        search.setOnClickListener(new View.OnClickListener() {
+        addnewwork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(OutsideEMP.this,SearchWorks.class);
+                Intent intent=new Intent(ViewWorks.this,OutsideEMP.class);
                 startActivity(intent);
 
             }

@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.example.mad_project.Database.ProjectTables.EMPWorks.TABLE_EMPWORKS;
 import static com.example.mad_project.Database.ProjectTables.EmployeeAdd.COLUMN_ADDRESS;
 import static com.example.mad_project.Database.ProjectTables.EmployeeAdd.TABLE_EMPLOYEEADD;
 
@@ -695,33 +696,77 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
     //EMPWork Start
-    private static final String SQL_CREATE_ENTRIES =
-            "CREATE TABLE " + ProjectTables.EMPWorks.TABLE_work + " (" +
-                    ProjectTables.EMPWorks.COLUMN_EMPID + " INTEGER PRIMARY KEY," +
-                    ProjectTables.EMPWorks.COLUMN_EMPName + " TEXT," +
-                    ProjectTables.EMPWorks.COLUMN_Work_Description + " TEXT)"+
-                    ProjectTables.EMPWorks.COLUMN_Location + " TEXT)";
 
-     public long addInfo(String empname, String workdescription, String location){
+    public long EmployeeWorksDetails(String nic, String employeename, String work_description, String location, String date){
 
-         // Gets the data repository in write mode
-         SQLiteDatabase db = getWritableDatabase();
+        // Gets the data repository in write mode
+        SQLiteDatabase db = getWritableDatabase();
 
         // Create a new map of values, where column names are the keys
-         ContentValues values = new ContentValues();
-         //values.put(ProjectTables.EMPWorks.COLUMN_EMPID, empname);
-         values.put(ProjectTables.EMPWorks.COLUMN_EMPName, empname);
-         values.put(ProjectTables.EMPWorks.COLUMN_Work_Description,workdescription);
-         values.put(ProjectTables.EMPWorks.COLUMN_Location,location);
+        ContentValues values = new ContentValues();
+        values.put(ProjectTables.EMPWorks.COLUMN_NIC, nic);
+        values.put(ProjectTables.EMPWorks.COLUMN_EMPName, employeename);
+        values.put(ProjectTables.EMPWorks.COLUMN_Work_Description, work_description);
+        values.put(ProjectTables.EMPWorks.COLUMN_Location, location);
+        values.put(ProjectTables.EMPWorks.COLUMN_Date, date);
+
+
 
         // Insert the new row, returning the primary key value of the new row
-         long newRowId = db.insert(ProjectTables.EMPWorks.TABLE_work, null, values);
+        long newRowId = db.insert(TABLE_EMPWORKS, null, values);
 
+        db.close();
+        return newRowId;
+    }
 
-         return newRowId;
-     }
+    public Boolean UpdateEmpWorks(String nic, String employeename, String work_description, String location, String date) {
+        SQLiteDatabase db = getWritableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(ProjectTables.EMPWorks.COLUMN_EMPName, employeename);
+        values.put(ProjectTables.EMPWorks.COLUMN_Work_Description, work_description);
+        values.put(ProjectTables.EMPWorks.COLUMN_Location, location);
+        values.put(ProjectTables.EMPWorks.COLUMN_Date, date);
+
+// Which row to update, based on the title
+        String selection = ProjectTables.EMPWorks.COLUMN_NIC + " LIKE ?";
+        String[] selectionArgs = { nic };
+
+        int count = db.update(
+                TABLE_EMPWORKS,
+                values,
+                selection,
+                selectionArgs);
+
+        if (count >= 1){
+            return true;
+        } else
+        {
+            return false;
+        }
+
+    }
+    public boolean DeleteEmpWorks(String nic) {
+        SQLiteDatabase db = getWritableDatabase();
+        // Define 'where' part of query.
+        String selection = ProjectTables.EMPWorks.COLUMN_NIC + " LIKE ?";
+// Specify arguments in placeholder order.
+        String[] selectionArgs = {nic};
+// Issue SQL statement.
+        int deletedRows = db.delete(TABLE_EMPWORKS, selection, selectionArgs);
+
+        if (deletedRows >= 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
      //EMPWork END
+
+
     public Cursor readEmployeeAddDetails(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+ TABLE_EMPLOYEEADD,null);

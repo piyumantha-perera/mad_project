@@ -143,5 +143,16 @@
     <string name="Profile_picture_Upload">Profile picture Upload</string>
     <string name="deleteUser">User Account Delete</string>
     <string name="deleteUserAcc">Sure, Are you want to Delete Your Account ?</string>
+    <string name="Date">Date :</string>
+    <string name="workSearch">Search Employee Works</string>
+    <string name="EnterNIC">Enter NIC</string>
+    <string name="Search">Search</string>
+    <string name="empName">Employee Name</string>
+    <string name="WorkDescription">Work Description</string>
+    <string name="location">Location</string>
+    <string name="updte">Update Employee Works</string>
+    <string name="updat">UPDATE</string>
+    <string name="delet">Delete</string>
+    <string name="addnewwork">ADD NEW WORK</string>
 
 </resources>
