@@ -180,12 +180,9 @@ public class DBHandler extends SQLiteOpenHelper {
         return newRowId;
     }
 
-
     public long addCreationDetails(String name, String creation, String length, String width, String imagesURL, String description, String qty, String total, String type, String dDate){
 
-
         SQLiteDatabase db = getWritableDatabase();
-
 
         ContentValues values = new ContentValues();
         values.put(ProjectTables.Creations.COLUMN_USERNAME, name);
@@ -199,8 +196,6 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(ProjectTables.Creations.COLUMN_TYPE, type);
         values.put(ProjectTables.Creations.COLUMN_DATE, dDate);
 
-
-        // Insert the new row, returning the primary key value of the new row
         long newRowId = db.insert(ProjectTables.Creations.TABLE_CREATION, null, values);
 
         db.close();
@@ -228,8 +223,6 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
 
-
-
     public Cursor readUserDetails(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+ ProjectTables.Users.TABLE_USERS,null);
@@ -256,7 +249,6 @@ public class DBHandler extends SQLiteOpenHelper {
         }
 
     }
-
 
     public long addEmployeeDetails(String userName, String BasicSalary, String TravellingAllowance, String OverTime, String SalaryAdvance, String NetSalary, String Date){
 
@@ -644,9 +636,6 @@ public class DBHandler extends SQLiteOpenHelper {
         }
 
     }
-
-
-    //EMPWork Start
 
     public long ADDEmployeeWorksDetails(String nic, String employeename, String work_description, String location, String date){
 
