@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="@+id/include8" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextsearchNIC"
         android:layout_width="340dp"
         android:layout_height="61dp"
         android:layout_marginStart="44dp"

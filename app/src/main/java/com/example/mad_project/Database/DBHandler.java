@@ -465,6 +465,11 @@ public class DBHandler extends SQLiteOpenHelper {
         return employeeaddInfo;
 
     }*/
+    public Cursor reademployeeworkDetails(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ ProjectTables.EMPWorks.TABLE_EMPWORKS,null);
+        return res;
+    }
 
     public Cursor readallemployeeaddInfo(){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -697,7 +702,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     //EMPWork Start
 
-    public long EmployeeWorksDetails(String nic, String employeename, String work_description, String location, String date){
+    public long ADDEmployeeWorksDetails(String nic, String employeename, String work_description, String location, String date){
 
         // Gets the data repository in write mode
         SQLiteDatabase db = getWritableDatabase();

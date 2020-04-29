@@ -32,6 +32,8 @@ public class ViewWorks extends AppCompatActivity {
         delete = findViewById(R.id.btnDeleteW);
         update = findViewById(R.id.btnUpdtW);
 
+
+
         addnewwork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
