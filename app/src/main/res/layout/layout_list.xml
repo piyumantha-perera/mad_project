@@ -68,7 +68,7 @@
         android:fontFamily="@font/armata"
         android:text="Canada"
         android:textColor="#000"
-        android:textSize="18sp"
+        android:textSize="12sp"
         android:textStyle="bold" />
 
     <de.hdodenhof.circleimageview.CircleImageView

@@ -98,6 +98,17 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String SQL_DELETE_THOUGHT = "DROP TABLE IF EXISTS " + ProjectTables.Thoughts.TABLE_Thought;
 
 
+    private static final String CREATE_TABLE_WORK = "CREATE TABLE " + ProjectTables.Thoughts.TABLE_Thought + " (" +
+            ProjectTables.EMPWorks._ID + " INTEGER PRIMARY KEY," +
+            ProjectTables.EMPWorks.COLUMN_NIC + " TEXT," +
+            ProjectTables.EMPWorks.COLUMN_EMPName + " TEXT," +
+            ProjectTables.EMPWorks.COLUMN_Work_Description + " TEXT," +
+            ProjectTables.EMPWorks.COLUMN_Location + " TEXT," +
+            ProjectTables.EMPWorks.COLUMN_Date + " TEXT)";
+
+    private static final String SQL_DELETE_WORK = "DROP TABLE IF EXISTS " + ProjectTables.Thoughts.TABLE_Thought;
+
+
 
 
     private static String CREATE_TABLE_PROFILE = "create table imageInfo (id INTEGER PRIMARY KEY"+", imageName TEXT"+
@@ -117,6 +128,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_CREATIONS);
         db.execSQL(CREATE_TABLE_THOUGHT);
         db.execSQL(CREATE_TABLE_EMPLOYEEADD);
+        db.execSQL(CREATE_TABLE_WORK);
 
         db.execSQL(CREATE_TABLE_PROFILE);
 
@@ -142,14 +154,17 @@ public class DBHandler extends SQLiteOpenHelper {
 
         db.execSQL(SQL_DELETE_PROFILE);
         onCreate(db);
+
+        db.execSQL(SQL_DELETE_WORK);
+        onCreate(db);
     }
 
     public long addUserDetails(String userName, String contactNo, String email, String address, String password, String cnfPassword){
 
-        // Gets the data repository in write mode
+
         SQLiteDatabase db = getWritableDatabase();
 
-        // Create a new map of values, where column names are the keys
+
         ContentValues values = new ContentValues();
         values.put(ProjectTables.Users.COULMN_USERNAME, userName);
         values.put(ProjectTables.Users.COULMN_CONTACTNO, contactNo);
@@ -158,7 +173,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(ProjectTables.Users.COULMN_PASSWORD, password);
         values.put(ProjectTables.Users.COULMN_CNFPASSWORD, cnfPassword);
 
-        // Insert the new row, returning the primary key value of the new row
+
         long newRowId = db.insert(ProjectTables.Users.TABLE_USERS, null, values);
 
         db.close();
@@ -168,10 +183,10 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public long addCreationDetails(String name, String creation, String length, String width, String imagesURL, String description, String qty, String total, String type, String dDate){
 
-        // Gets the data repository in write mode
+
         SQLiteDatabase db = getWritableDatabase();
 
-        // Create a new map of values, where column names are the keys
+
         ContentValues values = new ContentValues();
         values.put(ProjectTables.Creations.COLUMN_USERNAME, name);
         values.put(ProjectTables.Creations.COLUMN_CREATION, creation);
@@ -195,17 +210,17 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public long addThoughtDetails(String email, String rating, String feedback){
 
-        // Gets the data repository in write mode
+
         SQLiteDatabase db = getWritableDatabase();
 
-        // Create a new map of values, where column names are the keys
+
         ContentValues values = new ContentValues();
         values.put(ProjectTables.Thoughts.COULMN_EMAIL, email);
         values.put(ProjectTables.Thoughts.COULMN_RATING, rating);
         values.put(ProjectTables.Thoughts.COULMN_FEEDBACK, feedback);
 
 
-        // Insert the new row, returning the primary key value of the new row
+
         long newRowId = db.insert(ProjectTables.Thoughts.TABLE_Thought, null, values);
 
         db.close();
@@ -231,7 +246,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         int count = cursor.getCount();
         cursor.close();
-        //sqLiteDatabase.close();
+
 
         if (count>0){
             return true;
@@ -245,10 +260,10 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public long addEmployeeDetails(String userName, String BasicSalary, String TravellingAllowance, String OverTime, String SalaryAdvance, String NetSalary, String Date){
 
-        // Gets the data repository in write mode
+
         SQLiteDatabase db = getWritableDatabase();
 
-        // Create a new map of values, where column names are the keys
+
         ContentValues values = new ContentValues();
         values.put(ProjectTables.Employee.COLUMN_NAME, userName);
         values.put(ProjectTables.Employee.COLUMN_BASICSALARY, BasicSalary);
@@ -258,7 +273,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(ProjectTables.Employee.COLUMN_NETSALARY, NetSalary);
         values.put(ProjectTables.Employee.COLUMN_DATE, Date);
 
-        // Insert the new row, returning the primary key value of the new row
+
         long newRowId = db.insert(ProjectTables.Employee.TABLE_NAME, null, values);
 
         db.close();
@@ -281,21 +296,21 @@ public class DBHandler extends SQLiteOpenHelper {
 
         };
 
-        // Filter results WHERE "title" = 'My Title'
+
         String selection = ProjectTables.Employee._ID + " LIKE ?";
         String[] selectionArgs = { id };
 
-        // How you want the results sorted in the resulting Cursor
+
         String sortOrder = ProjectTables.Employee._ID + " ASC";
 
         Cursor cursor = db.query(
-                ProjectTables.Employee.TABLE_NAME,   // The table to query
-                projection,             // The array of columns to return (pass null to get all)
-                selection,              // The columns for the WHERE clause
-                selectionArgs,          // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                sortOrder               // The sort order
+                ProjectTables.Employee.TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                sortOrder
         );
 
         List employeeInfo = new ArrayList<>();
@@ -324,11 +339,10 @@ public class DBHandler extends SQLiteOpenHelper {
     public boolean deleteEmployeeInfo(String salaryID){
         SQLiteDatabase db = getWritableDatabase();
 
-        // Define 'where' part of query.
         String selection = ProjectTables.Employee._ID + " LIKE ?";
-       // Specify arguments in placeholder order.
+
          String[] selectionArgs = {salaryID};
-        // Issue SQL statement.
+
          int deletedRows = db.delete(ProjectTables.Employee.TABLE_NAME, selection, selectionArgs);
 
         if (deletedRows >= 1){
@@ -338,13 +352,12 @@ public class DBHandler extends SQLiteOpenHelper {
             return false;
         }
     }
-  //addemployee
+
     public long addEmployeeAddDetails(String employeefname, String employeelname, String email, String address, String contactNo, String nic, String empType){
 
-        // Gets the data repository in write mode
         SQLiteDatabase db = getWritableDatabase();
 
-        // Create a new map of values, where column names are the keys
+
         ContentValues values = new ContentValues();
         values.put(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME, employeefname);
         values.put(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEELNAME, employeelname);
@@ -354,7 +367,6 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(ProjectTables.EmployeeAdd.COLUMN_NIC, nic);
         values.put(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEETYPE, empType);
 
-        // Insert the new row, returning the primary key value of the new row
         long newRowId = db.insert(ProjectTables.EmployeeAdd.TABLE_EMPLOYEEADD, null, values);
 
         db.close();
@@ -364,7 +376,6 @@ public class DBHandler extends SQLiteOpenHelper {
     public Boolean updateemployeeaddInfo(String employeefname, String employeelname, String email, String address, String contactNo, String nic, String empType) {
         SQLiteDatabase db = getWritableDatabase();
 
-// New value for one column
         ContentValues values = new ContentValues();
         values.put(ProjectTables.EmployeeAdd.COLUMN_EMAIL, email);
         values.put(ProjectTables.EmployeeAdd.COLUMN_ADDRESS, address);
@@ -372,7 +383,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(ProjectTables.EmployeeAdd.COLUMN_NIC, nic);
         values.put(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEETYPE, empType);
         values.put(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEELNAME, employeelname);
-// Which row to update, based on the title
+
         String selection = ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " LIKE ?";
         String[] selectionArgs = { employeefname };
 
@@ -392,11 +403,11 @@ public class DBHandler extends SQLiteOpenHelper {
     }
      public boolean deleteemployeeaddInfo(String employeefname) {
          SQLiteDatabase db = getWritableDatabase();
-         // Define 'where' part of query.
+
          String selection = ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " LIKE ?";
-// Specify arguments in placeholder order.
+
          String[] selectionArgs = {employeefname};
-// Issue SQL statement.
+
          int deletedRows = db.delete(TABLE_EMPLOYEEADD, selection, selectionArgs);
 
          if (deletedRows >= 1){
@@ -406,70 +417,6 @@ public class DBHandler extends SQLiteOpenHelper {
              return false;
          }
      }
-
-
-    /*public List readallemployeeaddInfo(String employeefname) {
-
-        SQLiteDatabase db = getReadableDatabase();
-
-        // Define a projection that specifies which columns from the database
-// you will actually use after this query.
-        String[] projection = {
-                BaseColumns._ID,
-                ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME,
-                ProjectTables.EmployeeAdd.COLUMN_EMPLOYEELNAME,
-                ProjectTables.EmployeeAdd.COLUMN_EMAIL,
-                ProjectTables.EmployeeAdd.COLUMN_ADDRESS,
-                ProjectTables.EmployeeAdd.COLUMN_CONTACT,
-                ProjectTables.EmployeeAdd.COLUMN_NIC,
-                ProjectTables.EmployeeAdd.COLUMN_EMPLOYEETYPE,
-
-        };
-
-        // Filter results WHERE "title" = 'My Title'
-        String selection = ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " LIKE ?";
-        String[] selectionArgs = {employeefname};
-
-        // How you want the results sorted in the resulting Cursor
-        String sortOrder =
-                ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME + " ASC ";
-
-        Cursor cursor = db.query(
-                TABLE_EMPLOYEEADD,   // The table to query
-                projection,             // The array of columns to return (pass null to get all)
-                selection,              // The columns for the WHERE clause
-                selectionArgs,          // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                sortOrder               // The sort order
-        );
-
-        List employeeaddInfo = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            String employee= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEEFNAME));
-            String employeelname= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEELNAME));
-            String email= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_EMAIL));
-            String address= cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ADDRESS));
-            String contactNo= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_CONTACT));
-            String nic= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_NIC));
-            String empType= cursor.getString(cursor.getColumnIndexOrThrow(ProjectTables.EmployeeAdd.COLUMN_EMPLOYEETYPE));
-            employeeaddInfo.add(employee);
-            employeeaddInfo.add(employeelname);
-            employeeaddInfo.add(email);
-            employeeaddInfo.add(address);
-            employeeaddInfo.add(contactNo);
-            employeeaddInfo.add(nic);
-            employeeaddInfo.add(empType);
-        }
-        cursor.close();
-        return employeeaddInfo;
-
-    }*/
-    public Cursor reademployeeworkDetails(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+ ProjectTables.EMPWorks.TABLE_EMPWORKS,null);
-        return res;
-    }
 
     public Cursor readallemployeeaddInfo(){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -605,7 +552,6 @@ public class DBHandler extends SQLiteOpenHelper {
 
         int count = cursor.getCount();
         cursor.close();
-        //sqLiteDatabase.close();
 
         if (count>0){
             return true;
@@ -704,10 +650,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public long ADDEmployeeWorksDetails(String nic, String employeename, String work_description, String location, String date){
 
-        // Gets the data repository in write mode
         SQLiteDatabase db = getWritableDatabase();
 
-        // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
         values.put(ProjectTables.EMPWorks.COLUMN_NIC, nic);
         values.put(ProjectTables.EMPWorks.COLUMN_EMPName, employeename);
@@ -716,8 +660,6 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(ProjectTables.EMPWorks.COLUMN_Date, date);
 
 
-
-        // Insert the new row, returning the primary key value of the new row
         long newRowId = db.insert(TABLE_EMPWORKS, null, values);
 
         db.close();
@@ -727,14 +669,13 @@ public class DBHandler extends SQLiteOpenHelper {
     public Boolean UpdateEmpWorks(String nic, String employeename, String work_description, String location, String date) {
         SQLiteDatabase db = getWritableDatabase();
 
-// New value for one column
+
         ContentValues values = new ContentValues();
         values.put(ProjectTables.EMPWorks.COLUMN_EMPName, employeename);
         values.put(ProjectTables.EMPWorks.COLUMN_Work_Description, work_description);
         values.put(ProjectTables.EMPWorks.COLUMN_Location, location);
         values.put(ProjectTables.EMPWorks.COLUMN_Date, date);
 
-// Which row to update, based on the title
         String selection = ProjectTables.EMPWorks.COLUMN_NIC + " LIKE ?";
         String[] selectionArgs = { nic };
 
@@ -754,11 +695,11 @@ public class DBHandler extends SQLiteOpenHelper {
     }
     public boolean DeleteEmpWorks(String nic) {
         SQLiteDatabase db = getWritableDatabase();
-        // Define 'where' part of query.
+
         String selection = ProjectTables.EMPWorks.COLUMN_NIC + " LIKE ?";
-// Specify arguments in placeholder order.
+
         String[] selectionArgs = {nic};
-// Issue SQL statement.
+
         int deletedRows = db.delete(TABLE_EMPWORKS, selection, selectionArgs);
 
         if (deletedRows >= 1){
@@ -768,9 +709,6 @@ public class DBHandler extends SQLiteOpenHelper {
             return false;
         }
     }
-
-     //EMPWork END
-
 
     public Cursor readEmployeeAddDetails(){
         SQLiteDatabase db = this.getWritableDatabase();
