@@ -154,5 +154,10 @@
     <string name="updat">UPDATE</string>
     <string name="delet">Delete</string>
     <string name="addnewwork">ADD NEW WORK</string>
+    <string name="empname">Employee Name :</string>
+    <string name="workdes">Work Description :</string>
+    <string name="locatio">Location</string>
+    <string name="addworks">ADD DAY TO  DAY WORKS</string>
+    <string name="searview">Search Works</string>
 
 </resources>
