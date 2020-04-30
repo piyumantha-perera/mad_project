@@ -38,9 +38,9 @@ public class Admin_Login extends AppCompatActivity {
                 String pwd  = password.getText().toString();
 
                 if (user.equals("admin") && pwd.equals("123")){
-                    Toast.makeText(Admin_Login.this, "Login Successfull.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Admin_Login.this,Admin_Choose.class);
                     startActivity(intent);
+                    Toast.makeText(Admin_Login.this, "Login Successfull.", Toast.LENGTH_SHORT).show();
                 }
                else {
                     Toast.makeText(Admin_Login.this, "Login unsuccessfully.", Toast.LENGTH_SHORT).show();

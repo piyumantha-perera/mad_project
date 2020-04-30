@@ -17,6 +17,7 @@ import com.example.mad_project.Database.DBHandler;
 public class add_employee extends AppCompatActivity {
 
     String MobilePattern = "[0-9]{10}";
+    String nicPattern = "[0-9]{9}[vV]";
 
     EditText fname, lname, email, address, contact, nic, emp_type;
     Button add, update;
@@ -66,17 +67,27 @@ public class add_employee extends AppCompatActivity {
                     contact.setError("enter the contact no:");
 
                 } else {
+                    if(cntNo.matches(MobilePattern)){
+                        if (emp_nic.matches(nicPattern)){
+                            long newId = dbHandler.addEmployeeAddDetails(empfname, emplname, empEmail, addr, cntNo, emp_nic, employee_type);
+                            Toast.makeText(add_employee.this, "Added successfully.employeeID :" + newId, Toast.LENGTH_SHORT).show();
 
-                    long newId = dbHandler.addEmployeeAddDetails(empfname, emplname, empEmail, addr, cntNo, emp_nic, employee_type);
-                    Toast.makeText(add_employee.this, "Added successfully.employeeID :" + newId, Toast.LENGTH_SHORT).show();
+                            fname.setText(null);
+                            lname.setText(null);
+                            email.setText(null);
+                            address.setText(null);
+                            contact.setText(null);
+                            nic.setText(null);
+                            emp_type.setText(null);
+                        }else{
+                            Toast.makeText(add_employee.this, "Please enter the valid NIC", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else {
+                        Toast.makeText(add_employee.this, "Please enter the valid phone number", Toast.LENGTH_SHORT).show();
+                    }
 
-                    fname.setText(null);
-                    lname.setText(null);
-                    email.setText(null);
-                    address.setText(null);
-                    contact.setText(null);
-                    nic.setText(null);
-                    emp_type.setText(null);
+
                 }
 
             }
