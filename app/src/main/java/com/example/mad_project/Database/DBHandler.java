@@ -655,7 +655,13 @@ public class DBHandler extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    /*public Boolean UpdateEmpWorks(String nic, String employeename, String work_description, String location, String date) {
+    public Cursor readWorkDetails(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ TABLE_EMPWORKS,null);
+        return res;
+    }
+
+    public Boolean UpdateEmpWorks(String nic, String employeename, String work_description, String location, String date) {
         SQLiteDatabase db = getWritableDatabase();
 
 
@@ -697,7 +703,7 @@ public class DBHandler extends SQLiteOpenHelper {
         else {
             return false;
         }
-    }*/
+    }
 
     public Cursor readEmployeeAddDetails(){
         SQLiteDatabase db = this.getWritableDatabase();

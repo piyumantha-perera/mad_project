@@ -20,28 +20,30 @@ public class ViewWorks extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_works);
+
         dbHandler = new DBHandler(getApplicationContext());
 
-       /* nic = findViewById(R.id.editTextNICW);
+        nic = findViewById(R.id.editTextNICW);
         employeename = findViewById(R.id.editTextEMPnameW);
         work_description= findViewById(R.id.editTextWorkDes);
         location=findViewById(R.id.editTextlocationW);
         date = findViewById(R.id.editTextdateW);
 
-        addnewwork = findViewById(R.id.btnSearchview);
         delete = findViewById(R.id.btnDeleteW);
         update = findViewById(R.id.btnUpdtW);
 
+        Bundle bn = getIntent().getExtras();
+        final String empNic = bn.getString("NIC");
+        final String name = bn.getString("Name");
+        final String description = bn.getString("Description");
+        final String empLocation = bn.getString("Location");
+        final String empDate = bn.getString("Date");
 
-
-        addnewwork.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(ViewWorks.this,OutsideEMP.class);
-                startActivity(intent);
-
-            }
-        });
+        nic.setText(empNic);
+        employeename.setText(name);
+        work_description.setText(description);
+        location.setText(empLocation);
+        date.setText(empDate);
 
 
         update.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +92,6 @@ public class ViewWorks extends AppCompatActivity {
 
                 }
             }
-        });*/
+        });
     }
 }

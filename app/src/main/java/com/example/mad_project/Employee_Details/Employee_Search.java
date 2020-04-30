@@ -167,8 +167,6 @@ public class Employee_Search extends AppCompatActivity {
                             salaryID.setError("please enter the ID");
 
                         }
-
-
             }
         });
                 alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {

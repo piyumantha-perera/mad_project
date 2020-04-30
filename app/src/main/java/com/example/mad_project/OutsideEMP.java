@@ -31,14 +31,14 @@ public class OutsideEMP extends AppCompatActivity {
         add=findViewById(R.id.btnAddW);
 
 
-       /* searchwork.setOnClickListener(new View.OnClickListener() {
+        searchwork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(OutsideEMP.this,SearchWorks.class);
                 startActivity(intent);
 
             }
-        });*/
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
 
@@ -59,14 +59,11 @@ public class OutsideEMP extends AppCompatActivity {
                 long newId =  dbHandler.ADDEmployeeWorksDetails(eNIC, eName, eWorkDes, elocation, eDate);
                 Toast.makeText(OutsideEMP.this, "Added successfully :" +newId, Toast.LENGTH_SHORT).show();
 
-                //Intent intent=new Intent(getApplicationContext(),view_employee.class);
-                //startActivity(intent);
-
-                /*nic.setText(null);
+                nic.setText(null);
                 employeename.setText(null);
                 work_description.setText(null);
                 location.setText(null);
-                date.setText(null);*/
+                date.setText(null);
 
             }
 
