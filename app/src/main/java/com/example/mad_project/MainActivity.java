@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN , WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        /*frombottom = AnimationUtils.loadAnimation(MainActivity.this,R.anim.frombottom);
-        fromtop = AnimationUtils.loadAnimation(MainActivity.this,R.anim.fromtop);*/
+        frombottom = AnimationUtils.loadAnimation(MainActivity.this,R.anim.frombottom);
+        fromtop = AnimationUtils.loadAnimation(MainActivity.this,R.anim.fromtop);
 
         text = findViewById(R.id.textViewDes);
         title1 = findViewById(R.id.textviewTitle1);
@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
         pic.setAnimation(frombottom);
         text.setAnimation(frombottom);
 
-        /*new Handler().postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent intent = new Intent(MainActivity.this,Check.class);
                 startActivity(intent);
                 finish();
             }
-        },SPLASH_SCREEN);*/
+        },SPLASH_SCREEN);
 
         pic = findViewById(R.id.imageViewHome);
         pic.setOnClickListener(new View.OnClickListener() {
