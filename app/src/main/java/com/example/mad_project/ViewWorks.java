@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
@@ -15,6 +16,7 @@ public class ViewWorks extends AppCompatActivity {
     EditText nic,employeename,work_description,location,date;
     Button addnewwork, delete,update;
     DBHandler dbHandler;
+    ImageView home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,16 @@ public class ViewWorks extends AppCompatActivity {
         setContentView(R.layout.activity_view_works);
 
         dbHandler = new DBHandler(getApplicationContext());
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(ViewWorks.this,Admin_Choose.class);
+                startActivity(intent);
+            }
+        });
+
 
         nic = findViewById(R.id.editTextNICW);
         employeename = findViewById(R.id.editTextEMPnameW);

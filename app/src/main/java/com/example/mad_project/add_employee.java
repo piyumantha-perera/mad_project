@@ -10,9 +10,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
+import com.example.mad_project.Employee_Details.Employee_Salary;
 
 public class add_employee extends AppCompatActivity {
 
@@ -21,6 +23,7 @@ public class add_employee extends AppCompatActivity {
 
     EditText fname, lname, email, address, contact, nic, emp_type;
     Button add, update;
+    ImageView home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,16 @@ public class add_employee extends AppCompatActivity {
 
         add = findViewById(R.id.addempbutton);
         update = findViewById(R.id.updateempbutton);
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(add_employee.this,Admin_Choose.class);
+                startActivity(intent);
+            }
+        });
+
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override

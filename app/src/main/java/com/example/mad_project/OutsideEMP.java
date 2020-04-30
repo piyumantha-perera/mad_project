@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.mad_project.Database.DBHandler;
@@ -15,6 +16,7 @@ public class OutsideEMP extends AppCompatActivity {
 
     Button searchwork, add;
     EditText nic,employeename,work_description,location,date;
+    ImageView home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,16 @@ public class OutsideEMP extends AppCompatActivity {
 
         searchwork = findViewById(R.id.btnSearchW);
         add=findViewById(R.id.btnAddW);
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(OutsideEMP.this,Admin_Choose.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         searchwork.setOnClickListener(new View.OnClickListener() {

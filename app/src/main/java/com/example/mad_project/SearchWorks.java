@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.Employee_Details.Employee_SalaryUpdate;
@@ -19,6 +20,7 @@ public class SearchWorks extends AppCompatActivity {
 
     Button search;
     EditText eNIC;
+    ImageView home;
 
     DBHandler dbHandler;
 
@@ -28,6 +30,14 @@ public class SearchWorks extends AppCompatActivity {
         setContentView(R.layout.activity_search_works);
 
         dbHandler = new DBHandler(getApplicationContext());
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(SearchWorks.this,Admin_Choose.class);
+                startActivity(intent);
+            }
+        });
 
         search = findViewById(R.id.btnSearchview);
         eNIC = findViewById(R.id.editTextsearchNIC);
