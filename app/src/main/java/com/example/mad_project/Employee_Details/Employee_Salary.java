@@ -53,10 +53,11 @@ public class Employee_Salary extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =  new Intent(Employee_Salary.this, Check.class);
+                Intent intent =  new Intent(Employee_Salary.this,Admin_Choose.class);
                 startActivity(intent);
             }
         });
+
 
 
         add.setOnClickListener(new View.OnClickListener() {

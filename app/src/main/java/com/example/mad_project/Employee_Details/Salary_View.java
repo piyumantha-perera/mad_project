@@ -2,12 +2,17 @@ package com.example.mad_project.Employee_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.example.mad_project.Admin_Choose;
 import com.example.mad_project.Database.DBHandler;
+import com.example.mad_project.Employee_Choose;
 import com.example.mad_project.R;
 
 import java.util.ArrayList;
@@ -19,13 +24,24 @@ public class Salary_View extends AppCompatActivity {
     ListView listView;
 
     DBHandler db;
-
+    ImageView home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salary__view);
+       // home = findViewById(R.id.btn_home);
 
         listView=findViewById(R.id.salaryList);
+
+//        home.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Salary_View.this, Employee_Choose.class);
+//                startActivity(intent);
+//            }
+//        });
+
+
 
         db=new DBHandler(getApplicationContext());
 
@@ -56,6 +72,8 @@ public class Salary_View extends AppCompatActivity {
 
         adapter = new ListViewAdapter(getApplicationContext(), salaryList);
         listView.setAdapter(adapter);
+
+
 
     }
 }

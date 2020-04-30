@@ -2,13 +2,18 @@ package com.example.mad_project.Employee_Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mad_project.Admin_Choose;
+import com.example.mad_project.Customer_Details.Banner;
+import com.example.mad_project.Customer_Details.Customer_Choose;
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.R;
 
@@ -23,7 +28,7 @@ public class Employee_SalaryUpdate extends AppCompatActivity {
     EditText BasicSal,TravAll,Ot,SalAd,NetSa;
     Button Update;
     DBHandler dbHandler;
-
+    ImageView home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +62,16 @@ public class Employee_SalaryUpdate extends AppCompatActivity {
         Ot.setText(overTime);
         SalAd.setText(salaryAdvance);
         NetSa.setText(netSalary);
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Employee_SalaryUpdate.this, Admin_Choose.class);
+
+                startActivity(intent);
+            }
+        });
 
         Update.setOnClickListener(new View.OnClickListener() {
             @Override

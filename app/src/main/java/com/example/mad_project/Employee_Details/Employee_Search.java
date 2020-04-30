@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.mad_project.Admin_Choose;
 import com.example.mad_project.Database.DBHandler;
 import com.example.mad_project.R;
 
@@ -32,6 +33,7 @@ public class Employee_Search extends AppCompatActivity {
     TextView test;
 
     EditText salaryID;
+    ImageView home;
 
 
     @Override
@@ -48,6 +50,16 @@ public class Employee_Search extends AppCompatActivity {
         salaryID = findViewById(R.id.editTextID);
         //test = findViewById(R.id.textView2);
 
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Employee_Search.this, Admin_Choose.class);
+
+                startActivity(intent);
+            }
+        });
+
 
        final List<String> names = new ArrayList<>();
         names.add(0, "View Employee Names");
@@ -63,6 +75,8 @@ public class Employee_Search extends AppCompatActivity {
         adapter = new  ArrayAdapter(Employee_Search.this, android.R.layout.simple_spinner_item, names);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+
 
 
         search.setOnClickListener(new View.OnClickListener() {
