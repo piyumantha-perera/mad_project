@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.mad_project.R;
@@ -16,6 +17,8 @@ public class LightBoard extends AppCompatActivity {
     EditText len;
     EditText wid;
     EditText qty, imagesUrl, des;
+
+    ImageView home;
 
     Button next;
 
@@ -35,6 +38,16 @@ public class LightBoard extends AppCompatActivity {
         Bundle bn = getIntent().getExtras();
         final String username = bn.getString("Name");
         final String c_type = bn.getString("creation_type");
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LightBoard.this, Customer_Choose.class);
+                intent.putExtra("Name",username);
+                startActivity(intent);
+            }
+        });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

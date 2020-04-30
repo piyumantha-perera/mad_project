@@ -26,6 +26,8 @@ public class CreationUpdate extends AppCompatActivity {
 
     ImageView search;
 
+    ImageView home;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,16 @@ public class CreationUpdate extends AppCompatActivity {
         adapter = new  ArrayAdapter(this, android.R.layout.simple_spinner_item, names);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CreationUpdate.this, Customer_Choose.class);
+                intent.putExtra("Name",username);
+                startActivity(intent);
+            }
+        });
 
     }
 

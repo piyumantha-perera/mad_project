@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class Delete_Creation extends AppCompatActivity {
 
     TextView test;
     Button delete;
+    ImageView home;
 
 
     @Override
@@ -32,6 +34,16 @@ public class Delete_Creation extends AppCompatActivity {
 
         test = findViewById(R.id.textView65);
         delete = findViewById(R.id.buttonCreationDelete);
+
+       /* home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CreationUpdate_LeafClone.this, Customer_Choose.class);
+                intent.putExtra("Name",userName);
+                startActivity(intent);
+            }
+        });*/
 
         delete.setOnClickListener(new View.OnClickListener() {
             @Override

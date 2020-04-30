@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ public class Banner_Clone extends AppCompatActivity implements DatePickerDialog.
     TextView dDate;
 
     DBHandler dbHandler;
+    ImageView home;
 
     private NotificationManagerCompat notificationManagerCompat;
 
@@ -68,6 +70,16 @@ public class Banner_Clone extends AppCompatActivity implements DatePickerDialog.
         final String quantity = bn.getString("Quantity");
 
         full.setText("Rs."+String.valueOf(amount));
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Banner_Clone.this, Customer_Choose.class);
+                intent.putExtra("Name",username);
+                startActivity(intent);
+            }
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override

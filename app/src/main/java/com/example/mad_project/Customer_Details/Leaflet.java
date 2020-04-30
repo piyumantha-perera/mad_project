@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,8 @@ public class Leaflet extends AppCompatActivity {
     EditText qty, url, des;
     TextView total;
     Button next;
+
+    ImageView home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,16 @@ public class Leaflet extends AppCompatActivity {
                     qty.setText("");
                 }
 
+            }
+        });
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Leaflet.this, Customer_Choose.class);
+                intent.putExtra("Name",username);
+                startActivity(intent);
             }
         });
 

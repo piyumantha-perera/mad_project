@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,8 @@ public class Thought extends AppCompatActivity {
     RatingBar rating;
     EditText thought;
     Button submit;
+
+    ImageView home;
 
     DBHandler dbHandler;
 
@@ -38,8 +41,19 @@ public class Thought extends AppCompatActivity {
 
         Bundle bn = getIntent().getExtras();
         String usrEmail = bn.getString("Email");
+        final String username = bn.getString("Name");
 
         email.setText(usrEmail);
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Thought.this, Customer_Choose.class);
+                intent.putExtra("Name",username);
+                startActivity(intent);
+            }
+        });
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

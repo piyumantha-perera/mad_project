@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,8 @@ public class CreationUpdate_Clone extends AppCompatActivity implements DatePicke
     Button update;
 
     Button deliveryDate;
+
+    ImageView home;
 
     DBHandler dbHandler;
 
@@ -76,6 +79,16 @@ public class CreationUpdate_Clone extends AppCompatActivity implements DatePicke
 
         full.setText(amount);
         dDate.setText(delDate);
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CreationUpdate_Clone.this, Customer_Choose.class);
+                intent.putExtra("Name",user_name);
+                startActivity(intent);
+            }
+        });
 
 
         update.setOnClickListener(new View.OnClickListener() {

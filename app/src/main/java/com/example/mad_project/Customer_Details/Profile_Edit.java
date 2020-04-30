@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,8 @@ public class Profile_Edit extends AppCompatActivity {
     TextView user;
     EditText mail, contact, addr, pass, cnfPass;
     Button update;
+
+    ImageView home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,16 @@ public class Profile_Edit extends AppCompatActivity {
         addr.setText(address);
         pass.setText(password);
         cnfPass.setText(cnf_pass);
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile_Edit.this, Customer_Choose.class);
+                intent.putExtra("Name",username);
+                startActivity(intent);
+            }
+        });
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override

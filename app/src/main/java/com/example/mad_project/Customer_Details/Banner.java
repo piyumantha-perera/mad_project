@@ -3,6 +3,7 @@ package com.example.mad_project.Customer_Details;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ public class Banner extends AppCompatActivity {
     EditText qty, imagesUrl, des;
 
     Button next;
+    ImageView home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +33,22 @@ public class Banner extends AppCompatActivity {
         imagesUrl = findViewById(R.id.editTextCreationUrl);
         des = findViewById(R.id.editTextBannerDes);
 
+
         next = findViewById(R.id.buttonBannerNext);
 
         Bundle bn = getIntent().getExtras();
         final String username = bn.getString("Name");
         final String c_type = bn.getString("creation_type");
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Banner.this, Customer_Choose.class);
+                intent.putExtra("Name",username);
+                startActivity(intent);
+            }
+        });
 
 
         next.setOnClickListener(new View.OnClickListener() {

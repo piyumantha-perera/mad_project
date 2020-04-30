@@ -140,9 +140,6 @@ public class Employee_Search extends AppCompatActivity {
 
                 String getId = salaryID.getText().toString();
 
-
-
-
                 /*Cursor check = dbHandler.readEmployeeSalary();
                 while (check.moveToNext()){
                     String empName = check.getString(1);

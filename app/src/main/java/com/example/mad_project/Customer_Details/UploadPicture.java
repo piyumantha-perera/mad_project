@@ -37,6 +37,8 @@ public class UploadPicture extends AppCompatActivity {
     String password = null;
     String cnf_pass = null;
 
+    ImageView home;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +56,16 @@ public class UploadPicture extends AppCompatActivity {
         address = bn.getString("Address");
         password = bn.getString("Password");
         cnf_pass = bn.getString("CnfPassword");
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UploadPicture.this, Customer_Choose.class);
+                intent.putExtra("Name",username);
+                startActivity(intent);
+            }
+        });
     }
     public void chooseImage(View objectView){
         try {

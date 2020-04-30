@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,8 @@ public class Delete_User extends AppCompatActivity {
     DBHandler dbHandler;
     Button delete;
 
+    ImageView home;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,16 @@ public class Delete_User extends AppCompatActivity {
 
         Bundle bn = getIntent().getExtras();
         final String username = bn.getString("Name");
+
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Delete_User.this, Customer_Choose.class);
+                intent.putExtra("Name",username);
+                startActivity(intent);
+            }
+        });
 
         delete.setOnClickListener(new View.OnClickListener() {
             @Override

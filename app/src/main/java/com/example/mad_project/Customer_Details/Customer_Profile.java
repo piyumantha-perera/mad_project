@@ -109,6 +109,7 @@ public class Customer_Profile extends AppCompatActivity {
                 else {
                     Intent intent = new Intent(Customer_Profile.this, Thought.class);
                     intent.putExtra("Email", userEmail);
+                    intent.putExtra("Name", username);
                     startActivity(intent);
                 }
 
