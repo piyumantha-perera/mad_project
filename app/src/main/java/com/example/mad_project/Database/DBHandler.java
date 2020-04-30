@@ -98,7 +98,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String SQL_DELETE_THOUGHT = "DROP TABLE IF EXISTS " + ProjectTables.Thoughts.TABLE_Thought;
 
 
-    /*private static final String CREATE_TABLE_WORK = "CREATE TABLE " + ProjectTables.Thoughts.TABLE_Thought + " (" +
+    private static final String CREATE_TABLE_WORK = "CREATE TABLE " + TABLE_EMPWORKS + " (" +
             ProjectTables.EMPWorks._ID + " INTEGER PRIMARY KEY," +
             ProjectTables.EMPWorks.COLUMN_NIC + " TEXT," +
             ProjectTables.EMPWorks.COLUMN_EMPName + " TEXT," +
@@ -106,7 +106,7 @@ public class DBHandler extends SQLiteOpenHelper {
             ProjectTables.EMPWorks.COLUMN_Location + " TEXT," +
             ProjectTables.EMPWorks.COLUMN_Date + " TEXT)";
 
-    private static final String SQL_DELETE_WORK = "DROP TABLE IF EXISTS " + ProjectTables.Thoughts.TABLE_Thought;*/
+    private static final String SQL_DELETE_WORK = "DROP TABLE IF EXISTS " + TABLE_EMPWORKS;
 
 
 
@@ -128,7 +128,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_CREATIONS);
         db.execSQL(CREATE_TABLE_THOUGHT);
         db.execSQL(CREATE_TABLE_EMPLOYEEADD);
-        //db.execSQL(CREATE_TABLE_WORK);
+        db.execSQL(CREATE_TABLE_WORK);
 
         db.execSQL(CREATE_TABLE_PROFILE);
 
@@ -155,8 +155,8 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_PROFILE);
         onCreate(db);
 
-        /*db.execSQL(SQL_DELETE_WORK);
-        onCreate(db);*/
+        db.execSQL(SQL_DELETE_WORK);
+        onCreate(db);
     }
 
     public long addUserDetails(String userName, String contactNo, String email, String address, String password, String cnfPassword){
@@ -637,7 +637,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
 
-    /*public long ADDEmployeeWorksDetails(String nic, String employeename, String work_description, String location, String date){
+    public long ADDEmployeeWorksDetails(String nic, String employeename, String work_description, String location, String date){
 
         SQLiteDatabase db = getWritableDatabase();
 
@@ -655,7 +655,7 @@ public class DBHandler extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Boolean UpdateEmpWorks(String nic, String employeename, String work_description, String location, String date) {
+    /*public Boolean UpdateEmpWorks(String nic, String employeename, String work_description, String location, String date) {
         SQLiteDatabase db = getWritableDatabase();
 
 

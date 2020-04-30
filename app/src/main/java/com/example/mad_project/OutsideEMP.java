@@ -21,7 +21,7 @@ public class OutsideEMP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outside_emp);
 
-       /* nic = findViewById(R.id.empIDW);
+        nic = findViewById(R.id.empIDW);
         employeename = findViewById(R.id.empNameW);
         work_description= findViewById(R.id.workDescW);
         location=findViewById(R.id.locationW);
@@ -38,7 +38,7 @@ public class OutsideEMP extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        });
+        });*/
 
         add.setOnClickListener(new View.OnClickListener() {
 
@@ -62,16 +62,16 @@ public class OutsideEMP extends AppCompatActivity {
                 //Intent intent=new Intent(getApplicationContext(),view_employee.class);
                 //startActivity(intent);
 
-                nic.setText(null);
+                /*nic.setText(null);
                 employeename.setText(null);
                 work_description.setText(null);
                 location.setText(null);
-                date.setText(null);
+                date.setText(null);*/
 
             }
 
 
 
-        });*/
+        });
     }
 }
