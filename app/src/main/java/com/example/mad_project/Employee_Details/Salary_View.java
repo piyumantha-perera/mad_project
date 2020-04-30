@@ -29,18 +29,9 @@ public class Salary_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salary__view);
-       // home = findViewById(R.id.btn_home);
+       home = findViewById(R.id.btn_home);
 
         listView=findViewById(R.id.salaryList);
-
-//        home.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Salary_View.this, Employee_Choose.class);
-//                startActivity(intent);
-//            }
-//        });
-
 
 
         db=new DBHandler(getApplicationContext());
@@ -73,6 +64,14 @@ public class Salary_View extends AppCompatActivity {
         adapter = new ListViewAdapter(getApplicationContext(), salaryList);
         listView.setAdapter(adapter);
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Salary_View.this, Employee_Choose.class);
+                intent.putExtra("Name",userName);
+                startActivity(intent);
+            }
+        });
 
 
     }
