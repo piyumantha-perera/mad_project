@@ -18,6 +18,11 @@ public class Register extends AppCompatActivity {
     Button register;
     EditText user, contact, email, address, pwd, cnf_pwd;
 
+    String PWD_PATTERN = "((?=.*[a-z])(?=.*[@#$%!]).{6,40})";
+    String MobilePattern = "[0-9]{10}";
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,22 +55,54 @@ public class Register extends AppCompatActivity {
                 while (check.moveToNext()){
                     name = check.getString(1);
                 }
-                if(name.equals("*") || !(name.equals(username))) {
 
-                        if(password.equals(cnf_password)){
-                            long newId = dbHandler.addUserDetails(username, cntNo, userEmail, addr, password, cnf_password);
-                            Toast.makeText(Register.this, "User Details added. User ID: "+newId, Toast.LENGTH_SHORT).show();
+                if (username.isEmpty() || password.isEmpty() || userEmail.isEmpty() || cntNo.isEmpty()) {
+                    user.setError("please enter the user name");
+                    contact.setError("please enter the user contact");
+                    email.setError("please enter the email");
+                    pwd.setError("please enter the password");
 
-                            Intent intent = new Intent(Register.this, Customer_Login.class);
-                            startActivity(intent);
+                }
+                else{
+                    if(cntNo.matches(MobilePattern)){
+                        if(userEmail.matches(emailPattern)) {
+                            if(password.matches(PWD_PATTERN)){
+                                if(password.equals(cnf_password)){
+                                    if(name.equals("*") || !(name.equals(username))) {
+
+                                        long newId = dbHandler.addUserDetails(username, cntNo, userEmail, addr, password, cnf_password);
+                                        Toast.makeText(Register.this, "User Details added. User ID: "+newId, Toast.LENGTH_SHORT).show();
+
+                                        Intent intent = new Intent(Register.this, Customer_Login.class);
+                                        startActivity(intent);
+                                    }
+                                    else{
+                                        Toast.makeText(Register.this, "Username has been use before, Enter another username.", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                                else {
+                                    Toast.makeText(Register.this, "Please Enter matching Confirm Password.", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                            else{
+                                Toast.makeText(Register.this, "please enter the Strong password.", Toast.LENGTH_SHORT).show();
+                                pwd.setError("please enter the Strong password");
+
+                            }
                         }
                         else{
-                            Toast.makeText(Register.this, "Please Enter matching Confirm Password.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, "please enter the valid user Email.", Toast.LENGTH_SHORT).show();
+                            email.setError("please enter the valid user Email.");
                         }
+
                     }
                     else {
-                    Toast.makeText(Register.this, "Username has been use before, Enter another username.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Register.this, "please enter the valid user contact.", Toast.LENGTH_SHORT).show();
+                        contact.setError("please enter the valid user contact.");
+                    }
+
                 }
+
 
                 }
 

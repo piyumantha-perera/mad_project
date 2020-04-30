@@ -60,14 +60,25 @@ public class Leaflet extends AppCompatActivity {
                 image = url.getText().toString();
                 description = des.getText().toString();
 
-                Intent intent = new Intent(Leaflet.this, Leaflet_Clone.class);
-                intent.putExtra("Name",username);
-                intent.putExtra("creation_type", c_type);
-                intent.putExtra("Quantity", quantity);
-                intent.putExtra("Price", price);
-                intent.putExtra("ImageUrl", image);
-                intent.putExtra("Description", description);
-                startActivity(intent);
+                if (quantity.isEmpty() || image.isEmpty() || description.isEmpty()) {
+                    Toast.makeText(Leaflet.this, "Please Fill all text feild.", Toast.LENGTH_SHORT).show();
+                }
+                else if(price.isEmpty()){
+                    total.setError("please get Leaflet total");
+                    Toast.makeText(Leaflet.this, "Please Fill total text feild.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Intent intent = new Intent(Leaflet.this, Leaflet_Clone.class);
+                    intent.putExtra("Name",username);
+                    intent.putExtra("creation_type", c_type);
+                    intent.putExtra("Quantity", quantity);
+                    intent.putExtra("Price", price);
+                    intent.putExtra("ImageUrl", image);
+                    intent.putExtra("Description", description);
+                    startActivity(intent);
+                }
+
+
             }
         });
     }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.mad_project.R;
 
@@ -48,27 +49,33 @@ public class Banner extends AppCompatActivity {
                 crImages = imagesUrl.getText().toString();
                 crdescription = des.getText().toString();
 
-
                 int length, width, quantity;
 
-                length = Integer.parseInt(len.getText().toString());
-                width = Integer.parseInt(wid.getText().toString());
-                quantity = Integer.parseInt(qty.getText().toString());
+                if (crLength.isEmpty() || crWidth.isEmpty() || crQty.isEmpty() || crdescription.isEmpty()|| crImages.isEmpty()) {
+                    Toast.makeText(Banner.this, "Please Fill all text feild.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    length = Integer.parseInt(len.getText().toString());
+                    width = Integer.parseInt(wid.getText().toString());
+                    quantity = Integer.parseInt(qty.getText().toString());
 
-                Double calculate = ((length *width) * 100.0) * quantity;
+                    Double calculate = ((length *width) * 100.0) * quantity;
 
 
-                String amount = calculate.toString();
-                Intent intent = new Intent(Banner.this, Banner_Clone.class);
-                intent.putExtra("Name",username);
-                intent.putExtra("creation_type", c_type);
-                intent.putExtra("Length",crLength);
-                intent.putExtra("Width",crWidth);
-                intent.putExtra("Url",crImages);
-                intent.putExtra("Description",crdescription);
-                intent.putExtra("Quantity",crQty);
-                intent.putExtra("Price",amount);
-                startActivity(intent);
+                    String amount = calculate.toString();
+                    Intent intent = new Intent(Banner.this, Banner_Clone.class);
+                    intent.putExtra("Name",username);
+                    intent.putExtra("creation_type", c_type);
+                    intent.putExtra("Length",crLength);
+                    intent.putExtra("Width",crWidth);
+                    intent.putExtra("Url",crImages);
+                    intent.putExtra("Description",crdescription);
+                    intent.putExtra("Quantity",crQty);
+                    intent.putExtra("Price",amount);
+                    startActivity(intent);
+                }
+
+
             }
         });
 

@@ -22,7 +22,7 @@ public class ViewWorks extends AppCompatActivity {
         setContentView(R.layout.activity_view_works);
         dbHandler = new DBHandler(getApplicationContext());
 
-        nic = findViewById(R.id.editTextNICW);
+       /* nic = findViewById(R.id.editTextNICW);
         employeename = findViewById(R.id.editTextEMPnameW);
         work_description= findViewById(R.id.editTextWorkDes);
         location=findViewById(R.id.editTextlocationW);
@@ -90,6 +90,6 @@ public class ViewWorks extends AppCompatActivity {
 
                 }
             }
-        });
+        });*/
     }
 }

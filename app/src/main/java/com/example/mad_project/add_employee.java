@@ -75,19 +75,21 @@ public class add_employee extends AppCompatActivity {
 
                             Toast.makeText(add_employee.this, "Added successfully.employeeID :" + newId, Toast.LENGTH_SHORT).show();
 
-                            //Intent intent=new Intent(getApplicationContext(),view_employee.class);
-                            //startActivity(intent);
 
-                            fname.setText(null);
-                            lname.setText(null);
-                            email.setText(null);
-                            address.setText(null);
-                            contact.setText(null);
-                            nic.setText(null);
-                            emp_type.setText(null);
-                        }
-                    }
+                long newId =  dbHandler.addEmployeeAddDetails(empfname, emplname, empEmail, addr, cntNo, emp_nic, employee_type);
+                Toast.makeText(add_employee.this, "Added successfully.employeeID :" +newId, Toast.LENGTH_SHORT).show();
 
+                //Intent intent=new Intent(getApplicationContext(),view_employee.class);
+                //startActivity(intent);
+
+                fname.setText(null);
+                lname.setText(null);
+                email.setText(null);
+                address.setText(null);
+                contact.setText(null);
+                nic.setText(null);
+                emp_type.setText(null);
+            }
 
 
 

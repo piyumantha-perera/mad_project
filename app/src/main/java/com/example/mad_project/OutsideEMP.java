@@ -21,7 +21,7 @@ public class OutsideEMP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outside_emp);
 
-        nic = findViewById(R.id.empIDW);
+       /* nic = findViewById(R.id.empIDW);
         employeename = findViewById(R.id.empNameW);
         work_description= findViewById(R.id.workDescW);
         location=findViewById(R.id.locationW);
@@ -31,7 +31,7 @@ public class OutsideEMP extends AppCompatActivity {
         add=findViewById(R.id.btnAddW);
 
 
-        searchwork.setOnClickListener(new View.OnClickListener() {
+       /* searchwork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(OutsideEMP.this,SearchWorks.class);
@@ -72,6 +72,6 @@ public class OutsideEMP extends AppCompatActivity {
 
 
 
-        });
+        });*/
     }
 }
