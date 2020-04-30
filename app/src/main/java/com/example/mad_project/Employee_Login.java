@@ -17,9 +17,6 @@ public class Employee_Login extends AppCompatActivity {
     Button login;
     EditText name,pss;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

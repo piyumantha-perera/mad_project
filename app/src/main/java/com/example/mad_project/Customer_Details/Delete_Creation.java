@@ -20,30 +20,43 @@ import com.example.mad_project.R;
 
 public class Delete_Creation extends AppCompatActivity {
 
-    public static final String TAG = "CreationDeleteActivity";
-
     TextView test;
     Button delete;
     ImageView home;
 
+    DBHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete__creation);
 
+        dbHandler = new DBHandler(getApplicationContext());
+
         test = findViewById(R.id.textView65);
         delete = findViewById(R.id.buttonCreationDelete);
 
-       /* home = findViewById(R.id.btn_home);
+        home = findViewById(R.id.btn_home);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CreationUpdate_LeafClone.this, Customer_Choose.class);
-                intent.putExtra("Name",userName);
+
+                String creationId = test.getText().toString();
+                String id = null;
+                String name = null;
+
+                Cursor res = dbHandler.readCreationDetails();
+                while (res.moveToNext()){
+                    id = res.getString(0);
+                    if (id.equals(creationId)){
+                        name = res.getString(1);
+                    }
+                }
+                Intent intent = new Intent(Delete_Creation.this, Customer_Choose.class);
+                intent.putExtra("Name",name);
                 startActivity(intent);
             }
-        });*/
+        });
 
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,12 +97,10 @@ public class Delete_Creation extends AppCompatActivity {
             }
         });
 
-        Log.d(TAG,"onCreate: started.");
         setIncomingIntent();
     }
 
     public void setIncomingIntent(){
-        Log.d(TAG, "getIncomingIntent: checking for the incoming intent.");
 
         if(getIntent().hasExtra("creation_id")){
             String id = getIntent().getStringExtra("creation_id");

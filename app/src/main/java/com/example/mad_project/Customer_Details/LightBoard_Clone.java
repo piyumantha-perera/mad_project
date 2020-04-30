@@ -89,24 +89,30 @@ public class LightBoard_Clone extends AppCompatActivity implements DatePickerDia
                 String deliveryDate = dDate.getText().toString();
                 String getType = spinner.getSelectedItem().toString();
 
-                long newID = dbHandler.addCreationDetails(username, c_type, length, width, imageUrl, description, quantity, "Rs."+amount, getType, deliveryDate);
-                if (newID > 0){
-                    Toast.makeText(LightBoard_Clone.this, "Creation added Successfull", Toast.LENGTH_SHORT).show();
-
-                    String full_total = full.getText().toString();
-
-                    NotificationCompat.Builder builder = new NotificationCompat.Builder(LightBoard_Clone.this, CHANNEL_ID)
-                            .setSmallIcon(R.drawable.ic_announcement_black_24dp)
-                            .setContentTitle("RUSH Advertising Notification")
-                            .setContentText("Your creations' total amount is " + full_total)
-                            .setPriority(NotificationCompat.PRIORITY_HIGH)
-                            .setCategory(NotificationCompat.CATEGORY_MESSAGE);
-
-                    notificationManagerCompat.notify(1, builder.build());
+                if (deliveryDate.isEmpty() || getType.isEmpty()) {
+                    Toast.makeText(LightBoard_Clone.this, "Please Fill all text feild.", Toast.LENGTH_SHORT).show();
                 }
-                else {
-                    Toast.makeText(LightBoard_Clone.this, "Creation not added", Toast.LENGTH_SHORT).show();
+                else{
+                    long newID = dbHandler.addCreationDetails(username, c_type, length, width, imageUrl, description, quantity, "Rs."+amount, getType, deliveryDate);
+                    if (newID > 0){
+                        Toast.makeText(LightBoard_Clone.this, "Creation added Successfull", Toast.LENGTH_SHORT).show();
+
+                        String full_total = full.getText().toString();
+
+                        NotificationCompat.Builder builder = new NotificationCompat.Builder(LightBoard_Clone.this, CHANNEL_ID)
+                                .setSmallIcon(R.drawable.ic_announcement_black_24dp)
+                                .setContentTitle("RUSH Advertising Notification")
+                                .setContentText("Your creations' total amount is " + full_total)
+                                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                                .setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+                        notificationManagerCompat.notify(1, builder.build());
+                    }
+                    else {
+                        Toast.makeText(LightBoard_Clone.this, "Creation not added", Toast.LENGTH_SHORT).show();
+                    }
                 }
+
             }
         });
 

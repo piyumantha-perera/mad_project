@@ -26,10 +26,11 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="146dp"
-        android:layout_height="39dp"
+        android:layout_width="143dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/amaranth_bold"
         android:text="@string/login_heading"
-        android:textColor="#2196F3"
+        android:textColor="#000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

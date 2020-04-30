@@ -30,10 +30,6 @@ public class Admin_Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-               // String user;
-                //String pwd;
-
                String user = name.getText().toString();
                 String pwd  = password.getText().toString();
 

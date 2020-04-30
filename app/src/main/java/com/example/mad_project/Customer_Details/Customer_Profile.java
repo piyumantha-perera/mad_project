@@ -24,8 +24,6 @@ import java.util.ArrayList;
 
 public class Customer_Profile extends AppCompatActivity {
 
-    private static final String TAG = "Customer_Profile";
-
     private ArrayList<String> userName = new ArrayList<>();
     private ArrayList<String> userId = new ArrayList<>();
     private ArrayList<String> userCreation = new ArrayList<>();
@@ -144,17 +142,7 @@ public class Customer_Profile extends AppCompatActivity {
             }
         });
 
-        Log.d(TAG, "onCreate: started");
-
-        drop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                while (cnt == 0) {
-                    initImageBitmaps();
-                    cnt++;
-                }
-            }
-        });
+        initRecyclerView();
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,9 +183,6 @@ public class Customer_Profile extends AppCompatActivity {
             }
         });
 
-        Log.d(TAG,"onCreate: started.");
-        setIncomingIntent();
-
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -208,19 +193,7 @@ public class Customer_Profile extends AppCompatActivity {
         });
     }
 
-    public void setIncomingIntent(){
-        Log.d(TAG, "getIncomingIntent: checking for the incoming intent.");
-
-    }
-
-    private void initImageBitmaps(){
-        Log.d(TAG, "initImageBitmaps: started");
-        initRecyclerView();
-    }
-
-
     private void initRecyclerView(){
-        Log.d(TAG, "initRecyclerView: started");
 
         DBHandler dbHandler =  new DBHandler(getApplicationContext());
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -236,9 +209,7 @@ public class Customer_Profile extends AppCompatActivity {
 
             String name = data.getString(1);
 
-
             if (name.equals(username)){
-                //userId.add(data.getString(0));
 
                 userId.add(String.valueOf(count));
                 userName.add(data.getString(5));
@@ -252,14 +223,8 @@ public class Customer_Profile extends AppCompatActivity {
                 recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
                 count = count + 1;
-
-            }
-            if(count == 1){
-                Toast.makeText(this, "This user have not Creations", Toast.LENGTH_SHORT).show();
             }
 
         }
-
-
     }
 }

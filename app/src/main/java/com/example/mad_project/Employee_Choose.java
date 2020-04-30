@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.mad_project.Employee_Details.Employee_SalaryUpdate;
 import com.example.mad_project.Employee_Details.Salary_View;
@@ -13,6 +14,7 @@ import com.example.mad_project.Employee_Details.Salary_View;
 public class Employee_Choose extends AppCompatActivity {
 
     Button monthlySal;
+    TextView logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,15 @@ public class Employee_Choose extends AppCompatActivity {
                 intent.putExtra("Name",userName);
                 startActivity(intent);
 
+            }
+        });
+
+        logout = findViewById(R.id.btn_logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( Employee_Choose.this, Check.class);
+                startActivity(intent);
             }
         });
     }

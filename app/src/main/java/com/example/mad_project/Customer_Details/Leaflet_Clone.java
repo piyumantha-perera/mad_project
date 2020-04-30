@@ -87,23 +87,29 @@ public class Leaflet_Clone extends AppCompatActivity implements DatePickerDialog
                 String deliveryDate = dDate.getText().toString();
                 String getType = spinner.getSelectedItem().toString();
 
-
-                long newID = dbHandler.addCreationDetails(username, c_type, len, wid, url, des, qty, price, getType, deliveryDate);
-                if (newID > 0){
-                    Toast.makeText(Leaflet_Clone.this, "Creation added Successfull", Toast.LENGTH_SHORT).show();
-
-                    NotificationCompat.Builder builder = new NotificationCompat.Builder(Leaflet_Clone.this, CHANNEL_ID)
-                            .setSmallIcon(R.drawable.ic_announcement_black_24dp)
-                            .setContentTitle("RUSH Advertising Notification")
-                            .setContentText("Your creations' total amount is " + price)
-                            .setPriority(NotificationCompat.PRIORITY_HIGH)
-                            .setCategory(NotificationCompat.CATEGORY_MESSAGE);
-
-                    notificationManagerCompat.notify(1, builder.build());
+                if (deliveryDate.isEmpty() || getType.isEmpty()) {
+                    Toast.makeText(Leaflet_Clone.this, "Please Fill all text feild.", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(Leaflet_Clone.this, "Creation not added", Toast.LENGTH_SHORT).show();
+                    long newID = dbHandler.addCreationDetails(username, c_type, len, wid, url, des, qty, price, getType, deliveryDate);
+                    if (newID > 0){
+                        Toast.makeText(Leaflet_Clone.this, "Creation added Successfull", Toast.LENGTH_SHORT).show();
+
+                        NotificationCompat.Builder builder = new NotificationCompat.Builder(Leaflet_Clone.this, CHANNEL_ID)
+                                .setSmallIcon(R.drawable.ic_announcement_black_24dp)
+                                .setContentTitle("RUSH Advertising Notification")
+                                .setContentText("Your creations' total amount is " + price)
+                                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                                .setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+                        notificationManagerCompat.notify(1, builder.build());
+                    }
+                    else {
+                        Toast.makeText(Leaflet_Clone.this, "Creation not added", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
+
 
             }
         });

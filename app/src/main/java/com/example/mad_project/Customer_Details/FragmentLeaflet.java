@@ -29,7 +29,7 @@ public class FragmentLeaflet extends Fragment {
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_fragment_leaflet, container, false);
 
         dbHandler = new DBHandler(getContext());
