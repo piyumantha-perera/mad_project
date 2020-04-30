@@ -16,6 +16,7 @@ import com.example.mad_project.Database.DBHandler;
 
 public class add_employee extends AppCompatActivity {
 
+    String MobilePattern = "[0-9]{10}";
 
 
     EditText fname, lname, email, address, contact, nic, emp_type;
@@ -53,29 +54,40 @@ public class add_employee extends AppCompatActivity {
 
                 DBHandler dbHandler = new DBHandler(getApplicationContext());
 
-                String empfname,emplname,empEmail,addr,cntNo,emp_nic,employee_type;
+                String empfname, emplname, empEmail, addr, cntNo, emp_nic, employee_type;
                 empfname = fname.getText().toString();
-                emplname=lname.getText().toString();
-                empEmail=email.getText().toString();
-                addr=address.getText().toString();
+                emplname = lname.getText().toString();
+                empEmail = email.getText().toString();
+                addr = address.getText().toString();
                 cntNo = contact.getText().toString();
                 emp_nic = nic.getText().toString();
                 employee_type = emp_type.getText().toString();
 
-                long newId =  dbHandler.addEmployeeAddDetails(empfname, emplname, empEmail, addr, cntNo, emp_nic, employee_type);
-                Toast.makeText(add_employee.this, "Added successfully.employeeID :" +newId, Toast.LENGTH_SHORT).show();
+                if (empfname.isEmpty() || emp_nic.isEmpty() || cntNo.isEmpty()) {
+                    fname.setError(" enter the name");
+                    nic.setError(" enter the NIC");
+                    contact.setError("enter the contact no:");
 
-                //Intent intent=new Intent(getApplicationContext(),view_employee.class);
-                //startActivity(intent);
+                } else {
 
-                fname.setText(null);
-                lname.setText(null);
-                email.setText(null);
-                address.setText(null);
-                contact.setText(null);
-                nic.setText(null);
-                emp_type.setText(null);
-            }
+                      long newId = dbHandler.addEmployeeAddDetails(empfname, emplname, empEmail, addr, cntNo, emp_nic, employee_type);
+
+
+                            Toast.makeText(add_employee.this, "Added successfully.employeeID :" + newId, Toast.LENGTH_SHORT).show();
+
+                            //Intent intent=new Intent(getApplicationContext(),view_employee.class);
+                            //startActivity(intent);
+
+                            fname.setText(null);
+                            lname.setText(null);
+                            email.setText(null);
+                            address.setText(null);
+                            contact.setText(null);
+                            nic.setText(null);
+                            emp_type.setText(null);
+                        }
+                    }
+
 
 
 
