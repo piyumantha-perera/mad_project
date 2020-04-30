@@ -120,7 +120,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="72dp"
         android:layout_marginTop="552dp"
-        android:background="@drawable/btnoutside"
+        android:background="@drawable/btn_next"
         android:text="ADD"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
